@@ -1,0 +1,434 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "宋体";
+}
+body{
+  width: 1349px;
+}
+  @font-face {
+    font-family: titleFont;
+    src: url("../font/方正清刻本悦宋简体_2.TTF");
+  }
+//字体图标
+@font-face {
+  font-family: icontforme;
+  src: url("../font/iconfont.ttf");
+}
+//banner通用文本流
+.size{
+  width: 1349px;
+  height: 665px;
+  position: relative;
+}
+.banner_botton{
+  position: absolute;
+  cursor: pointer;
+  color:#273B5E;
+}
+//左右图标样式
+.Tcon{
+  position: absolute;
+  top: 320px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-family: icontforme;
+  font-size: 45px;
+  display: none;
+}
+#banner{
+  .size;
+  overflow: hidden;
+  #leftIcon{
+    .Tcon
+  }
+  #rightIcon{
+    right: 0;
+    .Tcon
+  }
+}
+
+#bannerBox{
+  position: absolute;
+  top: 0;
+  left: -1349px;
+  width: 6745px;
+  height: 665px;
+  div{
+    float: left;
+  }
+}
+.search{
+  margin-left: 50px;
+}
+.banner_1{
+  background-image: url("../images/baozhaoBanner1.jpg");
+  background-size: cover;
+  background-position: -200px 0;
+  .size;
+  p{
+    float: left;
+    width: 10px;
+    margin-left: 30px;
+    margin-top: 120px;
+    font-size: 10px;
+    color:#273B5E;
+  };
+  div{
+    top: 500px;
+    left: 500px;
+    .banner_botton
+  }
+  .circle{
+    position: absolute;
+    top: 505px;
+    left: 475px;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color:#273B5E;
+  }
+  .p1{
+    margin-left: 135px;
+  }
+  .p2{
+    margin-left:180px;
+  }
+  .banner_1_tittle{
+    margin-top: 110px;
+    font-size: 40px;
+    margin-left: 60px;
+    font-family: titleFont;
+  }
+}
+.banner_2{
+  background-image: url("../images/baozhaobanner2.jpg");
+  background-size: cover;
+  background-position: 0px 0;
+  .size;
+  p{
+    float: left;
+    width: 10px;
+    margin-left: 30px;
+    margin-top: 120px;
+    font-size: 10px;
+    color:#273B5E;
+  };
+  div{
+    top: 500px;
+    left: 250px;
+    .banner_botton
+  }
+  .circle{
+    position: absolute;
+    top: 505px;
+    left: 225px;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color:#273B5E;
+  }
+  .p2{
+    margin-left:150px;
+  }
+  .banner_1_tittle{
+    margin-top: 110px;
+    font-size: 40px;
+    margin-left: 135px;
+    font-family: titleFont;
+  }
+  .p1{
+    margin-left: 120px;
+  }
+}
+.banner_3{
+  background-image: url("../images/baozhaoBanner3.jpg");
+  background-size:1349px 655px;
+  .size;
+  p{
+    float: left;
+    width: 10px;
+    margin-left: 30px;
+    margin-top: 300px;
+    font-size: 10px;
+    color:#273B5E;
+  };
+  div{
+    top: 550px;
+    left: 550px;
+    .banner_botton
+  }
+  .circle{
+    position: absolute;
+    top: 555px;
+    left: 525px;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color:#273B5E;
+  }
+  .p1{
+    margin-top: 380px;
+    margin-left: 325px;
+  }
+  .p3{
+    margin-top: 380px;
+  }
+  .p2{
+    margin-left:80px;
+  }
+  .banner_1_tittle{
+    margin-top: 140px;
+    font-size: 40px;
+    margin-left: 60px;
+    font-family: titleFont;
+  }
+}
+//------------------内容样式
+section{
+  width: 1099px;
+  margin: 0 auto;
+  background-color: #F9F5F2;
+}
+//----------茶器版块
+#chaqi{
+  position: relative;
+  height: 1220px;
+  width: 1099px;
+}
+//版块1
+#chaqi_title{
+  position: relative;
+  height: 367px;
+  width: inherit;
+  overflow: hidden;
+  .chaqi_title{
+    width: 119px;
+    height: 39px;
+    background-color:#273B5E; ;
+    color: white;
+    text-align: center;
+    line-height: 39px;
+    font-family: titleFont;
+    margin: 50px auto;
+  }
+  .chaqi_page{
+    margin-left: 310px;
+    margin-top: 70px;
+    font-size: 10px;
+    p{
+      margin-top: 15px;
+      width: 500px;
+      text-align: center;
+      font-family:"宋体"
+    }
+  }
+  img{
+    position: absolute;
+  }
+  .img1{
+    top: 50px;
+    left: 600px;
+  }
+  .img2{
+    top: 30px;
+    left: 430px;
+  }
+  .img3{
+    top: 80px;
+    left: 0px;
+  }
+}
+//版块2
+.chaqi_medium{
+  width: inherit;
+  height: 196px;
+  overflow: hidden;
+  background-color: #2A445B;
+  img{
+    display: inline-block;
+    margin-left: 270px;
+    margin-top: 20px;
+  }
+}
+//版块3
+.chaqi_third{
+  position: relative;
+  width: inherit;
+  height: 657px;
+  overflow: hidden;
+  .img4{
+    position: absolute;
+    top: 100px;
+    left: 200px;
+  }
+  .img5{
+    position: absolute;
+    width: 348px;
+    height: 323px;
+    top: 130px;
+    left: 550px;
+  }
+  .img6{
+    position: absolute;
+    width: 126px;
+    height: 130px;
+    top: 470px;
+    left: 850px;
+  }
+  .img7{
+    position: absolute;
+    top: 500px;
+    left: 50px;
+  }
+}
+//版块标题样式
+.Name_title{
+  position: absolute;
+  top: 100px;
+  left: 580px;
+  width: 50px;
+  height: 165px;
+  color: white;
+  background-color: #273B5E;
+  div{
+    width: 38px;
+    height: 154px;
+    border: 1px solid white;
+    margin: 5px auto;
+    p{
+      width: 10px;
+      font-size: 18px;
+      font-family: titleFont;
+      margin-top: 12px;
+      margin-left: 7px;
+    }
+  }
+}
+//购买按钮样式
+.chaqi_botton{
+  position: absolute;
+  top: 420px;
+  left: 250px;
+  width: 114px;
+  height: 29px;
+  background-color: #273B5E;
+  color: white;
+  font-family: "宋体";
+  line-height: 29px;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all .1s linear;
+  &:hover{
+    background-color: white;
+    color:#273B5E;
+  }
+}
+//----------花器版块
+#huaqi{
+  position: relative;
+  height: 1220px;
+  width: 1099px;
+}
+#huaqi_title{
+  position: relative;
+  height: 367px;
+  width: inherit;
+  overflow: hidden;
+  .chaqi_title{
+    width: 119px;
+    height: 39px;
+    background-color:#273B5E; ;
+    color: white;
+    text-align: center;
+    line-height: 39px;
+    font-family: titleFont;
+    margin: 50px auto;
+  }
+  .chaqi_page{
+    margin-left: 310px;
+    margin-top: 70px;
+    font-size: 10px;
+    p{
+      margin-top: 15px;
+      width: 500px;
+      text-align: center;
+      font-family:"宋体"
+    }
+  }
+  img{
+    position: absolute;
+  }
+  .img1{
+    top: 50px;
+    left: 600px;
+  }
+  .img2{
+    top: 30px;
+    left: 430px;
+  }
+  .img3{
+    top: 80px;
+    left: 0px;
+  }
+}
+//----------艺品版块
+#yipin{
+  position: relative;
+  height: 1220px;
+  width: 1099px;
+}
+#yipin_title{
+  position: relative;
+  height: 367px;
+  width: inherit;
+  overflow: hidden;
+  .chaqi_title{
+    width: 119px;
+    height: 39px;
+    background-color:#273B5E; ;
+    color: white;
+    text-align: center;
+    line-height: 39px;
+    font-family: titleFont;
+    margin: 50px auto;
+  }
+  .chaqi_page{
+    margin-left: 310px;
+    margin-top: 70px;
+    font-size: 10px;
+    p{
+      margin-top: 15px;
+      width: 500px;
+      text-align: center;
+      font-family:"宋体"
+    }
+  }
+  img{
+    position: absolute;
+  }
+  .img1{
+    top: 50px;
+    left: 600px;
+  }
+  .img2{
+    top: 30px;
+    left: 430px;
+  }
+  .img3{
+    top: 80px;
+    left: 0px;
+  }
+}
+//----------茶器轮播
+.chaqilunbo{
+  position: absolute;
+  top: 420px;
+  left: 960px;
+  font-size: 26px;
+  cursor: pointer;
+  font-family: icontforme;
+}
