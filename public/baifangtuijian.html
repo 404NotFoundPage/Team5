@@ -60,12 +60,16 @@
         </div>
     </div>
     <div class="custom_left">
-        <img src="images/baifang_custom_1.png">
+        <img id="custom_updata" src="images/baifang_custom_1.png">
         <div class="custom_upload">
-            <input type="file">
-            <div>
-            </div>
+            <form action="" enctype="multipart/form-data">
+                <input id="updataImg" type="file" accept=".jpg,.png,.jpeg,.bmp">
+                <div>
+                    <img id="clickImg" src="images/updata.png">
+                </div>
+            </form>
         </div>
+        <button id="bf_cancel">取消</button>
     </div>
     <div class="custom_right">
         <div class="custom_right-top">
