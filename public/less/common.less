@@ -22,7 +22,7 @@ a{
 
 .nav{
   width: @nav_width;
-  margin: 0 auto;
+  //margin: 0 auto;
   height: @nav_height;
   overflow: hidden;
   border-bottom: 5px solid #273b5e;
@@ -32,14 +32,12 @@ a{
   float: left;
   margin-left: 125px;
   display: block;
-  margin-top: 30px;
   a{
     display: inline-block;
     text-align: center;
     width: 95px;
     height: @nav_height;
     background-color: #273b5e;
-    margin-top: -30px;
   }
   img{
     margin-top: 20px;
@@ -95,10 +93,10 @@ a{
   width: 100%;
 }
 .nav_bar>li:nth-of-type(8){
-  position: absolute;
+  position: relative;
 }
 .search{
-  position: relative;
+  position: absolute;
   span{
     overflow: hidden;
   }
