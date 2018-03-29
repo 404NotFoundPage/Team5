@@ -4,9 +4,48 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet/less" href="less/common.less">
     <link rel="stylesheet/less" type="text/less" href="css/baokuan.less" />
 </head>
 <body>
+<header>
+    <nav class="nav">
+        <div class="nav_logo">
+            <h1>
+                <a href="#">
+                    <img src="images/logo.png">
+                </a>
+            </h1>
+        </div>
+        <div class="nav_right">
+            <div class="nav_log">
+                <ul>
+                    <li><a href="#">注册</a></li>
+                    <li>|</li>
+                    <li><a href="#">登录</a></li>
+                    <li><a href="#">&#xe606;</a></li>
+                </ul>
+            </div>
+            <div class="nav_bar">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">花瓶</a></li>
+                    <li><a href="#">茶具</a></li>
+                    <li><a href="#">摆件</a></li>
+                    <li><a href="#"><span>&#xe689;</span>爆款推荐</a></li>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">艺术馆</a></li>
+                    <li>
+                        <div class="search">
+                            <span><a href="#">&#xe517;</a></span>
+                            <input type="text" placeholder="输入搜索内容">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
 <div id="banner">
     <div id="bannerBox">
         <div class="banner_3">
@@ -16,7 +55,7 @@
             <p>争出噬苹藾</p>
             <p>呦呦林间鹿</p>
             <p class="banner_1_tittle">鹿走云合</p>
-            <div>查看详情</div>
+            <div class="lookTotalyi">查看详情</div>
             <div class="circle"></div>
         </div>
         <div class="banner_1">
@@ -28,7 +67,7 @@
             <p>紫砂新罐买宜兴</p>
             <p>青箬旧封题谷雨</p>
             <p class="banner_1_tittle">梅月三弄</p>
-            <div>查看详情</div>
+            <div class="lookTotalcha">查看详情</div>
             <div class="circle"></div>
         </div>
         <div class="banner_2">
@@ -40,7 +79,7 @@
             <p>金缕鹧鸪斑</p>
             <p>兰斛藏香，梅瓶浸玉</p>
             <p>年度茶具设计前十</p>
-            <div>查看详情</div>
+            <div class="lookTotalhua">查看详情</div>
             <div class="circle"></div>
         </div>
         <div class="banner_3">
@@ -50,7 +89,7 @@
             <p>争出噬苹藾</p>
             <p>呦呦林间鹿</p>
             <p class="banner_1_tittle">鹿走云合</p>
-            <div>查看详情</div>
+            <div class="lookTotalyi">查看详情</div>
             <div class="circle"></div>
         </div>
         <div class="banner_1">
@@ -62,13 +101,147 @@
             <p>紫砂新罐买宜兴</p>
             <p>青箬旧封题谷雨</p>
             <p class="banner_1_tittle">梅月三弄</p>
-            <div>查看详情</div>
+            <div class="lookTotalcha">查看详情</div>
             <div class="circle"></div>
         </div>
     </div>
     <div id="leftIcon">&#xe64a;</div>
     <div id="rightIcon">&#xe65e;</div>
 </div>
+<!--内容-->
+<section>
+    <div id="chaqi">
+        <div id="chaqi_title">
+            <div class="chaqi_title">
+                茶   ·   器
+            </div>
+            <div class="chaqi_page">
+                <p>从往茶壶内注水开始，茶香的氤氲四溢；单手执壶不论壶柄的光滑或粗糙，握住的是所</p>
+                <p>有喝茶人的期待；专注在泡茶的那一刻，心透过眼神凝视着茶器并静静地等待；出汤时</p>
+                <p>一次执壶行茶，都是在眼、耳、鼻、舌、身、意六根全开下学习的契机。</p>
+            </div>
+            <img  class="img1" src="images/爆款背景.png" alt=""><img class="img2" src="images/爆款背景3.png" alt="">
+            <img class="img3" src="images/爆款背景2.png" alt="">
+        </div>
+        <div class="chaqi_medium">
+            <img src="images/爆款背景4.png" alt="">
+        </div>
+        <div class="chaqi_third">
+            <img class="img4" src="images/爆款版块3图1.png" alt="">
+            <img class="img5" src="images/爆款版块3图2.jpg" alt="">
+            <img class="img6" src="images/爆款版块3图3.jpg" alt="">
+            <img class="img7" src="images/爆款版块3图4.png" alt="">
+            <div class="Name_title" >
+                <div>
+                    <p>
+                        兰 斛·藏 香
+                    </p>
+                </div>
+            </div>
+            <div class="chaqi_botton">
+                立 即 购 买
+            </div>
+            <div class="chaqilunbo">&#xe65e;</div>
+        </div>
+    </div>
+    <img src="images/爆款板块4.jpg" alt="" width="1099" height="200">
+    <div id="huaqi">
+        <div id="huaqi_title">
+            <div class="chaqi_title">
+                花   ·   器
+            </div>
+            <div class="chaqi_page">
+                <p>从往茶壶内注水开始，茶香的氤氲四溢；单手执壶不论壶柄的光滑或粗糙，握住的是所</p>
+                <p>有喝茶人的期待；专注在泡茶的那一刻，心透过眼神凝视着茶器并静静地等待；出汤时</p>
+                <p>一次执壶行茶，都是在眼、耳、鼻、舌、身、意六根全开下学习的契机。</p>
+            </div>
+            <img  class="img1" src="images/爆款背景.png" alt=""><img class="img2" src="images/爆款背景3.png" alt="">
+            <img class="img3" src="images/爆款背景2.png" alt="">
+        </div>
+        <div class="chaqi_medium">
+            <img src="images/爆款背景4.png" alt="">
+        </div>
+        <div class="chaqi_third">
+            <img class="img4" src="images/爆款版块3图1.png" alt="">
+            <img class="img5" src="images/爆款花大.jpg" alt="">
+            <img class="img6" src="images/爆款花小.jpg" alt="">
+            <img class="img7" src="images/爆款版块3图4.png" alt="">
+            <div class="Name_title" >
+                <div>
+                    <p>
+                        梅 月·三 弄
+                    </p>
+                </div>
+            </div>
+            <div class="chaqi_botton">
+                立 即 购 买
+            </div>
+        </div>
+    </div>
+    <img src="images/爆款板块5.jpg" alt="" width="1099" height="200">
+    <div id="yipin">
+        <div id="yipin_title">
+            <div class="chaqi_title">
+                艺   ·   品
+            </div>
+            <div class="chaqi_page">
+                <p>从往茶壶内注水开始，茶香的氤氲四溢；单手执壶不论壶柄的光滑或粗糙，握住的是所</p>
+                <p>有喝茶人的期待；专注在泡茶的那一刻，心透过眼神凝视着茶器并静静地等待；出汤时</p>
+                <p>一次执壶行茶，都是在眼、耳、鼻、舌、身、意六根全开下学习的契机。</p>
+            </div>
+            <img  class="img1" src="images/爆款背景.png" alt=""><img class="img2" src="images/爆款背景3.png" alt="">
+            <img class="img3" src="images/爆款背景2.png" alt="">
+        </div>
+        <div class="chaqi_medium">
+            <img src="images/爆款背景4.png" alt="">
+        </div>
+        <div class="chaqi_third">
+            <img class="img4" src="images/爆款版块3图1.png" alt="">
+            <img class="img5" src="images/爆款鹿大.jpg" alt="">
+            <img class="img6" src="images/爆款鹿小.jpg" alt="">
+            <img class="img7" src="images/爆款版块3图4.png" alt="">
+            <div class="Name_title" >
+                <div>
+                    <p>
+                        鹿 走·云 合
+                    </p>
+                </div>
+            </div>
+            <div class="chaqi_botton">
+                立 即 购 买
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div>
+        <img src="images/logo.png">
+    </div>
+    <div>
+        <p>
+            <span><a href="#">花瓶</a></span><i> · </i>
+            <span><a href="#">茶具</a></span><i> · </i>
+            <span><a href="#">摆件</a></span><i> · </i>
+            <span><a href="#">爆款推荐</a></span><i> · </i>
+            <span><a href="#">品牌故事</a></span><i> · </i>
+            <span><a href="#">艺术馆</a></span>
+        </p>
+    </div>
+    <div>
+        <p>地址：四川省高新区成都市高新区云华路222号14栋603</p>
+        <p><span>电话：028-8238482 </span>   <span>传真：028-2344567</span></p>
+    </div>
+    <div>
+        <ul>
+            <li><a href="#">&#xe61c;</a></li>
+            <li><a href="#">&#xe658;</a></li>
+            <li><a href="#">&#xe630;</a></li>
+        </ul>
+    </div>
+    <div>
+        <p> Copyright © 2007-2018 www.anjuke.com All Rights Reserved   ICP</p>
+    </div>
+</footer>
 <script type="text/javascript" src="js/less.min.js"></script>
 <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 <script type="text/javascript">
@@ -94,7 +267,6 @@
         }else{
             $("#bannerBox").animate({"left":parseInt(left)+1349+"px"},1000)
         }
-
     })
 //    右按钮
     $("#rightIcon").click(function(){
@@ -126,7 +298,45 @@
             }
         },3000)
     })
-
+//        ---------------茶器轮播
+    var chaLunboListBig=["images/茶器轮播1.jpg","images/茶器轮播2.jpg","images/爆款版块3图2.jpg"];
+    var chaLunboListSmall=["images/茶器轮播3.jpg","images/茶器轮播4.jpg","images/爆款版块3图3.jpg"]
+    var timerChaBig=0;
+    var timeSmall=0;
+    $(".chaqilunbo").click(function(){
+//        $(".img5").get(0).animate()
+        $(".img5").get(0).src=chaLunboListBig[timerChaBig];
+        if(timerChaBig==2){
+            timerChaBig=0
+        }else {
+            timerChaBig++
+        }
+        $(".img6").get(0).src=chaLunboListSmall[timeSmall];
+        if(timeSmall==2){
+            timeSmall=0
+        }else {
+            timeSmall++
+        }
+    })
+//    banner按钮交互
+    $(".lookTotalcha").click(function(){
+        var scroll_offset = $(".chaqi_medium").eq(1).offset(); //得到pos这个div层的offset，包含两个值，top和left
+        $("body,html").animate({
+            scrollTop:scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
+        },1000);
+    })
+    $(".lookTotalhua").click(function(){
+        var scroll_offset = $(".chaqi_medium").eq(0).offset(); //得到pos这个div层的offset，包含两个值，top和left
+        $("body,html").animate({
+            scrollTop:scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
+        },1000);
+    })
+    $(".lookTotalyi").click(function(){
+        var scroll_offset = $(".chaqi_medium").eq(2).offset(); //得到pos这个div层的offset，包含两个值，top和left
+        $("body,html").animate({
+            scrollTop:scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
+        },1000);
+    })
 </script>
 </body>
 </html>

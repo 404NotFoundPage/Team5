@@ -8,6 +8,10 @@
 a{
   color: black;
 }
+a:hover, a:visited, a:link, a:active{
+  text-decoration: none;
+  color: black;
+}
 @font-face {
   font-family: myfont;
   src: url("../font/方正清刻本悦宋简体_2.TTF");
@@ -22,7 +26,6 @@ a{
 
 .nav{
   width: @nav_width;
-  margin: 0 auto;
   height: @nav_height;
   overflow: hidden;
   border-bottom: 5px solid #273b5e;
@@ -32,7 +35,6 @@ a{
   float: left;
   margin-left: 125px;
   display: block;
-  margin-top: 30px;
   a{
     display: inline-block;
     text-align: center;
@@ -95,7 +97,7 @@ a{
   width: 100%;
 }
 .nav_bar>li:nth-of-type(8){
-  position: absolute;
+  position: relative;
 }
 .search{
   position: relative;
@@ -119,8 +121,8 @@ a{
   border-radius: 5px;
   padding-left: 40px;
 }
-.search>input::placeholder{
-  font-size: 12px;
+.search>input::-webkit-input-placeholder{
+  font-size: 10px;
 }
 
 
@@ -129,7 +131,6 @@ a{
 .footer{
   width: 1349px;
   height: 260px;
-  margin: 0 auto;
   background-color: #273b5e;
   overflow: hidden;
 }
