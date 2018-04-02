@@ -24,7 +24,7 @@ section>div>div{
 .bannar{
     width: 1349px;
     height: 650px;
-    background-image: url("../img/500810195_banner.jpg");
+    background-image: url("../images/500810195_banner.jpg");
     background-size: cover;
 }
 .bannarText{
@@ -59,7 +59,7 @@ section>div>div{
 }
 /*内容*/
 .bg1{
-    background-image: url("../img/TB2tm2tX4mI.eBjy0FlXXbgkVXa-643008147.png");
+    background-image: url("../images/TB2tm2tX4mI.eBjy0FlXXbgkVXa-643008147.png");
     background-size: cover;
     height: 800px;
     margin: 0 auto;
@@ -102,7 +102,7 @@ section>div>div{
 .bg2{
     height: 345px;
     margin: 0 auto;
-    background-image: url("../img/TB2oCYtXZeJ.eBjy0FiXXXqapXa-643008147 (1).jpg");
+    background-image: url("../images/TB2oCYtXZeJ.eBjy0FiXXXqapXa-643008147 (1).jpg");
     background-size: cover;
     /*border: 1px solid red;*/
 }
@@ -111,7 +111,7 @@ section>div>div{
     border: 1px solid white;
     /*overflow: hidden;*/
     margin: 0 auto;
-    background-image: url("../img/TB2xKjrXY5K.eBjy0FfXXbApVXa-643008147.jpg");
+    background-image: url("../images/TB2xKjrXY5K.eBjy0FfXXbApVXa-643008147.jpg");
     background-size: cover;
 }
 .bg3>div{
@@ -164,7 +164,7 @@ section>div>div{
     height: 600px;
     /*border: 1px solid red;*/
     margin: 0 auto;
-    background-image: url("../img/TB2706yX9OI.eBjSspmXXatOVXa-643008147 (1).jpg");
+    background-image: url("../images/TB2706yX9OI.eBjSspmXXatOVXa-643008147 (1).jpg");
     background-size: cover;
 }
 .bg5>div{
@@ -216,7 +216,7 @@ section>div>div{
     height: 300px;
     /*border: 1px solid red;*/
     margin: 0 auto;
-    background-image: url("../img/TB27vTvXYmI.eBjy1zjXXaq5VXa-643008147.jpg");
+    background-image: url("../images/TB27vTvXYmI.eBjy1zjXXaq5VXa-643008147.jpg");
     background-size: cover;
     position: relative;
     right: 10px;
@@ -266,7 +266,7 @@ section>div>div{
     height: 280px;
     margin: 0 auto;
     margin-top: 30%;
-    background-image: url("../img/TB2pxBcXLTJXuFjSspeXXapipXa-643008147.jpg");
+    background-image: url("../images/TB2pxBcXLTJXuFjSspeXXapipXa-643008147.jpg");
     background-size: cover;
 }
 .bg8>div{
