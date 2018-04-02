@@ -8,8 +8,8 @@ const db = {
         host:"localhost",
         port:"3306",
         user:"root",
-        password:"",
-        database:"suciproject",
+        password:"root",
+        database:"teamwork",
         multipleStatements:true
     },
     create(){
