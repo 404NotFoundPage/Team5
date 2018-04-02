@@ -1,0 +1,517 @@
+/* Created by lixin on 2018/3/30.*/
+//引入方向图标
+@font-face {
+    font-family: 'direction';
+    src:url('../font/leftright/iconfont.ttf'),
+    url('../font/leftright/iconfont.woff'),
+    url('../font/leftright/iconfont.eot');
+}
+@import "common.less";
+@contentwidth:1349px;  //页面宽度
+@divwidth:620px;
+@marginwidth:125px;
+@divheight:600px;
+@pointColor:#273b5e;  //点睛色
+@colorLayout:#f2f2f2; //商品评论中的布局色
+//button的样式以及移入效果
+.buttonHover{
+    button{
+        width: 140px;
+        height: 30px;
+        background-color: white;
+        border: @borderStyle;
+        font-size: 16px;
+        &:hover{
+            background-color: @pointColor;
+            color: white;
+            border: none;
+        }
+    }
+}
+//border样式
+@borderStyle: 1px solid black;
+//文字垂直和水平居中
+.wordCenter(@size){
+    line-height: @size;
+    text-align: center;
+}
+//评论的字体样式
+.commfontstyle{
+    h4{
+        font-size: 16px;
+        color: @pointColor;
+    }
+    p{
+        margin-top: 10px;
+        font-size: 14px;
+        color: #747474;
+        line-height:25px;
+    }
+}
+//特殊标题
+.titleDiv{
+    border: @borderStyle;
+    width: 235px;
+    height: 52px;
+    margin-top: 80px;
+    text-align: center;
+    p{
+        font-size: 14px;
+        margin-top: 10px;
+        letter-spacing: 5px;
+    }
+    h3{
+        font-family: myfont;
+        font-size: 30px;
+        background-color: white;
+        width: 160px;
+        margin:10px auto;
+        label{
+            font-size: 16px;
+        }
+        .red{
+            font-size: 30px;
+            font-family: myfont;
+            color: red;
+        }
+    }
+}
+//文本垂直布局
+.vertical(@width,@height){
+    width: @width;
+    margin-left: 50px;
+    border: none;
+    height: @height;
+    line-height: 40px;
+    writing-mode:vertical-rl;
+    h2{
+        font-size: 30px;
+        font-family: myfont;
+    }
+    p{
+        font-size: 18px;
+    }
+}
+.Size(@width,@height){
+    width: @width;
+    height: @height;
+}
+.image1{
+    .Size(328px,418px);
+    margin: 10px 10px;
+}
+.image2{
+    .Size(249px,418px);
+    margin: 10px 10px;
+}
+#container{
+    //商品信息展示
+    section:nth-child(1){
+        height: @divheight;
+        width: 100%;
+        >div{
+           height:@divheight;
+            float: left;
+        }
+    }
+    #showImg{
+    margin-left:@marginwidth;
+    width: @divwidth;
+    div:nth-child(1){
+        margin-top: 60px;
+        position: relative;
+        div{
+            position: absolute;
+            color: white;
+            font-family: 'direction';
+            font-size: 45px;
+            top: 170px;
+            display:none;
+        }
+        img{
+            .Size(620px,410px);
+        }
+        #left{
+            left: 10px;
+        }
+        #right{
+            right: 10px;
+        }
+    }
+    div:nth-child(1):hover div{
+        display: block;
+    }
+    div:nth-child(2){
+        height: 100px;
+        margin-top: 5px;
+        li{
+            float: left;
+            margin: 0px 2px;
+            img{
+                width: 152px;
+                height: 100px;
+            }
+        }
+        li:nth-child(1){
+            margin-left: 0px;
+        }
+        li:nth-child(4){
+            margin-right: 0px;
+        }
+    }
+}
+    #productInfo{
+        margin-left: 50px;
+        color: @pointColor;
+        width:@contentwidth - @divwidth - @marginwidth*2;
+        h2{
+            font-family: 'myfont';
+            font-size: 28px;
+            margin-top: 105px;
+        }
+        #describe{
+            margin-top: 45px;
+            font-size: 14px;
+        }
+        h3{
+            margin-top: 30px;
+            font-size: 22px;
+            label{
+                font-size: 26px;
+            }
+        }
+        #salesNum{
+            font-size: 12px;
+        }
+        h4{
+            margin-top: 40px;
+            font-size: 16px;
+        }
+        #numberControl{
+        margin-top: 10px;
+        #reduce,#add,#showNumber{
+            float: left;
+            width: 20px;
+            height: 26px;
+            background-color: white;
+            margin: 0px 2px;
+            border: 1px solid black;
+        }
+        #showNumber{
+            width: 51px;
+            height: 24px;
+            text-align: center;
+        }
+    }
+        #operation{
+            margin-top: 100px;
+           .buttonHover;
+        }
+    }
+    //商品详情和评论
+    section:nth-child(2){
+        width: @contentwidth - @marginwidth*2;
+        margin: 0 auto;
+        #choose{
+            div{
+                margin-top: 0px;
+                width: 120px;
+                float: left;
+                font-size: 18px;
+                border-left: @borderStyle;
+                border-right: @borderStyle;
+                text-align: center;
+                line-height: 35px;
+            }
+            #productD{
+                background-color: @pointColor;
+                color: white;
+                border: none;
+            }
+            height: 35px;
+            border: @borderStyle;
+            margin: 0px auto;
+            margin-top: 20px;
+            width: @contentwidth - @marginwidth*2;
+        }
+        //商品详情
+        #Details{
+            #DetailShow{
+                height: 600px;
+                border-bottom: @borderStyle;
+                position: relative;
+                div{
+                    float: left;
+                    position: absolute;
+                }
+                div:nth-child(1){
+                    .Size(652px,438px);
+                    top: 60px;
+                    left: 30px;
+                    img{
+                        .Size(636px,418px);
+                        margin:10px 0px 0px 8px;
+                    }
+                }
+                .vertical{
+                    border: none;
+                    top: 120px;
+                    .Size(120px,280px);
+                    line-height: 40px;
+                    //垂直文本
+                    right:150px;
+                    writing-mode:vertical-rl;
+                    h2{
+                        font-size: 30px;
+                        font-family: myfont;
+                    }
+                    p{
+                        font-size: 18px;
+                    }
+                }
+            }
+            #DetailNum{
+                border-bottom: @borderStyle;
+                height: 1050px;
+                div:nth-child(1){
+                    width: 300px;
+                    height: 235px;
+                    margin: 0px auto;
+                    position: relative;
+                    div:nth-child(1){
+                        .titleDiv;
+                    };
+                    div:nth-child(2){
+                        height: 180px;
+                        text-align: center;
+                        h3{
+                            margin: 35px 50px;
+                            font-family: myfont;
+                            font-size: 22px;
+                            width: 200px;
+                        }
+                        p{
+                            line-height: 25px;
+                            font-size: 16px;
+                        }
+                    };
+                }
+                img{
+                    .Size(475px,340px);
+                    margin: 85px 0px 0px 300px;
+                };
+                div:nth-child(3){
+                    border: @borderStyle;
+                    .Size(760px,210px);
+                    margin: 80px auto;
+                    box-shadow: 0 3px 0 lightgray;
+                    h4{
+                        margin-top: 15px;
+                        .Size(600px,50px);
+                        margin-left:80px;
+                        line-height: 50px;
+                        border-bottom: @borderStyle;
+                        font-size: 22px;
+                        label{
+                            font-size: 18px;
+                        }
+                    }
+                    h4:nth-child(3){
+                        color: red;
+                        label{
+                            color: black;
+                        }
+                    }
+                }
+            }
+            #detailDisplay{
+                height: 1950px;
+                border-bottom: @borderStyle;
+                div:nth-child(1){
+                    font-size: 30px;
+                    font-family: 'myfont';
+                    color: white;
+                    .wordCenter(77px);
+                    height: 77px;
+                    margin-top: 50px;
+                    background-color: @pointColor;
+                }
+                div:nth-child(2){
+                    height: 580px;
+                    div{
+                        background-color: white;
+                        height: 440px;
+                        float: left;
+                        margin-top: 60px;
+                    }
+                    div:nth-child(1){
+                        margin-left: 50px;
+                        width: 350px;
+                    }
+                    div:nth-child(2){
+                        width: 270px;
+                        margin-left: 20px;
+                    }
+                    div:nth-child(3){
+                        .vertical(250px,450px)
+                    }
+                }
+                div:nth-child(3){
+                    height: 750px;
+                    div:nth-child(1){
+                        .vertical(200px,550px);
+                        color: black;
+                        text-align: left;
+                        background-color: white;
+                        margin-top: 40px;
+                        float: left;
+                    }
+                    div:nth-child(2){
+                        .Size(705px,700px);
+                        margin-left:388px;
+                        div{
+                            margin-top: 0px;
+                            width: 705px;
+                            margin-left: 0px;
+                        }
+                        div:nth-child(1){
+                            height: 310px;
+                            img{
+                                .Size(684px,287px);
+                                margin: 10px 10px;
+                            }
+                        }
+                        div:nth-child(2){
+                            margin-top: 20px;
+                            height: 378px;
+                            img{
+                                .Size(684px,356px);
+                                margin: 10px 10px;
+                            }
+                        }
+                    }
+                }
+                div:nth-child(4){
+                    height: 530px ;
+                    div{
+                        float: left;
+                    }
+                    div:nth-child(1){
+                        .Size(650px,400px);
+                        background-color: white;
+                        margin-left: 30px;
+                        div{
+                            margin-top: 0px;
+                            height: 439px;
+                            margin-left: 0px;
+                            float: left;
+                        }
+                        div:nth-child(1){
+                            width: 351px;
+                        }
+                        div:nth-child(2){
+                            width: 271px;
+                            margin-left: 20px;
+                        }
+                    }
+                    div:nth-child(2){
+                        .vertical(250px,400px);
+                        margin: 50px 0px 0px 120px;
+                    }
+                }
+            }
+            #package{
+                height: 610px;
+                div:nth-child(1){
+                    .titleDiv;
+                    margin: 20px auto;
+                }
+                img {
+                    margin: 100px 0px 0px 200px;
+                }
+            }
+        }
+        //商品评论
+        #productComment{
+            display: none;
+            height: 1380px;
+            //评论总数
+            #commentNum{
+                height: 45px;
+                background-color: @colorLayout;
+                margin-top: 12px;
+                font-size: 16px;
+                color: @pointColor;
+                line-height: 45px;
+                padding-left: 20px;
+            }
+            //评论列表
+            ul>li{
+                height: 120px;
+                border-bottom: 1px solid @colorLayout;
+                img,div{
+                    float: left;
+                    margin-top: 20px;
+                }
+                img{
+                    margin: 20px 0px 30px 32px;
+                }
+                .comm{
+                    margin-left: 15px;
+                   .commfontstyle;
+                }
+                .commtime{
+                    position: absolute;
+                    font-size: 12px;
+                    color: #a2a2a2;
+                    right:130px;
+                }
+                .reply{
+                    height: 77px;
+                    clear: both;
+                    margin: 0px 0px 0px 150px;
+                    width: 945px;
+                    background-color: @colorLayout;
+                    .commfontstyle;
+                    h4{
+                        margin: 15px 0px 0px  12px;
+                    }
+                    p{
+                        margin-left: 50px;
+                    }
+                }
+            }
+            .replycomm{
+                height: 215px;
+            }
+            #paging{
+                margin: 50px 150px;
+                select,button,div{
+                    float: left;
+                    height: 28px;
+                    padding: 0px 10px;
+                    margin: 0px 2px;
+                    background-color: white;
+                    border: 1px solid #a2a2a2;
+                }
+                #pageNum{
+                    border: none;
+                    //当前页数
+                    button:nth-child(1){
+                        background-color: @pointColor;
+                        color: white;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+//.dashedDiv{
+//    &:hover{
+//        box-shadow:-6px 8px 11px @pointColor;
+//        margin-top: -10px;
+//        position: relative;
+//        top: -10px;
+//    }
+//}

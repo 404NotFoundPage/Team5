@@ -1,9 +1,257 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>首页</title>
+	<link rel="stylesheet/less" href="less/common.less"/>
+	<link rel="stylesheet/less" href="less/index.less"/>
+	<script src="js/jquery.min.js"></script>
 </head>
 <body>
-	<h1>这是头</h1>
+<!-- 引入头部文件-->
+<header>
+	<nav class="nav">
+		<div class="nav_logo">
+			<h1>
+				<a href="#">
+					<img src="images/logo.png">
+				</a>
+			</h1>
+		</div>
+		<div class="nav_right">
+			<div class="nav_log">
+				<ul>
+					<li><a href="#">注册</a></li>
+					<li>|</li>
+					<li><a href="#">登录</a></li>
+					<li><a href="#">&#xe606;</a></li>
+				</ul>
+			</div>
+			<div class="nav_bar">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">花瓶</a></li>
+					<li><a href="#">茶具</a></li>
+					<li><a href="#">摆件</a></li>
+					<li><a href="#"><span>&#xe689;</span>爆款推荐</a></li>
+					<li><a href="#">品牌故事</a></li>
+					<li><a href="#">艺术馆</a></li>
+					<li>
+						<div class="search">
+							<span><a href="#">&#xe517;</a></span>
+							<input type="text" placeholder="输入搜索内容">
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+<!--banner-->
+<section>
+	<div class="in_banner">
+		<ul class="imgs">
+			<li class="active"><img src="images/in_banner1.jpg"></li>
+			<li><img src="images/in_banner2.jpg"></li>
+			<li><img src="images/in_banner2.jpg"></li>
+			<li><img src="images/in_banner3.jpg"></li>
+			<li><img src="images/in_banner4.jpg"></li>
+		</ul>
+		<ul class="cycle">
+
+		</ul>
+	</div>
+</section>
+<script>
+	function scroll(eid){
+		$(".cycle li").removeClass("active");
+		$(".cycle li").eq(eid).addClass("active");
+		marginLeft="-"+eid*1349+"px";
+		$(".imgs").css("marginLeft",marginLeft);
+	}
+	function autoscroll(){
+		nowid=$(".cycle li.active").index();
+		maxid=$(".imgs li").length-1;
+		if(nowid<maxid){
+			getid=nowid+1;
+		}
+		else{
+			getid=0;
+		}
+		scroll(getid);
+	}
+	$(document).ready(function(){
+		xnums=$(".imgs li").length;
+		for(i=1;i<=xnums;i++){
+			if(i==1){
+				str='<li class="active"></li>';
+			}else{
+				str=str+"<li></li>";
+			}
+		}
+		maxwidth=xnums*1349+"px";
+		$(".imgs").css("width",maxwidth);
+		$(".cycle").html(str);
+
+		$(".cycle li").on("click",function(){
+			xid=$(this).index();
+			scroll(xid);
+		});
+		window.setInterval(autoscroll,5000);
+	});
+</script>
+<!--新品上线-->
+<section>
+	<div class="kb"></div>
+	<div class="custom_bt">
+		<img src="images/bt_1.png" />
+		<p>新品&nbsp&nbsp&nbsp上线</p>
+	</div>
+	<div class="news">
+		<div class="news1">
+			<div class="news_rs">
+				<img src="images/tm1.png"/>
+			</div>
+			<div>
+				<a href=""><img src="images/in_1.jpg" /></a>
+			</div>
+		</div>
+		<div class="news2">
+			<div class="news2_product">
+				<a href=""><img src="images/incp1.jpg" alt=""/></a>
+				<div class="news2_jg">
+					<p>手工陶瓷大师技艺茶具茶壶</p>
+					<div class="news2_buy">
+						<a href="#">立即购买</a>
+					</div>
+				</div>
+			</div>
+			<div class="news2_product">
+				<a href="#"><img src="images/incp2.jpg" alt=""/></a>
+				<div class="news2_jg">
+					<p>简约创新磨砂陶瓷花瓶</p>
+					<div class="news2_buy">
+						<a href="#">立即购买</a>
+					</div>
+				</div>
+			</div>
+			<div class="news2_product">
+				<a href=""><img src="images/incp3.jpg" alt=""/></a>
+				<div class="news2_jg">
+					<p>特色手绘陶瓷摆件</p>
+					<div class="news2_buy">
+						<a href="#">立即购买</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--瓷器摆放设计-->
+<section>
+	<div class="in_bf">
+		<div class="tm_bg">
+			<img src="images/in_tm2.png" alt=""/>
+			<a href="#" class="bf_btn"><span>&#xe71e</span> 我要设计</a>
+		</div>
+	</div>
+</section>
+<!--爆款推荐-->
+<section>
+	<div class="kb"></div>
+	<div class="custom_bt">
+		<a href=""><img src="images/bt_1.png" /></a>
+		<p>爆款&nbsp&nbsp&nbsp推荐</p>
+	</div>
+	<div class="bk_section">
+		<div class="sec_one">
+			<a href=""><img src="images/bk1.jpg" alt=""/></a>
+			<div class="right">
+				<div>
+					<p class="rtx-1">手绘陶瓷茶具茶杯</p>
+					<a href="#">立即购买</a>
+					<p class="xx">朴，未加工的木头。<br/>
+						素，没染色的白绢。<br/>
+						朴素是一种大美，是一种朴拙，<br/>
+						自然，原始的美。
+					</p>
+				</div>
+				<a href=""><img src="images/bk2.jpg" alt=""/></a>
+			</div>
+		</div>
+		<div class="sec_t">
+			<div class="t_left">
+				<a href=""><img src="images/bk3.jpg" alt=""/></a>
+				<div class="t_buy">
+					<a href="#" class="t_buylj">
+						立即购买
+					</a>
+					<p class="price"><span class="sp1">￥</span><span class="sp2">1200</span></p>
+					<p>手绘陶瓷花器 </p>
+				</div>
+			</div>
+			<div class="t_right">
+				<a href=""><img src="images/bk4.jpg" alt=""/></a>
+				<div class="t_buy">
+					<a href="#" class="t_buylj">
+						立即购买
+					</a>
+					<p class="price"><span class="sp1">￥</span><span class="sp2">1200</span></p>
+					<p>手绘陶瓷花器 </p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="kb_h60"></div>
+</section>
+
+<!---制作工艺--->
+<section><img src="images/lc1.jpg" width="1349" /></section>
+
+<!---瓷器文化---->
+<section>
+	<div class="commonwidth">
+		<div class="cqwh">
+			<p class="cqwh_ix">瓷器<br>文化</p>
+			<div class="cqwh_text">
+				中华礼仪之大谓之夏，有服章之美谓之华，乃华夏也。奉神人之事谓之礼，来而不往非礼也，乃礼之源。过手七十二，方可成器，瓦之坚者-瓷也。“礼”和“瓷”皆是中华名族优秀文化的灿烂积淀，以瓷成礼，以礼全德，瓷为礼之体，礼为瓷之用，体用相符，名实相契。两百多年来，骨质瓷经过一代代名匠之手，逐渐发展成为世界陶瓷珍品......<a href="#" class="astyle1">查看更多</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--引入底部文件-->
+<footer class="footer">
+	<div>
+		<img src="images/logo.png">
+	</div>
+	<div>
+		<p>
+			<span><a href="#">花瓶</a></span><i> · </i>
+			<span><a href="#">茶具</a></span><i> · </i>
+			<span><a href="#">摆件</a></span><i> · </i>
+			<span><a href="#">爆款推荐</a></span><i> · </i>
+			<span><a href="#">品牌故事</a></span><i> · </i>
+			<span><a href="#">艺术馆</a></span>
+		</p>
+	</div>
+	<div>
+		<p>地址：四川省高新区成都市高新区云华路222号14栋603</p>
+		<p><span>电话：028-8238482 </span>   <span>传真：028-2344567</span></p>
+	</div>
+	<div>
+		<ul>
+			<li><a href="#">&#xe61c;</a></li>
+			<li><a href="#">&#xe658;</a></li>
+			<li><a href="#">&#xe630;</a></li>
+		</ul>
+	</div>
+	<div>
+		<p> Copyright © 2007-2018 www.anjuke.com All Rights Reserved   ICP</p>
+	</div>
+</footer>
+
+<script src="js/less.min.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+
 </body>
 </html>
