@@ -337,6 +337,19 @@
             scrollTop:scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
         },1000);
     })
+
+//    ---------------------测试
+    $(".chaqi_botton").click(function(){
+        console.log(1);
+        $.ajax({
+            type:"get",
+            data:"",
+            url:"/test.do",
+            success:function(data){
+                console.log(data)
+            }
+        })
+    })
 </script>
 </body>
 </html>
