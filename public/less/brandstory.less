@@ -1,0 +1,185 @@
+/**
+ * Created by Administrator on 2018/3/29 0029.
+ */
+@width:1349px;
+@height:546px;
+@bannertop:100px;
+@bannerleft:260px;
+@bannersize:48px;
+@bannerwidth:10px;
+#section1{
+  width: @width;
+  height:@height;
+  position: relative;
+  font-family: myfont;
+  //border: 1px solid red;
+  z-index: 99;
+  >p{
+    float: left;
+   position: absolute;
+    top:@bannertop;
+    left:@bannerleft;
+    font-size:@bannersize ;
+    width:@bannerwidth;
+ }
+  >div{
+    float: left;
+    position: absolute;
+    top: 200px;
+    left: 320px;
+    font-size: 14px;
+    width:@bannerwidth;
+  }
+}
+@divheight:720px;
+@imgw:700px;
+@imgh:600px;
+@section-width:1099px;
+#section2{
+  width:@section-width;
+  height: @divheight;
+  background-image: url("../images/brandstory/section1-kanji.png");
+  background-repeat: no-repeat;
+  background-position:700px 450px;
+  margin: 0 auto;
+ >#div1{
+   width: 400px;
+   height:@imgh ;
+   float: left;
+   margin-top: 40px;
+  overflow: hidden;
+>#img1{
+  width: 400px;
+  height:@imgh ;
+}
+   >#img2{
+     position: absolute;
+     z-index: 100;
+     margin-left: 280px;
+     margin-top: 420px;
+   }
+ }
+   >p{
+      float: left;
+      width: 20px;;
+      font-size: 72px;
+      font-family: myfont;
+     margin-left: 110px;
+     margin-top: 80px;
+    }
+
+  >#div3{
+    img{
+      float: left;
+      width: 440px;
+      height: 314px;
+     margin-left: 650px;
+      margin-top: -550px;
+    }
+  }
+  >#div4{
+    float: left;
+    margin-left:450px;
+    margin-top: -180px;
+    line-height: 30px;
+    font-size: 14px;
+    //border: 1px solid red;
+  }
+}
+@tpheigh:253px;
+#section3{
+  width: @section-width;
+  height: 644px;
+  background-color: #F5F5F3;
+  margin: 0 auto;
+  position: relative;
+  #d1{
+    position: absolute;
+    width: @section-width;
+    height:@tpheigh ;
+    top: 130px;
+    //border: 1px solid black;
+    img{
+      float: left;
+      height: @tpheigh;
+    }
+    #tp1,#tp2,#tp3{
+      width: 290px;
+    }
+    #tp4{
+      width: 228px;
+    }
+  }
+  #d2,#d3{
+    font-family: myfont;
+    font-size: 72px;
+  }
+  #d2{
+    float: right;
+    margin-right: 80px;
+    margin-top: 30px;
+  }
+  #d3{
+    position: absolute;
+    left: 950px;
+    top: 140px;
+    color: white;
+  }
+  #d4{
+    z-index: 999;
+    position: absolute;
+    left: 200px;
+    top: 270px;
+    //border: 1px solid red;
+    img{
+      width: 250px;
+    }
+  }
+  p{
+    position: absolute;
+    top: 450px;
+    left: 450px;
+    line-height: 30px;
+    font-size: 14px;
+  }
+}
+#section4{
+  width: @section-width;
+  height: 700px;
+  margin: 0 auto;
+  >img{
+    float: right;
+    margin-top: 60px;
+  }
+  >div{
+    position: relative;
+    width: 272px;
+    height: 272px;
+   top: 150px;
+    left: 100px;
+    img{
+      position: absolute;
+      width: 250px;
+    }
+    h1{
+      z-index: 100;
+      font-size: 72px;
+      width: 10px;
+      position: absolute;
+      margin-top: 40px;
+      margin-left:80px;
+    }
+  }
+  >p{
+    width: 350px;
+    height: 200px;
+    float: left;
+    margin-left: 120px;
+    margin-top: 160px;
+    line-height: 25px;
+    font-size: 14px;
+    span{
+      font-size: 32px;
+    }
+  }
+}
