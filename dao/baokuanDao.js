@@ -18,5 +18,5 @@ const baokuanDao={
 
 
 
-}
+};
 module.exports=baokuanDao;
