@@ -10,7 +10,7 @@ a{
 }
 @font-face {
   font-family: myfont;
-  src: url("../font/方正清刻本悦宋简体_2.TTF");
+  src: url("../font/fz.TTF");
 }
 @font-face {
   font-family: myfonticon;
@@ -20,7 +20,10 @@ a{
   clear: both;
 }
 
-
+header{
+  opacity: 0;
+  transition: all 0.4s linear;
+}
 .bf_banner{
   width: 1349px;
   background-image: url("../images/baifang_banner.png");
@@ -56,6 +59,8 @@ a{
 /*-------------客户设计-------------------*/
 section{
   width: 1349px;
+  opacity: 0;
+  transition: all 0.4s linear;
 }
 .custom_design {
   height: 220px;
@@ -206,7 +211,7 @@ section{
   color: white;
 }
 
-.custom_right_bottom-huaping{
+.custom_right_bottom-huaping,.custom_right_bottom-chaju,.custom_right_bottom-baijiang{
   background-color: #e7ebf0;
   width: 415px;
   height: 380px;
@@ -229,6 +234,7 @@ section{
 }
 .custom_right_bottom-chaju,.custom_right_bottom-baijiang{
   position: absolute;
+  display: none;
 }
 /*-------------------经典案例-----------------------*/
 .ClassicCase{
