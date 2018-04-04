@@ -3,7 +3,8 @@
  */
 const express = require("express");
 const router = express.Router();
-const baokuanController=require("../controller/baokuanController.js")
+const baokuanController=require("../controller/baokuanController.js");
 
 router.get("/test.do",baokuanController.getAlldata);
+router.get("/getload.do",baokuanController.getAlldata);
 module.exports = router;

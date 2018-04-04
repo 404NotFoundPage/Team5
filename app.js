@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");  //处理POST数据
 const path = require("path"); //处理路径
 const session = require("express-session");//session引入
 const cookie = require("cookie-parser");
-const router=require("./routes/baokuan.js");
+const router=require("./routes/baokuanrouter.js");
 
 const app = express();
 app.use(router);
@@ -22,7 +22,7 @@ app.use(session({
 //将post数据储存为json数据
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname,"/")));
 app.use(express.static(path.join(__dirname,"public/html")));
 
 //监听端口
