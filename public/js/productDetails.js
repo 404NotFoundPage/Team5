@@ -3,15 +3,15 @@ var autoPlay;//轮播定时器
 var z=0;//当前轮播图的编号
 var changediv=$("#choose>div");//功能切换div
 //在加载时隐藏内容
-$(document).ready(function(){
-    $("header,footer,#container").hide();
-});
+//$(document).ready(function(){
+//    $("header,footer,#container").hide();
+//});
 $(function(){
     //加载完成后，加载DIV隐藏，内容显示
-    setTimeout(function(){
-        $("#load").fadeOut(400).hide();
-        $("header,footer,#container").fadeIn(600).show();
-    },1500);
+    //setTimeout(function(){
+    //    $("#load").fadeOut(400).hide();
+    //    $("header,footer,#container").fadeIn(600).show();
+    //},1500);
     autoPlay=setInterval(changeImg,1500);
 
     //切换商品详情和评论

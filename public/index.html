@@ -4,9 +4,17 @@
 	<title>首页</title>
 	<link rel="stylesheet/less" href="less/common.less"/>
 	<link rel="stylesheet/less" href="less/index.less"/>
-	<script src="js/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/load.css">
+
 </head>
 <body>
+<div id="load">
+	<div id="facebook">
+		<div class="bar"></div>
+		<div class="bar"></div>
+		<div class="bar"></div>
+	</div>
+</div>
 <!-- 引入头部文件-->
 <%-include head.html %>
 <!--banner-->
@@ -306,7 +314,7 @@
 		<div class="cqwh">
 			<p class="cqwh_ix">瓷器<br>文化</p>
 			<div class="cqwh_text">
-				中华礼仪之大谓之夏，有服章之美谓之华，乃华夏也。奉神人之事谓之礼，来而不往非礼也，乃礼之源。过手七十二，方可成器，瓦之坚者-瓷也。“礼”和“瓷”皆是中华名族优秀文化的灿烂积淀，以瓷成礼，以礼全德，瓷为礼之体，礼为瓷之用，体用相符，名实相契。两百多年来，骨质瓷经过一代代名匠之手，逐渐发展成为世界陶瓷珍品......<a href="#" class="astyle1">查看更多</a>
+				中华礼仪之大谓之夏，有服章之美谓之华，乃华夏也。奉神人之事谓之礼，来而不往非礼也，乃礼之源。过手七十二，方可成器，瓦之坚者-瓷也。“礼”和“瓷”皆是中华名族优秀文化的灿烂积淀，以瓷成礼，以礼全德，瓷为礼之体，礼为瓷之用，体用相符，名实相契。两百多年来，骨质瓷经过一代代名匠之手，逐渐发展成为世界陶瓷珍品......<a href="#" id="cultureMore">查看更多</a>
 			</div>
 		</div>
 	</div>
@@ -318,7 +326,17 @@
 <script src="js/less.min.js"></script>
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/ajax.js"></script>
+<script src="js/jquery.min.js"></script>
 <script>
+	$(document).ready(function(){
+		$("header,footer,section").hide();
+	});
+	$(function(){
+		setTimeout(function(){
+			$("#load").fadeOut(400).hide();
+			$("header,footer,section").fadeIn(600).show();
+		},1500);
+	});
 	function scroll(eid){
 		$(".cycle li").removeClass("active");
 		$(".cycle li").eq(eid).addClass("active");
@@ -404,6 +422,10 @@
 			location.href="productDetails.html?pro_id=" +$(this).attr('uid');
 		})
 	});
+	//更多瓷器文化
+	$('#cultureMore').click(function(){
+		location.href='ciqiwenhua_zx.html';
+	})
 </script>
 </body>
 </html>
