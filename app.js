@@ -7,9 +7,11 @@ const path = require("path"); //处理路径
 const session = require("express-session");//session引入
 const cookie = require("cookie-parser");
 const router=require("./routes/baokuan.js");
+const shangpinRouter=require("./routes/shangpin.js");
 
 const app = express();
 app.use(router);
+app.use(shangpinRouter);
 app.use(cookie());
 app.use(session({
     name:"cms",
