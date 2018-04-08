@@ -12,6 +12,33 @@ const baokuanController={
         }).catch((err)=>{
             console.log(err)
         })
+    },
+    buypro(request,response){
+        const sql='SELECT pro_id FROM t_productinfo WHERE pro_name=?';
+        console.log(request.query.proId);
+        baokuanModel.buyproDao(sql,[request.query.proId]).then((data)=>{
+            response.send(data)
+        }).catch((err)=>{
+            console.log(err)
+        })
+    },
+    collectdata(request,response){
+        const sql='SELECT pro_id FROM t_productinfo WHERE pro_name=?';
+        console.log(request.query.proId);
+        baokuanModel.collectDao(sql,[request.query.proId]).then((data)=>{
+            response.send(data)
+        }).catch((err)=>{
+            console.log(err)
+        })
+    },
+    collectcancledata(request,response){
+        const sql='SELECT pro_id FROM t_productinfo WHERE pro_name=?';
+        console.log(request.query.proId);
+        baokuanModel.collectcancleDao(sql,[request.query.proId]).then((data)=>{
+            response.send(data)
+        }).catch((err)=>{
+            console.log(err)
+        })
     }
 
 

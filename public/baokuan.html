@@ -88,11 +88,15 @@
         <div class="chaqi_third">
             <img class="img4" src="images/爆款版块3图1.png" alt="">
             <img class="img5" alt="">
+            <div class="toumingceng">
+                <p style="margin-left: 120px" class="collecP">&#xe61c;</p>
+                <p class="shopcarP">&#xe624;</p>
+            </div>
             <img class="img6" alt="">
             <img class="img7" src="images/爆款版块3图4.png" alt="">
             <div class="Name_title" >
                 <div>
-                    <p id="Name_title">
+                    <p id="Name_title1">
 
                     </p>
                 </div>
@@ -123,6 +127,10 @@
         <div class="chaqi_third">
             <img class="img4" src="images/爆款版块3图1.png" alt="">
             <img class="img5" alt="">
+            <div class="toumingceng">
+                <p style="margin-left: 120px" class="collecP">&#xe61c;</p>
+                <p class="shopcarP">&#xe624;</p>
+            </div>
             <img class="img6" alt="">
             <img class="img7" src="images/爆款版块3图4.png" alt="">
             <div class="Name_title" >
@@ -157,6 +165,10 @@
         <div class="chaqi_third">
             <img class="img4" src="images/爆款版块3图1.png" alt="">
             <img class="img5"  alt="">
+            <div class="toumingceng">
+                <p style="margin-left: 120px" class="collecP">&#xe61c;</p>
+                <p class="shopcarP">&#xe624;</p>
+            </div>
             <img class="img6"  alt="">
             <img class="img7" src="images/爆款版块3图4.png" alt="">
             <div class="Name_title" >
@@ -298,18 +310,63 @@ $(document).on("click",".lookTotalyi",function(){
 });
 
 
-//    ---------------------测试
+ //------------立即购买
     $(".chaqi_botton").click(function(){
-        console.log(1);
-        $.ajax({
-            type:"get",
-            data:"",
-            url:"/test.do",
-            success:function(data){
-                console.log(data)
+        for(var i=1;i<$(".chaqi_botton").length+1;i++){
+            if($(this).get(0)==$(".chaqi_botton")[i-1]){
+                console.log(typeof ($("#Name_title"+i).html()));
+                $.ajax({
+                    type:"get",
+                    data:"proId="+$("#Name_title"+i).html(),
+                    url:"/test.do",
+                    success:function(data){
+                        console.log(data)
+                    }
+                })
             }
-        })
+
+        }
     })
+//    -----加入收藏
+var target1=false;
+var target2=false;
+var target3=false;
+for(var i=1;i<$(".collecP").length+1;i++){
+    $(".collecP").attr("target","false")
+}
+    $(".collecP").click(function(){
+        for(var i=1;i<$(".collecP").length+1;i++){
+            if($(this).get(0)==$(".collecP")[i-1]){
+                console.log($($(".collecP")[i-1]).attr("target"));
+                if($($(".collecP")[i-1]).attr("target")=="false"){
+
+                    $.ajax({
+                        type:"get",
+                        data:"proId="+$("#Name_title"+i).html(),
+                        url:"/collect.do",
+                        success:function(data2){
+
+                        }
+                    });
+                    $(this).html("&#xe61d;");
+                    $($(".collecP")[i-1]).attr("target","true")
+                }else {
+                    $.ajax({
+                        type:"get",
+                        data:"proId="+$("#Name_title"+i).html(),
+                        url:"/collectcancle.do",
+                        success:function(data2){
+
+                        }
+                    });
+                    $(this).html("&#xe61c;");
+                    $($(".collecP")[i-1]).attr("target","false")
+                }
+            }
+        }
+
+    })
+
 //    --------------页面加载时数据拿回
     $(function(){
         $.ajax({
@@ -317,7 +374,7 @@ $(document).on("click",".lookTotalyi",function(){
             data:"",
             url:"/getload.do",
             success:function(data){
-                console.log(data[0].pro_img_url);
+                console.log(data);
                 $(".banner_2").html(
                        '<p class="banner_1_tittle">'+data[0].pro_name+'</p>'+
                         '<p class="p1">'+data[0].pro_info. split("？")[0]+'</p>'+
@@ -331,7 +388,7 @@ $(document).on("click",".lookTotalyi",function(){
                         '<div class="circle"></div>'
                 );
                 $(".banner_2").css({"background-image":"url("+data[0].pro_img_url+")"});
-                $("#Name_title").html(data[0].pro_name);
+                $("#Name_title1").html(data[0].pro_name);
                 $(".banner_1").html(
                         '<p class="p1">'+data[2].pro_info. split("？")[0]+'</p>'+
                         '<p>'+data[2].pro_info. split("？")[1]+'</p>'+
@@ -367,6 +424,7 @@ $(document).on("click",".lookTotalyi",function(){
             }
         })
     })
+
 </script>
 </body>
 </html>

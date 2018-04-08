@@ -1,5 +1,9 @@
 /* Created by lixin on 2018/4/3.*/
+<<<<<<< HEAD
+const productModal=require('./../modal/productModal.js');
+=======
 const productModal=require('../modal/productModal.js');
+>>>>>>> 8c80a67cadfdeabffb2ad2da0eb0b4ad3fcb38a0
 module.exports={
     Product:function(request,response){
         if(request.session.user){
