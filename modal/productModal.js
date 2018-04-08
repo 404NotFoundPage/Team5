@@ -1,7 +1,6 @@
 /* Created by lixin on 2018/3/12.*/
-let sqlpool = require('./sqlcool.js');
+let db = require('./../config/sqlConfig.js');
 const mysql=require('mysql');
-const db = sqlpool.sqlpool();
 module.exports={
     productDetail:function(pro_id,callback){
         let sql="select * from t_productinfo,t_producttext,t_productimg where t_productinfo.pro_id=t_producttext.pro_id and " +
