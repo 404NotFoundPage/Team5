@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- 引入头部文件-->
-<%-include head.html%>
+<%-include head.html %>
 <!--banner-->
 <section>
 	<div class="in_banner">
@@ -61,6 +61,7 @@
 		</ul>
 	</div>
 </section>
+
 <!--新品上线-->
 <section>
 	<div class="kb"></div>
@@ -77,24 +78,11 @@
 			</div>
 			<div class="in_cp1">
 				<img src="images/in_1.jpg" />
-				<!--蒙版层-->
-				<!--<div class="in_cpmb">-->
-					<!--<div class="mb_sj">-->
-						<!--<a href="">&#xe60f</a>-->
-					<!--</div>-->
-					<!--<h2>瓷韵夏日青莲系列</h2>-->
-					<!--<div class="in_ljBuy in_jrBuy">-->
-						<!--<a href="#">加入购物车</a>-->
-					<!--</div>-->
-					<!--<div class="in_ljBuy">-->
-						<!--<a href="#">立即购买</a>-->
-					<!--</div>-->
-				<!--</div>-->
 			</div>
 		</div>
 		<div class="news2">
-			<div class="news2_product">
-				<a class="img_wrap" href=""><img src="images/incp1.jpg" alt=""/></a>
+			<div class="news2_product" uid="<%=newid[1] %>">
+				<a class="img_wrap" href=""><img src="<%=newimg[0] %>" alt=""/></a>
 				<!--蒙版层-->
 				<div class="in_cpmb1">
 					<div class="mb_bb"></div>
@@ -107,14 +95,14 @@
 					</div>
 				</div>
 				<div class="news2_jg">
-					<p>手工陶瓷大师技艺茶具茶壶</p>
+					<p><%=newname[0] %></p>
 					<div class="news2_buy">
 						<a href="#">加入购物车</a>
 					</div>
 				</div>
 			</div>
-			<div class="news2_product">
-				<a class="img_wrap" href="#"><img src="images/incp2.jpg" alt=""/></a>
+			<div class="news2_product" uid="<%=newid[1] %>">
+				<a class="img_wrap" href="#"><img src="<%=newimg[1][0] %>" alt=""/></a>
 				<!--蒙版层-->
 				<div class="in_cpmb1">
 					<div class="mb_bb"></div>
@@ -127,14 +115,14 @@
 					</div>
 				</div>
 				<div class="news2_jg">
-					<p>简约创新磨砂陶瓷花瓶</p>
+					<p><%=newname[1] %></p>
 					<div class="news2_buy">
 						<a href="#">加入购物车</a>
 					</div>
 				</div>
 			</div>
-			<div class="news2_product">
-				<a class="img_wrap" href=""><img src="images/incp3.jpg" alt=""/></a>
+			<div class="news2_product" uid="<%=newid[1] %>">
+				<a class="img_wrap" href=""><img src="<%=newimg[2] %>" alt=""/></a>
 				<!--蒙版层-->
 				<div class="in_cpmb1">
 					<div class="mb_bb"></div>
@@ -147,7 +135,7 @@
 					</div>
 				</div>
 				<div class="news2_jg">
-					<p>特色手绘陶瓷摆件</p>
+					<p><%=newname[2] %></p>
 					<div class="news2_buy">
 						<a href="#">加入购物车</a>
 					</div>
@@ -176,21 +164,21 @@
 	</div>
 	<div class="bk_section">
 		<div class="sec_one">
-			<a class="bkimg_wrap"  href=""><img src="images/bk1.jpg" alt=""/></a>
+			<a class="bkimg_wrap"  href=""><img src="<%=baoimg[0][0]%>" alt=""/></a>
 			<!--蒙版层-->
-			<div class="in_bkmb1">
+			<div class="bao in_bkmb1" uid="<%=baoid[1] %>">
 				<div class="bkmb_bb"></div>
 				<div class="mb_sj">
 					<a href="">&#xe61c</a>
 				</div>
 				<h2>瓷韵夏日青莲系列</h2>
 				<div class="in_ljBuy">
-					<a href="#">立即购买</a>
+					<a href="#" class="buy" uid="<%=baoid[1] %>">立即购买</a>
 				</div>
 			</div>
 			<div class="right">
 				<div>
-					<p class="rtx-1">手绘陶瓷茶具茶杯</p>
+					<p class="rtx-1"><%=baoname[0] %></p>
 					<a href="#">加入购物车</a>
 					<p class="xx">朴，未加工的木头。<br/>
 					素，没染色的白绢。<br/>
@@ -198,50 +186,46 @@
 					自然，原始的美。
 					</p>
 				</div>
-				<a href=""><img src="images/bk2.jpg" alt=""/></a>
+				<a href=""><img src="<%=baoimg[0][1]%>" alt=""/></a>
 			</div>
 		</div>
 		<div class="sec_t">
 			<div class="t_left">
-				<a class="t_img_wrap" href=""><img src="images/bk3.jpg" alt=""/></a>
+				<a class="t_img_wrap" href=""><img src="<%=baoimg[1][1]%>" alt=""/></a>
 				<!--蒙版层-->
-				<div class="in_t_mb1">
+				<div class="bao in_t_mb1" uid="<%=baoid[1] %>">
 					<div class="t_mb_bb"></div>
 					<div class="mb_sj">
 						<a href="">&#xe61c</a>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
-						<a href="#">立即购买</a>
+						<a href="#" class="buy" uid="<%=baoid[1] %>">立即购买</a>
 					</div>
 				</div>
 				<div class="t_buy">
-					<a href="#" class="t_buylj">
-						加入购物车
-					</a>
-					<p class="price"><span class="sp1">￥</span><span class="sp2">1200</span></p>
-					<p>手绘陶瓷花器 </p>
+					<a href="#" class="t_buylj">加入购物车</a>
+					<p class="price"><span class="sp1">￥</span><span class="sp2"><%=baoprice[1] %></span></p>
+					<p><%=baoname[1] %> </p>
 				</div>
 			</div>
 			<div class="t_right">
-				<a class="tr_img_wrap" href=""><img src="images/bk4.jpg" alt=""/></a>
+				<a class="tr_img_wrap" href=""><img src="<%=baoimg[2]%>" alt=""/></a>
 				<!--蒙版层-->
-				<div class="in_tr_mb1">
+				<div class="bao in_tr_mb1" uid="<%=baoid[1] %>">
 					<div class="tr_mb_bb"></div>
 					<div class="mb_sj">
 						<a href="">&#xe61c</a>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
-						<a href="#">立即购买</a>
+						<a href="#" class="buy" uid="<%=baoid[1] %>">立即购买</a>
 					</div>
 				</div>
 				<div class="t_buy">
-					<a href="#" class="t_buylj">
-						加入购物车
-					</a>
-					<p class="price"><span class="sp1">￥</span><span class="sp2">1200</span></p>
-					<p>手绘陶瓷花器 </p>
+					<a href="#" class="t_buylj">加入购物车</a>
+					<p class="price"><span class="sp1">￥</span><span class="sp2"><%=baoprice[2] %></span></p>
+					<p><%=baoname[2] %> </p>
 				</div>
 			</div>
 		</div>
@@ -313,10 +297,7 @@
 				<p>瓷坯变成了件件精美的瓷器</p>
 			</div>
 		</div>
-
 	</div>
-
-
 </section>
 
 <!---瓷器文化---->
@@ -325,17 +306,18 @@
 		<div class="cqwh">
 			<p class="cqwh_ix">瓷器<br>文化</p>
 			<div class="cqwh_text">
-				中华礼仪之大谓之夏，有服章之美谓之华，乃华夏也。奉神人之事谓之礼，来而不往非礼也，乃礼之源。过手七十二，方可成器，瓦之坚者-瓷也。“礼”和“瓷”皆是中华名族优秀文化的灿烂积淀，以瓷成礼，以礼全德，瓷为礼之体，礼为瓷之用，体用相符，名实相契。两百多年来，骨质瓷经过一代代名匠之手，逐渐发展成为世界陶瓷珍品......<a href="ciqiwenhua_zx.html" class="astyle1">查看更多</a>
+				中华礼仪之大谓之夏，有服章之美谓之华，乃华夏也。奉神人之事谓之礼，来而不往非礼也，乃礼之源。过手七十二，方可成器，瓦之坚者-瓷也。“礼”和“瓷”皆是中华名族优秀文化的灿烂积淀，以瓷成礼，以礼全德，瓷为礼之体，礼为瓷之用，体用相符，名实相契。两百多年来，骨质瓷经过一代代名匠之手，逐渐发展成为世界陶瓷珍品......<a href="#" class="astyle1">查看更多</a>
 			</div>
 		</div>
 	</div>
 </section>
 
 <!--引入底部文件-->
-<%-include footer.html%>
+<%-include footer.html %>
 
 <script src="js/less.min.js"></script>
 <script src="js/jquery-1.11.3.js"></script>
+<script src="js/ajax.js"></script>
 <script>
 	function scroll(eid){
 		$(".cycle li").removeClass("active");
@@ -409,6 +391,18 @@
 		$(".ib_right").mouseleave(function(){
 			myvar=window.setInterval(autoscroll,8000);
 		});
+	});
+	$('.news2_product').each(function(index,element){
+		$(element).click(function(){
+			location.href="productDetails.html?pro_id=" +$(this).attr('uid');
+		})
+	});
+
+	//立即购买
+	$('.buy,.bao').each(function(index,element){
+		$(element).click(function(){
+			location.href="productDetails.html?pro_id=" +$(this).attr('uid');
+		})
 	});
 </script>
 </body>

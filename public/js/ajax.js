@@ -22,7 +22,7 @@ function ajaxFn(obj){
      }
 
     xmlHttp.open(obj.method,obj.url);
-    //濡傛灉鏄痯ost 锛岄渶瑕佽缃〃澶寸殑缂栫爜
+    //如果是post ，需要设置表头的编码
     if(obj.method=="post"){
         xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xmlHttp.send(obj.param);
