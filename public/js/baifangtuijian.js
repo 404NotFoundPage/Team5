@@ -24,8 +24,8 @@ $(document).ready(function () {
                     let title = data[0].cass_title;
                     let p1 = data[0].cass_total.substring(0,23);
                     let p2 = data[0].cass_total.substring(23,data[0].cass_total.length-1);
-                    $(".ClassicCase").css("background-image","url(../public/"+caseImgurl+")");
-                    $(".ClassicCase>div>p:nth-of-type(1)").html("<span>&#xe71e;</span>"+title+"<img src='../public/images/suci_red.png'>")
+                    $(".ClassicCase").css("background-image","url("+caseImgurl+")");
+                    $(".ClassicCase>div>p:nth-of-type(1)").html("<span>&#xe71e;</span>"+title+"<img src='images/suci_red.png'>")
                     $(".ClassicCase>div>p:nth-of-type(2)").text(p2);
                     $(".ClassicCase>div>p:nth-of-type(3)").text(p1);
                 }
@@ -41,8 +41,8 @@ $(document).ready(function () {
                     let caseImgurl = data[0].cass_img_urll;
                     let title = data[0].cass_title;
                     let p = data[0].cass_total;
-                    $(".lyy_left").css("background-image","url(../public/"+caseImgurl+")");
-                    $(".lyy_right>p:nth-of-type(1)").html("<span>&#xe71e;</span>"+ title +"<img src='../public/images/suci_red.png'>");
+                    $(".lyy_left").css("background-image","url("+caseImgurl+")");
+                    $(".lyy_right>p:nth-of-type(1)").html("<span>&#xe71e;</span>"+ title +"<img src='images/suci_red.png'>");
                     $(".lyy_right>p:nth-of-type(2)").text(p);
                 }
             })
@@ -58,8 +58,8 @@ $(document).ready(function () {
                     let title = data[0].cass_title;
                     let p1 = data[0].cass_total.substring(0,21);
                     let p2 = data[0].cass_total.substring(21,data[0].cass_total.length-1);
-                    $(".cftx_right").css("background-image","url(../public/"+caseImgurl+")");
-                    $(".cftx_left>p:nth-of-type(1)").html("<span>&#xe71e;</span>"+ title +"<img src='../public/images/suci_red.png'>");
+                    $(".cftx_right").css("background-image","url("+caseImgurl+")");
+                    $(".cftx_left>p:nth-of-type(1)").html("<span>&#xe71e;</span>"+ title +"<img src='images/suci_red.png'>");
                     $(".cftx_left>p:nth-of-type(2)").text(p1);
                     $(".cftx_left>p:nth-of-type(3)").text(p2);
             }
@@ -82,7 +82,7 @@ $(document).ready(function () {
         $("#bf_cancel").click(function () {
             $("#clickImg").css("display", "block");
             $("#bf_cancel").css("display", "none");
-            $("#custom_updata").attr('src', "public/images/baifang_custom_1.png");
+            $("#custom_updata").attr('src', "images/baifang_custom_1.png");
             $("body>img").each(function (i, e) {
                 $(e).remove();
             });
@@ -162,27 +162,31 @@ $(document).ready(function () {
         $(this).attr("soucangOnOff","true");
     });
     $(".custom_right").on("click","i>span:nth-of-type(1)",function () {
+        let index = $(this).parent().parent().index()+1;
         let _self = this;
         let first = $(this).parents("div")[0];
         let goods_type;
-        // console.log($(first).attr("id"));
         if($(first).attr("id")=="huaping"){
             goods_type = 1;
-        }else if($(first).attr("id")=="cahju"){
+        }else if($(first).attr("id")=="chaju"){
             goods_type = 2;
         }else {
             goods_type = 3;
         }
         if($(_self).attr("soucangOnOff")==="true"){
-            $(this).html("&#xe61d;");
                 /*收藏ajax写入数据库*/
             $.ajax({
                 type:"get",
                 url:"/soucang.do",
-                data:{"goods_type":goods_type},
+                data:{"goods_type":goods_type,"index":index},
                 success:function (data) {
-                    $(_self).attr("soucangOnOff","false");
-                    console.log(data);
+                    // console.log(data);
+                    if(data=="login"){
+                        window.location.href ="/login.html"
+                    }else{
+                        $(_self).html("&#xe61d;");
+                        $(_self).attr("soucangOnOff","false");
+                    }
                 }
             });
         }else {
@@ -190,7 +194,7 @@ $(document).ready(function () {
             $.ajax({
                 type:"get",
                 url:"/cancelsoucang.do",
-                data:{"goods_type":goods_type},
+                data:{"goods_type":goods_type,"index":index},
                 success:function (data) {
                     $(_self).attr("soucangOnOff","true");
                     console.log(data)
@@ -207,7 +211,7 @@ $(document).ready(function () {
                 let Imgsrc = data[0].pro_img_url.split(",");
                 let Imgtext = data[0].pro_text_title.split(",");
                 $(".custom_right_bottom-chaju img").each(function (i,e) {
-                    $(this).attr("src","../public/images/"+Imgsrc[i])
+                    $(this).attr("src","images/"+Imgsrc[i])
                 });
                 $(".custom_right_bottom-chaju p").each(function (i,e) {
                     $(this).text(Imgtext[i])
@@ -224,7 +228,7 @@ $(document).ready(function () {
                 let Imgsrc = data[0].pro_img_url.split(",");
                 let Imgtext = data[0].pro_text_title.split(",");
                 $(".custom_right_bottom-baijiang img").each(function (i,e) {
-                    $(this).attr("src","../public/images/"+Imgsrc[i])
+                    $(this).attr("src","images/"+Imgsrc[i])
                 });
                 $(".custom_right_bottom-baijiang p").each(function (i,e) {
                     $(this).text(Imgtext[i])

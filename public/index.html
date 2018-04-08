@@ -8,44 +8,7 @@
 </head>
 <body>
 <!-- 引入头部文件-->
-<header>
-	<nav class="nav">
-		<div class="nav_logo">
-			<h1>
-				<a href="#">
-					<img src="images/logo.png">
-				</a>
-			</h1>
-		</div>
-		<div class="nav_right">
-			<div class="nav_log">
-				<ul>
-					<li><a href="#">注册</a></li>
-					<li>|</li>
-					<li><a href="#">登录</a></li>
-					<li><a href="#">&#xe606;</a></li>
-				</ul>
-			</div>
-			<div class="nav_bar">
-				<ul>
-					<li><a href="#">首页</a></li>
-					<li><a href="#">花瓶</a></li>
-					<li><a href="#">茶具</a></li>
-					<li><a href="#">摆件</a></li>
-					<li><a href="#"><span>&#xe689;</span>爆款推荐</a></li>
-					<li><a href="#">品牌故事</a></li>
-					<li><a href="#">艺术馆</a></li>
-					<li>
-						<div class="search">
-							<span><a href="#">&#xe517;</a></span>
-							<input type="text" placeholder="输入搜索内容">
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-</header>
+<%-include head.html%>
 <!--banner-->
 <section>
 	<div class="in_banner">
@@ -98,7 +61,6 @@
 		</ul>
 	</div>
 </section>
-
 <!--新品上线-->
 <section>
 	<div class="kb"></div>
@@ -363,42 +325,14 @@
 		<div class="cqwh">
 			<p class="cqwh_ix">瓷器<br>文化</p>
 			<div class="cqwh_text">
-				中华礼仪之大谓之夏，有服章之美谓之华，乃华夏也。奉神人之事谓之礼，来而不往非礼也，乃礼之源。过手七十二，方可成器，瓦之坚者-瓷也。“礼”和“瓷”皆是中华名族优秀文化的灿烂积淀，以瓷成礼，以礼全德，瓷为礼之体，礼为瓷之用，体用相符，名实相契。两百多年来，骨质瓷经过一代代名匠之手，逐渐发展成为世界陶瓷珍品......<a href="#" class="astyle1">查看更多</a>
+				中华礼仪之大谓之夏，有服章之美谓之华，乃华夏也。奉神人之事谓之礼，来而不往非礼也，乃礼之源。过手七十二，方可成器，瓦之坚者-瓷也。“礼”和“瓷”皆是中华名族优秀文化的灿烂积淀，以瓷成礼，以礼全德，瓷为礼之体，礼为瓷之用，体用相符，名实相契。两百多年来，骨质瓷经过一代代名匠之手，逐渐发展成为世界陶瓷珍品......<a href="ciqiwenhua_zx.html" class="astyle1">查看更多</a>
 			</div>
 		</div>
 	</div>
 </section>
 
 <!--引入底部文件-->
-<footer class="footer">
-	<div>
-		<img src="images/logo.png">
-	</div>
-	<div>
-		<p>
-			<span><a href="#">花瓶</a></span><i> · </i>
-			<span><a href="#">茶具</a></span><i> · </i>
-			<span><a href="#">摆件</a></span><i> · </i>
-			<span><a href="#">爆款推荐</a></span><i> · </i>
-			<span><a href="#">品牌故事</a></span><i> · </i>
-			<span><a href="#">艺术馆</a></span>
-		</p>
-	</div>
-	<div>
-		<p>地址：四川省高新区成都市高新区云华路222号14栋603</p>
-		<p><span>电话：028-8238482 </span>   <span>传真：028-2344567</span></p>
-	</div>
-	<div>
-		<ul>
-			<li><a href="#">&#xe61c;</a></li>
-			<li><a href="#">&#xe658;</a></li>
-			<li><a href="#">&#xe630;</a></li>
-		</ul>
-	</div>
-	<div>
-		<p> Copyright © 2007-2018 www.anjuke.com All Rights Reserved   ICP</p>
-	</div>
-</footer>
+<%-include footer.html%>
 
 <script src="js/less.min.js"></script>
 <script src="js/jquery-1.11.3.js"></script>

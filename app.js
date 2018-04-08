@@ -37,13 +37,9 @@ app.use(bodyParser.json());
 app.set("views",__dirname+"/public");//配置模板所在路径
 app.engine("html",myejs.__express);//添加一个html引擎
 app.set("view engine","html");//使用的引擎
-app.use(productRouter);
-app.use(express.static(path.join(__dirname,"/")));
+app.use(express.static(path.join(__dirname,"/public")));
 app.use(express.static(path.join(__dirname,"public/html")));
 
-app.set("views",__dirname+"/view");
-app.engine("html",myejs.__express);
-app.set("view engine","html");
 
 //监听端口
 app.listen(1111,()=>{console.log("服务器1111启动")});
