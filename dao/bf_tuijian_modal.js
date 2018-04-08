@@ -82,10 +82,10 @@ const bf_model = {
                 })
             })
         },
-        "bf_soucang":function (id,type) {
+        "bf_soucang":function (id,pro_id) {
             return new Promise(function (reslove,reject) {
-                let sql = "INSERT INTO t_collection VALUES (null,?,?,'0')";
-                let parm = [type,id];
+                let sql = "INSERT INTO t_collection2 VALUES (null,?,?,'0')";
+                let parm = [pro_id,id];
                 db.connect(sql,parm,function (err,data) {
                     if(!err){
                         reslove(data)
@@ -95,10 +95,10 @@ const bf_model = {
                 })
             })
         },
-        "bf_cancelsoucang":function (type,id) {
+        "bf_cancelsoucang":function (pro_id,id) {
             return new Promise(function (reslove,reject) {
-                let sql = "DELETE FROM t_collection WHERE pro_id = ? AND user_id = ?";
-                let parm = [type,id];
+                let sql = "DELETE FROM t_collection2 WHERE pro_id = ? AND user_id = ?";
+                let parm = [pro_id,id];
                 db.connect(sql,parm,function (err,data) {
                     if(!err){
                         reslove(data)

@@ -1,17 +1,24 @@
 /* Created by lixin on 2018/4/3.*/
+<<<<<<< HEAD
 const productModal=require('./../modal/productModal.js');
+=======
+const productModal=require('../modal/productModal.js');
+>>>>>>> 8c80a67cadfdeabffb2ad2da0eb0b4ad3fcb38a0
 module.exports={
     Product:function(request,response){
         if(request.session.user){
-            response.render('product',{"username":request.session.user.username});
+            response.render('productDetails',{"username":request.session.user.username});
         }else{
             response.redirect('login.html')
         }
     },
     productDetails:function(request,response){
         request.session.pro_id=8;
+        request.session.user ="tom";
         let pro_id=request.session.pro_id;
         productModal.productDetail(pro_id,function(err,data){
+            console.log(data[0].pro_img_url);
+
             let imgUrlList=data[0].pro_img_url.split(',');//产品的图片路劲
             let titleList=data[0].pro_text_title.split('@');//产品各模块的标题
             let descriptList=data[0].pro_text_discribe.split('@');//产品各模块的描述
@@ -24,7 +31,7 @@ module.exports={
             let material=data[0].pro_material;              //材质
             response.render('productDetails',{"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
                 "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
-                "material":material});
+                "material":material,"username":request.session.user});
         })
     },
     comment:function(request,response){

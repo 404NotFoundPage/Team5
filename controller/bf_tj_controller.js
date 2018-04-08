@@ -10,8 +10,11 @@ const bf_tj_contro ={
             let isrc = imgsrc.split(",");
             let imgtext = data[0].pro_text_title;
             let itext = imgtext.split(",");
-            req.session.user ="tom";
-            res.render("baifangtuijian.html",{isrc:isrc,itext:itext,"username": req.session.user})
+            if(req.session.user){
+                res.render("baifangtuijian.html",{isrc:isrc,itext:itext,"username": req.session.user})
+            }else{
+                res.render("baifangtuijian.html",{isrc:isrc,itext:itext,"username": req.session.user})
+            }
         }).catch(function (err) {
             res.render(err);
         })
@@ -54,20 +57,28 @@ const bf_tj_contro ={
     },
     "soucang":function (req,res) {
         let goods_type = req.query.goods_type;
-        req.session.user = 1;
+        let index = req.query.index;
+        let pro_id = goods_type+"+"+index;
+        req.session.user_id = 1;
         if(req.session.user){
-            bf_model.bf_soucang(goods_type,req.session.user).then(function (data) {
+            bf_model.bf_soucang(pro_id,req.session.user_id).then(function (data) {
                 if(data.affectedRows != 0){
                     res.send("收藏成功");
                 }
+            }).catch(function (err) {
+                console.log(err)
             });
+        }else {
+            res.send("login")
         }
     },
     "cancelsoucang":function (req,res) {
         let goods_type = req.query.goods_type;
-        req.session.user = 1;
+        let index = req.query.index;
+        let pro_id = goods_type+"+"+index;
+        req.session.user_id = 1;
         if(req.session.user){
-            bf_model.bf_cancelsoucang(goods_type,req.session.user).then(function (data) {
+            bf_model.bf_cancelsoucang(pro_id,req.session.user_id).then(function (data) {
                 if(data.affectedRows != 0){
                     res.send("取消收藏成功");
                 }
@@ -75,22 +86,52 @@ const bf_tj_contro ={
         }
     },
     "sign":function (req,res) {
-        res.redirect("public/register.html");
+        if(req.session.username){
+            res.render("register.html",{"username":req.session.username});
+        }else{
+            res.render("register.html",{"username":req.session.username});
+        }
     },
     "logo":function (req,res) {
-        res.redirect("public/login.html")
+        if(req.session.username){
+            res.render("login.html",{"username":req.session.username});
+        }else{
+            res.render("login.html",{"username":req.session.username});
+        }
+    },
+    "person":function (req,res) {
+      res.redirect("person.html")
     },
     "shoppingCart":function (req,res) {
         req.session.user= 1;
         if(req.session.user){
-            res.redirect("public/person.html")
+            res.redirect("person.html")
         }else {
-            res.redirect("public/login.html")
+            res.redirect("login.html")
         }
-    }
+    },
+    "index":function (req,res) {
+        if(req.session.user){
+            res.render("index.html",{"username":req.session.user});
+        }else {
+            res.render("index.html",{"username":req.session.user})
+        }
 
-
-
+    },
+    "brandstory":function (req,res) {
+        if(req.session.user){
+            res.render("brandstory.html",{"username":req.session.user})
+        }else {
+            res.render("brandstory.html",{"username":req.session.user})
+        }
+    },
+    "ciqiwenhua":function (req,res) {
+        if(req.session.user){
+            res.render("ciqiwenhua_zx.html",{"username":req.session.user})
+        }else {
+            res.render("ciqiwenhua_zx.html",{"username":req.session.user})
+        }
+    },
 
 };
 
