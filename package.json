@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-=======
-  "name": "team5",
->>>>>>> d104a1820a50de1fea2ad9fbe25074b67dcc541e
   "name": "testcms",
   "version": "1.0.0",
   "description": "",
@@ -14,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/404NotFoundPage/Team5.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/404NotFoundPage/Team5/issues"
@@ -28,7 +23,6 @@
     "express-session": "^1.15.6",
     "multer": "^1.3.0",
     "mysql": "^2.15.0",
-<<<<<<< HEAD
     "author": "",
     "license": "ISC"
   },
@@ -36,20 +30,13 @@
     "body-parser": "^1.18.2",
     "connect-multiparty": "^2.1.0",
     "cookie-parser": "^1.4.3",
-=======
     "ws": "^5.1.1",
->>>>>>> d104a1820a50de1fea2ad9fbe25074b67dcc541e
     "ejs": "^2.5.7",
     "fs": "0.0.1-security",
     "leancloud-storage": "^3.4.0",
     "morgan": "^1.9.0",
     "path": "^0.12.7",
-<<<<<<< HEAD
     "serve-favicon": "^2.4.5"
-  }
-=======
-    "serve-favicon": "^2.4.5"},
-  "author": "",
-  "license": "ISC"
->>>>>>> d104a1820a50de1fea2ad9fbe25074b67dcc541e
+  },
+  "author": ""
 }
