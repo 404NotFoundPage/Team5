@@ -43,5 +43,5 @@ app.use(express.static(path.join(__dirname,"public/html")));
 
 
 //监听端口
-app.listen(2222,()=>{console.log("服务器1111启动")});
+app.listen(1111,()=>{console.log("服务器1111启动")});
 

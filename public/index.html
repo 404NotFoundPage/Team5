@@ -81,17 +81,17 @@
 			</div>
 		</div>
 		<div class="news2">
-			<div class="news2_product" uid="<%=newid[1] %>">
+			<div class="news2_product">
 				<a class="img_wrap" href=""><img src="<%=newimg[0] %>" alt=""/></a>
 				<!--蒙版层-->
-				<div class="in_cpmb1">
+				<div class="in_cpmb1 new" uid="<%=newid[1] %>">
 					<div class="mb_bb"></div>
 					<div class="mb_sj">
 						<a href="">&#xe61c</a>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
-						<a href="#">立即购买</a>
+						<a href="#" class="newbuy"  uid="<%=newid[1] %>">立即购买</a>
 					</div>
 				</div>
 				<div class="news2_jg">
@@ -101,17 +101,17 @@
 					</div>
 				</div>
 			</div>
-			<div class="news2_product" uid="<%=newid[1] %>">
+			<div class="news2_product">
 				<a class="img_wrap" href="#"><img src="<%=newimg[1][0] %>" alt=""/></a>
 				<!--蒙版层-->
-				<div class="in_cpmb1">
+				<div class="in_cpmb1 new" uid="<%=newid[1] %>">
 					<div class="mb_bb"></div>
 					<div class="mb_sj">
 						<a href="">&#xe61c</a>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
-						<a href="#">立即购买</a>
+						<a href="#"  class="newbuy"  uid="<%=newid[1] %>">立即购买</a>
 					</div>
 				</div>
 				<div class="news2_jg">
@@ -121,17 +121,17 @@
 					</div>
 				</div>
 			</div>
-			<div class="news2_product" uid="<%=newid[1] %>">
+			<div class="news2_product">
 				<a class="img_wrap" href=""><img src="<%=newimg[2] %>" alt=""/></a>
 				<!--蒙版层-->
-				<div class="in_cpmb1">
+				<div class="in_cpmb1 new" uid="<%=newid[1] %>">
 					<div class="mb_bb"></div>
 					<div class="mb_sj">
 						<a href="">&#xe61c</a>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
-						<a href="#">立即购买</a>
+						<a href="#" class="newbuy" uid="<%=newid[1] %>">立即购买</a>
 					</div>
 				</div>
 				<div class="news2_jg">
@@ -392,7 +392,7 @@
 			myvar=window.setInterval(autoscroll,8000);
 		});
 	});
-	$('.news2_product').each(function(index,element){
+	$('.new,.newbuy').each(function(index,element){
 		$(element).click(function(){
 			location.href="productDetails.html?pro_id=" +$(this).attr('uid');
 		})
