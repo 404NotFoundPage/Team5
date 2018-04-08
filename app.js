@@ -7,9 +7,11 @@ const bodyParser = require("body-parser");  //处理POST数据
 const path = require("path"); //处理路径
 const session = require("express-session");//session引入
 const cookie = require("cookie-parser");
+
 const logger = require("morgan");
-const router=require("./routes/baokuan.js");
 const bf_router=require("./routes/bf_tuijianRouters");
+const productRouter=require('./routes/productRouter.js');
+const router=require("./routes/baokuanrouter.js");
 
 const app = express();
 app.use(logger('dev'));
@@ -23,6 +25,7 @@ app.use(session({
 }));
 app.use(router);
 app.use(bf_router);
+app.use(productRouter);
 app.use(cookie());
 
 //将post数据储存为json数据
@@ -37,3 +40,5 @@ app.set("view engine","html");
 
 //监听端口
 app.listen(1111,()=>{console.log("服务器1111启动")});
+
+

@@ -49,97 +49,145 @@
 <!--banner-->
 <section>
 	<div class="in_banner">
+		<div class="inb_buttonwap">
+			<span class="inb_button ib_left">&#xe604;</span>
+			<span class="inb_button ib_right">&#xe604;</span>
+		</div>
 		<ul class="imgs">
-			<li class="active"><img src="images/in_banner1.jpg"></li>
-			<li><img src="images/in_banner2.jpg"></li>
-			<li><img src="images/in_banner3.jpg"></li>
-			<li><img src="images/in_banner4.jpg"></li>
-			<li><img src="images/in_banner5.jpg"></li>
+			<li class="active">
+				<img src="images/in_banner1.jpg">
+				<div class="banner_text txt1">
+					<h1>一茶一杯一世界</h1>
+					<a href="">点击查看</a>
+				</div>
+			</li>
+			<li>
+				<img src="images/in_banner2.jpg">
+				<div class="banner_text txt2">
+					<h1>暗香</h1>
+					<p>疏影横斜水清浅<br>暗香浮动月黄昏</p>
+					<a href="">点击查看</a>
+				</div>
+			</li>
+			<li>
+				<img src="images/in_banner3.jpg">
+				<div class="banner_text txt3">
+					<h1>碧波流翠</h1>
+					<p>只一眼，便已清心...</p>
+					<a href="">点击查看</a>
+				</div>
+			</li>
+			<li>
+				<img src="images/in_banner4.jpg">
+				<div class="banner_text">
+					<h1>花器</h1>
+					<p>许花草一个精致的归属...</p>
+					<a href="">点击查看</a>
+				</div>
+			</li>
+			<li>
+				<img src="images/in_banner5.jpg">
+				<div class="banner_text txt5">
+					<h1>大师传统手工制作，千年传承</h1>
+					<a href="#">点击查看</a>
+				</div>
+			</li>
 		</ul>
 		<ul class="cycle">
 
 		</ul>
 	</div>
 </section>
-<script>
-	function scroll(eid){
-		$(".cycle li").removeClass("active");
-		$(".cycle li").eq(eid).addClass("active");
-		marginLeft="-"+eid*1349+"px";
-		$(".imgs").css("marginLeft",marginLeft);
-	}
-	function autoscroll(){
-		nowid=$(".cycle li.active").index();
-		maxid=$(".imgs li").length-1;
-		if(nowid<maxid){
-			getid=nowid+1;
-		}
-		else{
-			getid=0;
-		}
-		scroll(getid);
-	}
-	$(document).ready(function(){
-		xnums=$(".imgs li").length;
-		for(i=1;i<=xnums;i++){
-			if(i==1){
-				str='<li class="active"></li>';
-			}else{
-				str=str+"<li></li>";
-			}
-		}
-		maxwidth=xnums*1349+"px";
-		$(".imgs").css("width",maxwidth);
-		$(".cycle").html(str);
 
-		$(".cycle li").on("click",function(){
-			xid=$(this).index();
-			scroll(xid);
-		});
-		window.setInterval(autoscroll,5000);
-	});
-</script>
 <!--新品上线-->
 <section>
 	<div class="kb"></div>
-	<div class="custom_bt">
-		<img src="images/bt_1.png" />
-		<p>新品&nbsp&nbsp&nbsp上线</p>
+	<div class="custom_design">
+		<div class="custom_bt">
+			<img src="images/head_icon.png">
+			<p>新品<span>&#xe71e;</span>上线</p>
+		</div>
 	</div>
 	<div class="news">
 		<div class="news1">
 			<div class="news_rs">
 				<img src="images/tm1.png"/>
 			</div>
-			<div>
-				<a href=""><img src="images/in_1.jpg" /></a>
+			<div class="in_cp1">
+				<img src="images/in_1.jpg" />
+				<!--蒙版层-->
+				<!--<div class="in_cpmb">-->
+					<!--<div class="mb_sj">-->
+						<!--<a href="">&#xe60f</a>-->
+					<!--</div>-->
+					<!--<h2>瓷韵夏日青莲系列</h2>-->
+					<!--<div class="in_ljBuy in_jrBuy">-->
+						<!--<a href="#">加入购物车</a>-->
+					<!--</div>-->
+					<!--<div class="in_ljBuy">-->
+						<!--<a href="#">立即购买</a>-->
+					<!--</div>-->
+				<!--</div>-->
 			</div>
 		</div>
 		<div class="news2">
 			<div class="news2_product">
-				<a href=""><img src="images/incp1.jpg" alt=""/></a>
+				<a class="img_wrap" href=""><img src="images/incp1.jpg" alt=""/></a>
+				<!--蒙版层-->
+				<div class="in_cpmb1">
+					<div class="mb_bb"></div>
+					<div class="mb_sj">
+						<a href="">&#xe61c</a>
+					</div>
+					<h2>瓷韵夏日青莲系列</h2>
+					<div class="in_ljBuy">
+						<a href="#">立即购买</a>
+					</div>
+				</div>
 				<div class="news2_jg">
 					<p>手工陶瓷大师技艺茶具茶壶</p>
 					<div class="news2_buy">
-						<a href="#">立即购买</a>
+						<a href="#">加入购物车</a>
 					</div>
 				</div>
 			</div>
 			<div class="news2_product">
-				<a href="#"><img src="images/incp2.jpg" alt=""/></a>
+				<a class="img_wrap" href="#"><img src="images/incp2.jpg" alt=""/></a>
+				<!--蒙版层-->
+				<div class="in_cpmb1">
+					<div class="mb_bb"></div>
+					<div class="mb_sj">
+						<a href="">&#xe61c</a>
+					</div>
+					<h2>瓷韵夏日青莲系列</h2>
+					<div class="in_ljBuy">
+						<a href="#">立即购买</a>
+					</div>
+				</div>
 				<div class="news2_jg">
 					<p>简约创新磨砂陶瓷花瓶</p>
 					<div class="news2_buy">
-						<a href="#">立即购买</a>
+						<a href="#">加入购物车</a>
 					</div>
 				</div>
 			</div>
 			<div class="news2_product">
-				<a href=""><img src="images/incp3.jpg" alt=""/></a>
+				<a class="img_wrap" href=""><img src="images/incp3.jpg" alt=""/></a>
+				<!--蒙版层-->
+				<div class="in_cpmb1">
+					<div class="mb_bb"></div>
+					<div class="mb_sj">
+						<a href="">&#xe61c</a>
+					</div>
+					<h2>瓷韵夏日青莲系列</h2>
+					<div class="in_ljBuy">
+						<a href="#">立即购买</a>
+					</div>
+				</div>
 				<div class="news2_jg">
 					<p>特色手绘陶瓷摆件</p>
 					<div class="news2_buy">
-						<a href="#">立即购买</a>
+						<a href="#">加入购物车</a>
 					</div>
 				</div>
 			</div>
@@ -151,28 +199,41 @@
 	<div class="in_bf">
 		<div class="tm_bg">
 			<img src="images/in_tm2.png" alt=""/>
-			<a href="#" class="bf_btn"><span>&#xe71e</span> 我要设计</a>
+			<a href="#" class="bf_btn"><span>&#xe642</span> 我要设计</a>
 		</div>
 	</div>
 </section>
 <!--爆款推荐-->
 <section>
 	<div class="kb"></div>
-	<div class="custom_bt">
-		<a href=""><img src="images/bt_1.png" /></a>
-		<p>爆款&nbsp&nbsp&nbsp推荐</p>
+	<div class="custom_design">
+		<div class="custom_bt">
+			<img src="images/head_icon.png">
+			<p>爆款<span>&#xe71e;</span>推荐</p>
+		</div>
 	</div>
 	<div class="bk_section">
 		<div class="sec_one">
-			<a href=""><img src="images/bk1.jpg" alt=""/></a>
+			<a class="bkimg_wrap"  href=""><img src="images/bk1.jpg" alt=""/></a>
+			<!--蒙版层-->
+			<div class="in_bkmb1">
+				<div class="bkmb_bb"></div>
+				<div class="mb_sj">
+					<a href="">&#xe61c</a>
+				</div>
+				<h2>瓷韵夏日青莲系列</h2>
+				<div class="in_ljBuy">
+					<a href="#">立即购买</a>
+				</div>
+			</div>
 			<div class="right">
 				<div>
 					<p class="rtx-1">手绘陶瓷茶具茶杯</p>
-					<a href="#">立即购买</a>
+					<a href="#">加入购物车</a>
 					<p class="xx">朴，未加工的木头。<br/>
-						素，没染色的白绢。<br/>
-						朴素是一种大美，是一种朴拙，<br/>
-						自然，原始的美。
+					素，没染色的白绢。<br/>
+					朴素是一种大美，是一种朴拙，<br/>
+					自然，原始的美。
 					</p>
 				</div>
 				<a href=""><img src="images/bk2.jpg" alt=""/></a>
@@ -180,20 +241,42 @@
 		</div>
 		<div class="sec_t">
 			<div class="t_left">
-				<a href=""><img src="images/bk3.jpg" alt=""/></a>
+				<a class="t_img_wrap" href=""><img src="images/bk3.jpg" alt=""/></a>
+				<!--蒙版层-->
+				<div class="in_t_mb1">
+					<div class="t_mb_bb"></div>
+					<div class="mb_sj">
+						<a href="">&#xe61c</a>
+					</div>
+					<h2>瓷韵夏日青莲系列</h2>
+					<div class="in_ljBuy">
+						<a href="#">立即购买</a>
+					</div>
+				</div>
 				<div class="t_buy">
 					<a href="#" class="t_buylj">
-						立即购买
+						加入购物车
 					</a>
 					<p class="price"><span class="sp1">￥</span><span class="sp2">1200</span></p>
 					<p>手绘陶瓷花器 </p>
 				</div>
 			</div>
 			<div class="t_right">
-				<a href=""><img src="images/bk4.jpg" alt=""/></a>
+				<a class="tr_img_wrap" href=""><img src="images/bk4.jpg" alt=""/></a>
+				<!--蒙版层-->
+				<div class="in_tr_mb1">
+					<div class="tr_mb_bb"></div>
+					<div class="mb_sj">
+						<a href="">&#xe61c</a>
+					</div>
+					<h2>瓷韵夏日青莲系列</h2>
+					<div class="in_ljBuy">
+						<a href="#">立即购买</a>
+					</div>
+				</div>
 				<div class="t_buy">
 					<a href="#" class="t_buylj">
-						立即购买
+						加入购物车
 					</a>
 					<p class="price"><span class="sp1">￥</span><span class="sp2">1200</span></p>
 					<p>手绘陶瓷花器 </p>
@@ -205,7 +288,74 @@
 </section>
 
 <!---制作工艺--->
-<section><img src="images/lc1.jpg" width="1349" /></section>
+<section>
+	<div class="in_gy">
+		<div class="custom_design">
+			<div class="custom_bt">
+				<img src="images/head_icon.png">
+				<p>制作<span>&#xe71e</span>工艺</p>
+			</div>
+		</div>
+		<h1>品质的保证来自于严格的工艺</h1>
+		<h3>精选的原料配方、精良的智能窑炉设备、精湛的链式干燥、精细的自动修胚技术、每一个物质符号<br/>
+			都赋予着瓷器新的生命和灵魂，也渗透着素瓷人的艰辛和汗水</h3>
+		<div class="gy_icon">
+			<div class="ic_gy">
+				<img src="images/in_gy1.png" alt=""/>
+				<h1>淘泥</h1>
+				<p>把瓷土淘成可用的瓷泥</p>
+			</div>
+			<div class="ic_gy">
+				<img src="images/in_gy2.png" alt=""/>
+				<h1>摞泥</h1>
+				<p>将淘好的瓷泥分割开</p>
+			</div>
+			<div class="ic_gy">
+				<img src="images/in_gy3.png" alt=""/>
+				<h1>拉坯</h1>
+				<p>将摞好的瓷泥放入大转盘内</p>
+			</div>
+			<div class="ic_gy">
+				<img src="images/in_gy4.png" alt=""/>
+				<h1>印坯</h1>
+				<p>将瓷坯印成各种不同的形状</p>
+			</div>
+			<div class="ic_gy ico">
+				<img src="images/in_gy5.png" alt=""/>
+				<h1>修坯</h1>
+				<p>修坯又分为湿修和干修</p>
+			</div>
+			<div class="ic_gy icon_bottom">
+				<img src="images/in_gy6.png" alt=""/>
+				<h1>捺水</h1>
+				<p>用清水洗去坯上的尘土</p>
+			</div>
+			<div class="ic_gy icon_bottom">
+				<img src="images/in_gy7.png" alt=""/>
+				<h1>画坯</h1>
+				<p>画坯都是陶瓷工序的点睛之笔</p>
+			</div>
+			<div class="ic_gy icon_bottom">
+				<img src="images/in_gy8.png" alt=""/>
+				<h1>上釉</h1>
+				<p>上好釉后则光滑又明亮</p>
+			</div>
+			<div class="ic_gy icon_bottom">
+				<img src="images/in_gy9.png" alt=""/>
+				<h1>烧窑</h1>
+				<p>造窑内经受住千度高温的烧炼</p>
+			</div>
+			<div class="ic_gy ico icon_bottom">
+				<img src="images/in_gy10.png" alt=""/>
+				<h1>成瓷</h1>
+				<p>瓷坯变成了件件精美的瓷器</p>
+			</div>
+		</div>
+
+	</div>
+
+
+</section>
 
 <!---瓷器文化---->
 <section>
@@ -252,6 +402,80 @@
 
 <script src="js/less.min.js"></script>
 <script src="js/jquery-1.11.3.js"></script>
+<script>
+	function scroll(eid){
+		$(".cycle li").removeClass("active");
+		$(".cycle li").eq(eid).addClass("active");
+		marginLeft="-"+eid*1349+"px";
+		$(".imgs").css("marginLeft",marginLeft);
+	}
+	function autoscroll(){
+		nowid=$(".cycle li.active").index();
+		maxid=$(".imgs li").length-1;
+		if(nowid<maxid){
+			getid=nowid+1;
+		}
+		else{
+			getid=0;
+		}
+		scroll(getid);
+	}
+	function left_scroll(){
+		nowid=$(".cycle li.active").index();
+		maxid=$(".imgs li").length-1;
+		if(nowid>0){
+			getid=nowid-1;
+		}
+		else{
+			getid=maxid;
+		}
+		scroll(getid);
+	}
+	function right_scroll(){
+		nowid=$(".cycle li.active").index();
+		maxid=$(".imgs li").length-1;
+		if(nowid<maxid){
+			getid=nowid+1;
+		}
+		else{
+			getid=0;
+		}
+		scroll(getid);
+	}
+	$(document).ready(function(){
+		xnums=$(".imgs li").length;
+		for(i=1;i<=xnums;i++){
+			if(i==1){
+				str='<li class="active"></li>';
+			}else{
+				str=str+"<li></li>";
+			}
+		}
+		maxwidth=xnums*1349+"px";
+		$(".imgs").css("width",maxwidth);
+		$(".cycle").html(str);
 
+		$(".cycle li").on("click",function(){
+			xid=$(this).index();
+			scroll(xid);
+		});
+		myvar=window.setInterval(autoscroll,8000);
+
+		$(".ib_left").click(function(){
+			clearInterval(myvar);
+			left_scroll();
+		});
+		$(".ib_right").click(function(){
+			clearInterval(myvar);
+			right_scroll();
+		});
+		$(".ib_left").mouseleave(function(){
+			myvar=window.setInterval(autoscroll,8000);
+		});
+		$(".ib_right").mouseleave(function(){
+			myvar=window.setInterval(autoscroll,8000);
+		});
+	});
+</script>
 </body>
 </html>

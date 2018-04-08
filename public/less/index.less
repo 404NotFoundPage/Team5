@@ -6,8 +6,151 @@
     text-decoration: none;
 }
 span{
-    font-family:myfonticon;
+    font-family:iconfont;
     color: white;
+}
+.banner_text{
+    position: absolute;
+    z-index: 1000;
+    color: white;
+    top: 180px;
+    left: 180px;
+    h1{
+        font-family: myfont;
+        margin-bottom: 20px;
+        font-size: 38px;
+    }
+    a{
+        border: 1px solid white;
+        color: white;
+        font-size: 12px;
+        padding: 5px 10px;
+        display: inline-block;
+        margin-top: 30px;
+        opacity: 0.5;
+    }
+    a:hover{
+        background-color: #273B5E;
+        border: 1px solid #273B5E;
+        opacity: 1;
+    }
+}
+.txt1{
+        top: 110px;
+        left: 130px;
+    h1{
+        font-size: 28px;
+        margin-bottom: 0px;
+    }
+    a{
+        margin-top: 20px;
+    }
+}
+.txt2{
+    top: 110px;
+    left: 890px;
+    writing-mode: vertical-rl;
+    h1{
+        padding-left: 15px;
+    }
+   a{
+       padding: 10px 5px;
+       margin: 0 20px 0 0;
+   }
+    p{
+        letter-spacing: 4px;
+        line-height: 25px;
+    }
+}
+.txt3{
+    top: 250px;
+    left: 890px;
+}
+.txt5{
+    top: 250px;
+    left: 125px;
+    h1{
+        font-size: 34px;
+        margin-bottom: 0px;
+    }
+    a{
+        margin-top: 20px;
+    }
+}
+.inb_buttonwap{
+    position: absolute;
+    z-index: 15;
+    top: 50%;
+    transform: translateY(-50%);
+    width:100%;
+    height:auto;
+}
+span.inb_button{
+    font-size:65px;
+    color:#FFFFFF;
+    font-weight: normal;
+    cursor: pointer;
+    opacity: 0.4;
+    float: left;
+}
+span.inb_button.ib_left{
+    transform: rotate(180deg);
+    left:0;
+}
+span.inb_button.ib_right{
+    right:0;
+    float: right;
+}
+span.inb_button:hover{
+    opacity: 0.8;
+    color:#273B5E;
+}
+@font-face {
+    font-family: 'iconfont';  /* project id 616061 */
+    src: url('//at.alicdn.com/t/font_616061_l8bliix9rflp7gb9.eot');
+    src: url('//at.alicdn.com/t/font_616061_l8bliix9rflp7gb9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_616061_l8bliix9rflp7gb9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_616061_l8bliix9rflp7gb9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_616061_l8bliix9rflp7gb9.svg#iconfont') format('svg');
+}
+.custom_design {
+    height: 104px;
+    width: 1349px;
+}
+.custom_bt{
+    width: 510px;
+    height: 85px;
+    margin: 0 auto;
+    //padding-top: 60px;
+    position: relative;
+    p{
+        width: 203px;
+        height: 55px;
+        background-color: #273b5e;
+        position: absolute;
+        bottom:-20px;
+        left: 34%;
+        text-align: center;
+        font-family: myfont;
+        font-size: 34px;
+        color: white;
+        line-height: 55px;
+        &:before{
+            content: "";
+            width: 96%;
+            height: 85%;
+            left: 3px;
+            top: 3px;
+            border: 1px solid white;
+            position: absolute;
+        }
+        span{
+            font-family: myfonticon;
+            font-size: 20px;
+            display: inline-table;
+            vertical-align: middle;
+        }
+    }
 }
 @font-face {
     font-family: myfont;
@@ -16,6 +159,10 @@ span{
 @font-face {
     font-family: myfonticon;
     src: url("../font/iconfont.ttf");
+}
+@font-face {
+    font-family: myinfont;
+    src: url("../font/indexfont/iconfont.ttf");
 }
 .clear{
     clear: both;
@@ -46,6 +193,7 @@ span{
     width:1349px;
     height:545px;
     overflow: hidden;
+    position: relative;
 }
 .in_banner .imgs{
     transition:all 0.5s;
@@ -82,24 +230,7 @@ span{
     height:60px;
     clear: both;
 }
-.custom_bt{
-    width: 1349px;
-    height: 90px;
-    position: relative;
-    text-align: center;
-}
-.custom_bt img{
-    position: absolute;
-    left: 400px;
-}
-.custom_bt>p{
-    font-family: myfont;
-    font-size: 34px;
-    position: absolute;
-    top: 45px;
-    left: 590px;
-    color: white;
-}
+
 .news1{
     margin: 60px 125px 10px;
     height: 468px;
@@ -203,6 +334,7 @@ span{
             float: right;
             line-height: 24px;
             writing-mode: vertical-rl;
+            text-align: left;
         }
         p.rtx-1{
             left:0;
@@ -322,4 +454,417 @@ span{
 .cqwh_text .astyle1:hover{
     background-color: #273b5e;
     color:#ffffff;
+}
+.in_gy{
+    background: url("../images/in_zzgy.jpg") no-repeat;
+    width: 1349px;
+    height: 687px;
+    padding-top: 30px;
+    text-align: center;
+}
+.in_gy h1{
+    color: #273b5e;
+  padding-top: 14px;
+    font-family: 宋体;
+    font-weight: bold;
+}
+.in_gy h3{
+    font-size: 16px;
+    font-family: 宋体;
+    padding-top: 30px;
+    line-height: 24px;
+}
+.gy_icon{
+    width: 1099px;
+    height: 355px;
+    margin: 40px 0 0 125px;
+}
+.ic_gy{
+    width: 218px;
+    height: 177px;
+    border-bottom: 1px solid #273b5e;
+    border-right: 1px solid #273b5e;
+}
+.ic_gy{
+    float: left;
+}
+.ic_gy p{
+    padding-top: 10px;
+    color: #273b5e;
+}
+.ico{
+    border-right: 0px solid #273b5e;
+}
+.icon_bottom{
+    height: 165px;
+    border-bottom: 0px solid #273b5e;
+    padding-top: 30px;
+}
+
+//新品上线——产品蒙版层
+.news2_product{
+    position: relative;
+    text-align: center;
+}
+.mb_bb{
+    width:360px;height:378px;
+    position: absolute;
+    z-index: 10;
+}
+.mb_bb::before,
+.mb_bb::after {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+.mb_bb::before {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+}
+.mb_bb::after {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    -webkit-transform: scale(1,0);
+    transform: scale(1,0);
+}
+.news2_product:hover .mb_bb::before,.news2_product:hover .mb_bb::after{
+    opacity: 0.2;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.img_wrap{
+    width: 360px;
+    height: 378px;
+    display: block;
+    overflow: hidden;
+    background-color: black;
+}
+.img_wrap img{
+    width:360px;
+    height:378px;
+}
+.news2_product:hover img{
+    opacity: 0.7;
+}
+.in_cpmb1{
+    width: 360px;
+    height: 378px;
+    position: absolute;
+    top: 0;
+    color: white;
+    opacity: 0;
+}
+.news2_product:hover .in_cpmb1{
+    opacity: 1;
+}
+.in_cpmb1 h2{
+    margin-top: 50px;
+    position: relative;
+    z-index: 99;
+    transition: all 0.35s;
+    opacity: 0.2;
+}
+.news2_product:hover .in_cpmb1 h2{
+    margin-top: 70px;
+    position: relative;
+    z-index: 99;
+    opacity: 1;
+}
+.in_cpmb1 a{
+    color: white;
+}
+.mb_sj{
+    width: 0;
+    height: 0;
+    border-color: transparent rgba(39,59,94,1);
+    border-width: 0 0 80px 80px;
+    border-style: solid;
+    position: relative;
+    z-index: 90;
+}
+.mb_sj a{
+    font-family: iconfont;
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    left: -70px;
+    top: 18px;
+}
+.in_ljBuy{
+    border: 1px solid rgba(255,255,255,0.6);
+    width: 87px;
+    height: 28px;
+    margin: 30px auto;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+    z-index: 99;
+}
+.in_ljBuy a{
+    color: rgba(255,255,255,0.6);
+    line-height: 28px;
+}
+.in_ljBuy:hover{
+    background-color: #273b5e;
+    border: 1px solid #273b5e;
+}
+.in_ljBuy:hover a{
+    color: white;
+}
+
+
+//爆款推荐——产品蒙版层
+.sec_one{
+    position: relative;
+    text-align: center;
+}
+.bkmb_bb{
+    width:797px;height:572px;
+    position: absolute;
+    z-index: 10;
+}
+.bkmb_bb::before,
+.bkmb_bb::after {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+.bkmb_bb::before {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+}
+.bkmb_bb::after {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    -webkit-transform: scale(1,0);
+    transform: scale(1,0);
+}
+.sec_one:hover .bkmb_bb::before,.sec_one:hover .bkmb_bb::after{
+    opacity: 0.2;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.bkimg_wrap{
+    width: 797px;
+    height: 572px;
+    display: block;
+    overflow: hidden;
+    background-color: black;
+    float: left;
+}
+.bkimg_wrap img{
+    width:797px;
+    height:572px;
+}
+.sec_one:hover img{
+    opacity: 0.7;
+}
+.in_bkmb1{
+    width: 797px;
+    height: 572px;
+    position: absolute;
+    top: 0;
+    color: white;
+    opacity: 0;
+}
+.sec_one:hover .in_bkmb1{
+    opacity: 1;
+}
+.in_bkmb1 h2{
+    margin-top: 140px;
+    position: relative;
+    z-index: 99;
+    transition: all 0.35s;
+    opacity: 0.2;
+}
+.sec_one:hover .in_bkmb1 h2{
+    margin-top: 160px;
+    position: relative;
+    z-index: 99;
+    opacity: 1;
+}
+.in_bkmb1 a{
+    color: white;
+}
+
+
+//爆款推荐——产品2  蒙版层
+.t_left{
+    position: relative;
+    text-align: center;
+}
+.t_mb_bb{
+    width:497px;
+    height:460px;
+    position: absolute;
+    z-index: 10;
+}
+.t_mb_bb::before,
+.t_mb_bb::after {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+.t_mb_bb::before {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+}
+.t_mb_bb::after {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    -webkit-transform: scale(1,0);
+    transform: scale(1,0);
+}
+.t_left:hover .t_mb_bb::before,.t_left:hover .t_mb_bb::after{
+    opacity: 0.2;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.t_img_wrap{
+    width: 497px;
+    height: 460px;
+    display: block;
+    overflow: hidden;
+    background-color: black;
+}
+.t_img_wrap img{
+    width:497px;
+    height:460px;
+}
+.t_left:hover img{
+    opacity: 0.7;
+}
+.in_t_mb1{
+    width: 497px;
+    height: 460px;
+    position: absolute;
+    top: 0;
+    color: white;
+    opacity: 0;
+}
+.t_left:hover .in_t_mb1{
+    opacity: 1;
+}
+.in_t_mb1 h2{
+    margin-top: 90px;
+    position: relative;
+    z-index: 99;
+    transition: all 0.35s;
+    opacity: 0.2;
+}
+.t_left:hover .in_t_mb1 h2{
+    margin-top: 110px;
+    position: relative;
+    z-index: 99;
+    opacity: 1;
+}
+.in_t_mb1 a{
+    color: white;
+}
+
+
+//爆款推荐——产品3  蒙版层
+.t_right{
+    position: relative;
+    text-align: center;
+}
+.tr_mb_bb{
+    width:589px;
+    height:460px;
+    position: absolute;
+    z-index: 10;
+}
+.tr_mb_bb::before,
+.tr_mb_bb::after {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+.tr_mb_bb::before {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+}
+.tr_mb_bb::after {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    -webkit-transform: scale(1,0);
+    transform: scale(1,0);
+}
+.t_right:hover .tr_mb_bb::before,.t_right:hover .tr_mb_bb::after{
+    opacity: 0.2;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.tr_img_wrap{
+    width: 589px;
+    height: 460px;
+    display: block;
+    overflow: hidden;
+    background-color: black;
+
+}
+.tr_img_wrap img{
+    width:589px;
+    height:460px;
+}
+.t_right:hover img{
+    opacity: 0.7;
+}
+.in_tr_mb1{
+    width: 589px;
+    height: 460px;
+    position: absolute;
+    top: 0;
+    color: white;
+    opacity: 0;
+}
+.t_right:hover .in_tr_mb1{
+    opacity: 1;
+}
+.in_tr_mb1 h2{
+    margin-top: 90px;
+    position: relative;
+    z-index: 99;
+    transition: all 0.35s;
+    opacity: 0.2;
+}
+.t_right:hover .in_tr_mb1 h2{
+    margin-top: 110px;
+    position: relative;
+    z-index: 99;
+    opacity: 1;
+}
+.in_tr_mb1 a{
+    color: white;
 }

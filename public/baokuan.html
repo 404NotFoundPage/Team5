@@ -49,60 +49,19 @@
 <div id="banner">
     <div id="bannerBox">
         <div class="banner_3">
-            <p class="p1">艺术大赏金奖作品</p>
-            <p class="p3">希维尔洛夫.劳</p>
-            <p class="p2">出自瓷艺术家</p>
-            <p>争出噬苹藾</p>
-            <p>呦呦林间鹿</p>
-            <p class="banner_1_tittle">鹿走云合</p>
-            <div class="lookTotalyi">查看详情</div>
-            <div class="circle"></div>
+
         </div>
         <div class="banner_1">
-            <p class="p1">花器年度设计作品奖</p>
-            <p>黯然销魂者，唯别罢了矣</p>
-            <p>金缕鹧鸪斑</p>
-            <p>细搅松风灺一灯</p>
-            <p class="p2">却从梅月横三弄</p>
-            <p>紫砂新罐买宜兴</p>
-            <p>青箬旧封题谷雨</p>
-            <p class="banner_1_tittle">梅月三弄</p>
-            <div class="lookTotalcha">查看详情</div>
-            <div class="circle"></div>
+
         </div>
         <div class="banner_2">
-            <p class="banner_1_tittle">兰斛藏香</p>
-            <p class="p1">素瓷雪色缥沫香</p>
-            <p>何似诸仙琼蕊浆</p>
-            <p class="p2">纤纤捧</p>
-            <p>冰瓷莹玉</p>
-            <p>金缕鹧鸪斑</p>
-            <p>兰斛藏香，梅瓶浸玉</p>
-            <p>年度茶具设计前十</p>
-            <div class="lookTotalhua">查看详情</div>
-            <div class="circle"></div>
+
         </div>
         <div class="banner_3">
-            <p class="p1">艺术大赏金奖作品</p>
-            <p class="p3">希维尔洛夫.劳</p>
-            <p class="p2">出自瓷艺术家</p>
-            <p>争出噬苹藾</p>
-            <p>呦呦林间鹿</p>
-            <p class="banner_1_tittle">鹿走云合</p>
-            <div class="lookTotalyi">查看详情</div>
-            <div class="circle"></div>
+
         </div>
         <div class="banner_1">
-            <p class="p1">花器年度设计作品奖</p>
-            <p>黯然销魂者，唯别罢了矣</p>
-            <p>金缕鹧鸪斑</p>
-            <p>细搅松风灺一灯</p>
-            <p class="p2">却从梅月横三弄</p>
-            <p>紫砂新罐买宜兴</p>
-            <p>青箬旧封题谷雨</p>
-            <p class="banner_1_tittle">梅月三弄</p>
-            <div class="lookTotalcha">查看详情</div>
-            <div class="circle"></div>
+
         </div>
     </div>
     <div id="leftIcon">&#xe64a;</div>
@@ -128,13 +87,13 @@
         </div>
         <div class="chaqi_third">
             <img class="img4" src="images/爆款版块3图1.png" alt="">
-            <img class="img5" src="images/爆款版块3图2.jpg" alt="">
-            <img class="img6" src="images/爆款版块3图3.jpg" alt="">
+            <img class="img5" alt="">
+            <img class="img6" alt="">
             <img class="img7" src="images/爆款版块3图4.png" alt="">
             <div class="Name_title" >
                 <div>
-                    <p>
-                        兰 斛·藏 香
+                    <p id="Name_title">
+
                     </p>
                 </div>
             </div>
@@ -163,19 +122,19 @@
         </div>
         <div class="chaqi_third">
             <img class="img4" src="images/爆款版块3图1.png" alt="">
-            <img class="img5" src="images/爆款花大.jpg" alt="">
-            <img class="img6" src="images/爆款花小.jpg" alt="">
+            <img class="img5" alt="">
+            <img class="img6" alt="">
             <img class="img7" src="images/爆款版块3图4.png" alt="">
             <div class="Name_title" >
                 <div>
-                    <p>
-                        梅 月·三 弄
+                    <p id="Name_title2">
                     </p>
                 </div>
             </div>
             <div class="chaqi_botton">
                 立 即 购 买
             </div>
+            <div class="chaqilunbo">&#xe65e;</div>
         </div>
     </div>
     <img src="images/爆款板块5.jpg" alt="" width="1099" height="200">
@@ -197,19 +156,20 @@
         </div>
         <div class="chaqi_third">
             <img class="img4" src="images/爆款版块3图1.png" alt="">
-            <img class="img5" src="images/爆款鹿大.jpg" alt="">
-            <img class="img6" src="images/爆款鹿小.jpg" alt="">
+            <img class="img5"  alt="">
+            <img class="img6"  alt="">
             <img class="img7" src="images/爆款版块3图4.png" alt="">
             <div class="Name_title" >
                 <div>
-                    <p>
-                        鹿 走·云 合
+                    <p id="Name_title3">
+
                     </p>
                 </div>
             </div>
             <div class="chaqi_botton">
                 立 即 购 买
             </div>
+            <div class="chaqilunbo">&#xe65e;</div>
         </div>
     </div>
 </section>
@@ -303,8 +263,7 @@
     var chaLunboListSmall=["images/茶器轮播3.jpg","images/茶器轮播4.jpg","images/爆款版块3图3.jpg"]
     var timerChaBig=0;
     var timeSmall=0;
-    $(".chaqilunbo").click(function(){
-//        $(".img5").get(0).animate()
+    $(".chaqilunbo").eq(0).click(function(){
         $(".img5").get(0).src=chaLunboListBig[timerChaBig];
         if(timerChaBig==2){
             timerChaBig=0
@@ -317,26 +276,27 @@
         }else {
             timeSmall++
         }
-    })
+    });
 //    banner按钮交互
-    $(".lookTotalcha").click(function(){
+    $(document).on("click",".lookTotalcha",function(){
         var scroll_offset = $(".chaqi_medium").eq(1).offset(); //得到pos这个div层的offset，包含两个值，top和left
         $("body,html").animate({
             scrollTop:scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
         },1000);
-    })
-    $(".lookTotalhua").click(function(){
-        var scroll_offset = $(".chaqi_medium").eq(0).offset(); //得到pos这个div层的offset，包含两个值，top和left
-        $("body,html").animate({
-            scrollTop:scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
-        },1000);
-    })
-    $(".lookTotalyi").click(function(){
-        var scroll_offset = $(".chaqi_medium").eq(2).offset(); //得到pos这个div层的offset，包含两个值，top和left
-        $("body,html").animate({
-            scrollTop:scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
-        },1000);
-    })
+    });
+$(document).on("click",".lookTotalhua",function(){
+    var scroll_offset = $(".chaqi_medium").eq(0).offset(); //得到pos这个div层的offset，包含两个值，top和left
+    $("body,html").animate({
+        scrollTop:scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
+    },1000);
+});
+$(document).on("click",".lookTotalyi",function(){
+    var scroll_offset = $(".chaqi_medium").eq(2).offset(); //得到pos这个div层的offset，包含两个值，top和left
+    $("body,html").animate({
+        scrollTop:scroll_offset.top //让body的scrollTop等于pos的top，就实现了滚动
+    },1000);
+});
+
 
 //    ---------------------测试
     $(".chaqi_botton").click(function(){
@@ -347,6 +307,63 @@
             url:"/test.do",
             success:function(data){
                 console.log(data)
+            }
+        })
+    })
+//    --------------页面加载时数据拿回
+    $(function(){
+        $.ajax({
+            type:"get",
+            data:"",
+            url:"/getload.do",
+            success:function(data){
+                console.log(data[0].pro_img_url);
+                $(".banner_2").html(
+                       '<p class="banner_1_tittle">'+data[0].pro_name+'</p>'+
+                        '<p class="p1">'+data[0].pro_info. split("？")[0]+'</p>'+
+                        '<p>'+data[0].pro_info. split("？")[1]+'</p>'+
+                       '<p class="p2">'+data[0].pro_info. split("？")[2]+'</p>'+
+                        '<p>'+data[0].pro_info. split("？")[3]+'</p>'+
+                        '<p>'+data[0].pro_info. split("？")[4]+'</p>'+
+                        '<p>'+data[0].pro_info. split("？")[5]+'</p>'+
+                '<p>'+data[0].pro_info. split("？")[6]+'</p>'+
+                '<div class="lookTotalhua">查看详情</div>'+
+                        '<div class="circle"></div>'
+                );
+                $(".banner_2").css({"background-image":"url("+data[0].pro_img_url+")"});
+                $("#Name_title").html(data[0].pro_name);
+                $(".banner_1").html(
+                        '<p class="p1">'+data[2].pro_info. split("？")[0]+'</p>'+
+                        '<p>'+data[2].pro_info. split("？")[1]+'</p>'+
+                        '<p>'+data[2].pro_info. split("？")[2]+'</p>'+
+                        '<p>'+data[2].pro_info. split("？")[3]+'</p>'+
+                        '<p class="p2">'+data[1].pro_info. split("？")[4]+'</p>'+
+                        '<p>'+data[2].pro_info. split("？")[5]+'</p>'+
+                        '<p>'+data[2].pro_info. split("？")[6]+'</p>'+
+                        '<p class="banner_1_tittle">'+data[2].pro_name+'</p>'+
+                        '<div class="lookTotalcha">查看详情</div>'+
+                        '<div class="circle"></div>'
+                );
+                $(".banner_1").css({"background-image":"url("+data[2].pro_img_url+")"});
+                $("#Name_title2").html(data[2].pro_name);
+                $(".banner_3").html(
+                        '<p class="p1">'+data[4].pro_info. split("？")[0]+'</p>'+
+                        '<p class="p3">'+data[4].pro_info. split("？")[1]+'</p>'+
+                        '<p class="p2">'+data[4].pro_info. split("？")[2]+'</p>'+
+                        '<p>'+data[4].pro_info. split("？")[3]+'</p>'+
+                        '<p>'+data[4].pro_info. split("？")[4]+'</p>'+
+                        '<p class="banner_1_tittle">'+data[4].pro_name+'</p>'+
+                        '<div class="lookTotalyi">查看详情</div>'+
+                        '<div class="circle"></div>'
+                );
+                $(".banner_3").css({"background-image":"url("+data[4].pro_img_url+")"});
+                $("#Name_title3").html(data[4].pro_name);
+                $(".img5").eq(0).attr("src",data[1].pro_img_url.split(",")[0]);
+                $(".img6").eq(0).attr("src",data[1].pro_img_url.split(",")[1]);
+                $(".img5").eq(1).attr("src",data[3].pro_img_url.split("，")[0]);
+                $(".img6").eq(1).attr("src",data[3].pro_img_url.split("，")[1]);
+                $(".img5").eq(2).attr("src",data[5].pro_img_url.split("，")[0]);
+                $(".img6").eq(2).attr("src",data[5].pro_img_url.split("，")[1]);
             }
         })
     })
