@@ -10,11 +10,15 @@ a{
 }
 @font-face {
   font-family: myfont;
-  src: url("../font/fz.TTF");
+  src: url("../font/方正清刻本悦宋简体_2.TTF");
 }
 @font-face {
-  font-family: myfonticon;
-  src: url("../font/iconfont.ttf");
+  font-family: 'myfonticon';  /* project id 616061 */
+  src: url('//at.alicdn.com/t/font_616061_zvh076g7vua3jtt9.eot');
+  src: url('//at.alicdn.com/t/font_616061_zvh076g7vua3jtt9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_616061_zvh076g7vua3jtt9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_616061_zvh076g7vua3jtt9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_616061_zvh076g7vua3jtt9.svg#iconfont') format('svg');
 }
 .clear{
   clear: both;
@@ -124,7 +128,7 @@ section{
   height: 30px;
   opacity: 0.7;
   font-family: "宋体";
-  font-size: 16px;
+  font-size: 12px;
   right: 0;
   top: 449px;
   transition: all 0.2s linear;
@@ -169,6 +173,12 @@ section{
   width: 415px;
   height: 93px;
   overflow: hidden;
+  li:nth-of-type(1){
+    background-color: #273b5e;
+    span,p{
+      color: white;
+    }
+  }
   li{
     float: left;
     cursor: pointer;
@@ -218,13 +228,75 @@ section{
   overflow: hidden;
   margin-top: 97px;
   position: absolute;
-  //display: none;
+  transition: all 0.3s linear;
+  ul{
+    overflow: hidden;
+    display: inline-block;
+    margin-left: 5px;
+  }
   li{
     text-align: center;
     float: left;
     width: 135px;
     height: 190px;
     cursor: pointer;
+    position: relative;
+    i{
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 80px;
+      left: 45px;
+      font-style: normal;
+      color: white;
+      text-align: center;
+      margin: 0 auto;
+      transition: all 0.2s linear;
+      user-select: none;
+      opacity: 0;
+      span{
+        font-family: myfonticon;
+        font-size: 20px;
+        letter-spacing: 10px;
+      }
+      span:nth-of-type(2){
+        font-size: 23px;
+      }
+    }
+    &:before{
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #757575;
+      transition: all 0.2s linear;
+      opacity: 0;
+      left: 0;
+      top:0;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      width: 115px;
+      height: 170px;
+      border: 1px solid white;
+      left: 0;
+      right: 0;
+      top:10px;
+      bottom: 0;
+      margin: 0 auto;
+      transition: all 0.2s linear;
+      opacity: 0;
+    }
+    &:hover i{
+      opacity: 1;
+    }
+    &:hover:before{
+      opacity: 0.4;
+    }
+    &:hover:after{
+       opacity: 1;
+     }
     &>p{
       margin-top: 10px;
       font-family: '宋体';
@@ -234,11 +306,15 @@ section{
 }
 .custom_right_bottom-chaju,.custom_right_bottom-baijiang{
   position: absolute;
-  display: none;
+  z-index: 2;
+}
+.custom_right_bottom-huaping{
+  opacity: 1;
+  z-index: 3;
 }
 /*-------------------经典案例-----------------------*/
 .ClassicCase{
-  background-image: url("../images/case_banner.png");
+  //background-image: url("../images/case_banner.png");
   width: 1099px;
   height: 591px;
   margin-left: 125px;
@@ -314,7 +390,7 @@ section{
   position: relative;
 }
 .lyy_left{
-  background-image: url("../images/case_2.png");
+  //background-image: url("../images/case_2.png");
   height: 407px;
   width: 495px;
   position: relative;
@@ -349,6 +425,9 @@ section{
       font-size: 20px;
       display: inline-table;
       vertical-align: middle;
+    }
+    img{
+      margin-left: 15px;
     }
   }
   p:nth-of-type(2) {
@@ -397,8 +476,8 @@ section{
       }
       img{
         display: inline-block;
-        margin-right: -35px;
-        margin-top: 0px;
+        margin-left: 30px;
+        margin-top: 0;
       }
 
     }
@@ -420,7 +499,7 @@ section{
   .cftx_right{
     width: 755px;
     height: 480px;
-    background-image: url("../images/case_3.png");
+    //background-image: url("../images/case_3.png");
     position: absolute;
     right: 125px;
     top:0;
@@ -437,6 +516,11 @@ section{
 }
 .footer{
   margin-top: 100px;
+}
+#picview{
+  width: 655px;
+  height: 482px;
+  position: absolute;
 }
 
 

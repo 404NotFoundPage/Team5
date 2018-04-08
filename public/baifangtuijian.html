@@ -3,48 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>摆放推荐</title>
-    <link rel="stylesheet/less" href="less/common.less">
     <link rel="stylesheet/less" href="less/baifangtuijian.less">
 </head>
 <body>
-<header>
-    <nav class="nav">
-        <div class="nav_logo">
-            <h1>
-                <a href="#">
-                    <img src="images/logo.png">
-                </a>
-            </h1>
-        </div>
-        <div class="nav_right">
-            <div class="nav_log">
-                <ul>
-                    <li><a href="#">注册</a></li>
-                    <li>|</li>
-                    <li><a href="#">登录</a></li>
-                    <li><a href="#">&#xe606;</a></li>
-                </ul>
-            </div>
-            <div class="nav_bar">
-                <ul>
-                    <li><a href="#">首页</a></li>
-                    <li><a href="#">花瓶</a></li>
-                    <li><a href="#">茶具</a></li>
-                    <li><a href="#">摆件</a></li>
-                    <li><a href="#"><span>&#xe689;</span>爆款推荐</a></li>
-                    <li><a href="#">品牌故事</a></li>
-                    <li><a href="#">艺术馆</a></li>
-                    <li>
-                        <div class="search">
-                            <span><a href="#">&#xe517;</a></span>
-                            <input type="text" placeholder="输入搜索内容">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+<%-include head.html %>
 <section>
     <div class="bf_banner">
         <div class="bf_title">
@@ -88,87 +50,105 @@
                 </li>
             </ul>
         </div>
-        <div class="custom_right_bottom-huaping">
+        <div class="custom_right_bottom-huaping" id="huaping">
             <ul>
                 <li>
-                    <img src="images/huaping_goods_1.png" alt="">
-                    <p>新中式三件套</p>
+                    <img src="images/<%= isrc[0] %>">
+                    <p><%=itext[0]%></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/huaping_goods_2.png" alt="">
-                    <p>宝蓝瓶</p>
+                    <img src="images/<%= isrc[1] %>">
+                    <p><%=itext[1]%></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/huaping_goods_3.png" alt="">
-                    <p>熔岩瓶</p>
+                    <img src="images/<%= isrc[2] %>">
+                    <p><%=itext[2]%></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/huaping_goods_4.png" alt="">
-                    <p>青花瓶</p>
+                    <img src="images/<%= isrc[3] %>">
+                    <p><%=itext[3]%></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/huaping_goods_5.png" alt="">
-                    <p>莲花瓶</p>
+                    <img src="images/<%= isrc[4] %>">
+                    <p><%=itext[4]%></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/huaping_goods_6.png" alt="">
-                    <p>牡丹瓶</p>
+                    <img src="images/<%= isrc[5] %>">
+                    <p><%=itext[5]%></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
             </ul>
         </div>
-        <div class="custom_right_bottom-chaju">
+        <div class="custom_right_bottom-chaju" id="chaju">
             <ul>
                 <li>
-                    <img src="images/bf_spch6.png" alt="">
-                    <p>新中式三件套</p>
+                    <img src="" alt="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/bf_spch1.png" alt="">
-                    <p>宝蓝瓶</p>
+                    <img src="" alt="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/bf_spch2.png" alt="">
-                    <p>熔岩瓶</p>
+                    <img src="" alt="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/bf_spch3.png" alt="">
-                    <p>青花瓶</p>
+                    <img src="" alt="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/bf_spch4.png" alt="">
-                    <p>莲花瓶</p>
+                    <img src="" alt="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/bf_spch5.png" alt="">
-                    <p>牡丹瓶</p>
+                    <img src="" alt="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
             </ul>
         </div>
-        <div class="custom_right_bottom-baijiang">
+        <div class="custom_right_bottom-baijiang" id="baijiang">
             <ul>
                 <li>
-                    <img src="images/bj_spbj1.png" alt="">
-                    <p>新中式三件套</p>
+                    <img src="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/bj_spbj2.png" alt="">
-                    <p>宝蓝瓶</p>
+                    <img src="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/bj_spbj3.png" alt="">
-                    <p>熔岩瓶</p>
+                    <img src="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/bj_spbj4.png" alt="">
-                    <p>青花瓶</p>
+                    <img src="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/bj_spbj5.png" alt="">
-                    <p>莲花瓶</p>
+                    <img src="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
                 <li>
-                    <img src="images/bj_spbj6.png" alt="">
-                    <p>牡丹瓶</p>
+                    <img src="">
+                    <p></p>
+                    <i><span>&#xe61c;</span><span>&#xe642;</span></i>
                 </li>
             </ul>
         </div>
@@ -185,15 +165,13 @@
     <div class="ClassicCase">
         <div>
             <p>
-                <span>&#xe71e;</span>
-                时尚慢生活
-                <img src="images/suci_red.png">
+
             </p>
             <p>
-                人一种舒服清新的感觉 ，这正是家的味道 。
+
             </p>
             <p>
-                以本真的形象示人 ，配上圆滑的身躯和线条 ，给
+
             </p>
         </div>
         <p>希维尔洛夫斯基·劳</p>
@@ -208,12 +186,8 @@
         </div>
         <div class="lyy_right">
             <p>
-                <span>&#xe71e;</span>
-                莱茵苑 · 素陶说
-                <img src="images/suci_red.png">
             </p>
             <p>
-                万物中最朴质纯洁的泥土，风吹日晒的自然洗礼，经精工巧匠用心雕琢，高温窑炉的烧炼，终以成器。
             </p>
         </div>
     </div>
@@ -222,15 +196,10 @@
     <div class="cftx">
         <div class="cftx_left">
             <p>
-                <span>&#xe71e;</span>
-                瓷福天下
-                <img src="images/suci_red.png">
             </p>
             <p>
-                知恩 ， 假是百味 ， 也是平常不二 。
             </p>
             <p>
-                一颗乐茶之心 ， 外却我相 ， 内蓄柔德 ， 知敬
             </p>
         </div>
 
@@ -240,38 +209,11 @@
     </div>
 
 </section>
-<footer class="footer">
-    <div>
-        <img src="images/logo.png">
-    </div>
-    <div>
-        <p>
-            <span><a href="#">花瓶</a></span><i> · </i>
-            <span><a href="#">茶具</a></span><i> · </i>
-            <span><a href="#">摆件</a></span><i> · </i>
-            <span><a href="#">爆款推荐</a></span><i> · </i>
-            <span><a href="#">品牌故事</a></span><i> · </i>
-            <span><a href="#">艺术馆</a></span>
-        </p>
-    </div>
-    <div>
-        <p>地址：四川省高新区成都市高新区云华路222号14栋603</p>
-        <p><span>电话：028-8238482 </span>   <span>传真：028-2344567</span></p>
-    </div>
-    <div>
-        <ul>
-            <li><a href="#">&#xe61c;</a></li>
-            <li><a href="#">&#xe658;</a></li>
-            <li><a href="#">&#xe630;</a></li>
-        </ul>
-    </div>
-    <div>
-        <p> Copyright © 2007-2018 www.anjuke.com All Rights Reserved   ICP</p>
-    </div>
-</footer>
-
+<%-include footer.html %>
 <script src="js/less.min.js"></script>
 <script src="js/jquery-1.11.3.js"></script>
+<script src="js/jquery.mousewheel.min.js"></script>
+<script src="js/zoom-marker.js"></script>
 <script src="js/baifangtuijian.js"></script>
 </body>
 </html>

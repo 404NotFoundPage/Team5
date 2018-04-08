@@ -8,374 +8,287 @@
     <link rel="stylesheet" href="css/load.css">
 </head>
 <body>
-    <div id="load">
-        <div id="facebook">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+<div id="load">
+    <div id="facebook">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
     </div>
-    <!--头部-->
-    <header>
-        <nav class="nav">
-            <div class="nav_logo">
-                <h1>
-                    <a href="#">
-                        <img src="images/logo.png">
-                    </a>
-                </h1>
+</div>
+<!--头部-->
+<%-include head.html %>
+<!-- 内容-->
+<div id="container">
+    <section>
+        <!--图片展示-->
+        <div id="showImg">
+            <div>
+                <img src='<%=imgurllist[0]%>' alt=""/>
+                <div id="left">&#xf0343;</div>
+                <div id="right">&#xf0344;</div>
             </div>
-            <div class="nav_right">
-                <div class="nav_log">
-                    <ul>
-                        <li><a href="#">注册</a></li>
-                        <li>|</li>
-                        <li><a href="#">登录</a></li>
-                        <li><a href="#">&#xe606;</a></li>
-                    </ul>
-                </div>
-                <div class="nav_bar">
-                    <ul>
-                        <li><a href="#">首页</a></li>
-                        <li><a href="#">花瓶</a></li>
-                        <li><a href="#">茶具</a></li>
-                        <li><a href="#">摆件</a></li>
-                        <li><a href="#"><span>&#xe689;</span>爆款推荐</a></li>
-                        <li><a href="#">品牌故事</a></li>
-                        <li><a href="#">艺术馆</a></li>
-                        <li>
-                            <div class="search">
-                                <span><a href="#">&#xe517;</a></span>
-                                <input type="text" placeholder="输入搜索内容">
-                            </div>
-                        </li>
-                    </ul>
+            <div>
+                <ul>
+                    <li><img src="<%=imgurllist[0]%>" id="img1"/></li>
+                    <li><img src="<%=imgurllist[1]%>" id="img2"/></li>
+                    <li><img src="<%=imgurllist[2]%>" id="img3"/></li>
+                    <li><img src="<%=imgurllist[3]%>" id="img4"/></li>
+                </ul>
+            </div>
+        </div>
+        <!--产品信息展示-->
+        <div id="productInfo">
+            <h2><%=name %></h2>
+            <p id="describe"><%=info %>
+            </p>
+            <h3>RMB:<label><%=price %></label></h3>
+            <p id="salesNum">销量：<label><%=salesNum %></label>件</p>
+            <h4>数量</h4>
+            <div id="numberControl">
+                <input type="button" id="reduce" value="-">
+                <input  id="showNumber" type="text" value="1"/>
+                <input type="button" id="add" value="+">
+            </div>
+            <div id="operation">
+                <button>立即购买</button>
+                <button><span></span>加入购物车</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="choose">
+            <div id="productD">产品详情</div>
+            <div id="comment">商品评论</div>
+        </div>
+        <!-- 产品详情-->
+        <div id="Details">
+            <div id="DetailShow">
+                <div class="dashedDiv"><img src="<%=imgurllist[4]%>" id="img5"/></div>
+                <div class="vertical">
+                    <h2><img src="images/teaProduct/circle.png" /><%=titlelist[0] %></h2>
+                    <p><%=descriptlist[0] %></p>
                 </div>
             </div>
-        </nav>
-    </header>
-    <!-- 内容-->
-    <div id="container">
-        <section>
-            <!--图片展示-->
-            <div id="showImg">
+            <!-- 商品参数-->
+            <div id="DetailNum">
                 <div>
-                    <img src="images/teaProduct/tea1_01.jpg" alt=""/>
-                    <div id="left">&#xf0343;</div>
-                    <div id="right">&#xf0344;</div>
-                </div>
-                <div>
-                    <ul>
-                        <li><img src="images/teaProduct/tea1_01.jpg" id="img1"/></li>
-                        <li><img src="images/teaProduct/tea1_02.jpg" id="img2"/></li>
-                        <li><img src="images/teaProduct/tea1_03.jpg" id="img3"/></li>
-                        <li><img src="images/teaProduct/tea1_04.jpg" id="img4"/></li>
-                    </ul>
-                </div>
-            </div>
-            <!--产品信息展示-->
-            <div id="productInfo">
-                <h2>哥窑禅茶系列</h2>
-                <p id="describe">以古代雅士曲水流觞茶盘为线，搭配充满祥瑞的茶器，呈现低调</br>
-                    又带点文人骚客的独特韵味。
-                </p>
-                <h3>RMB:<label>1326</label></h3>
-                <p id="salesNum">销量：<label>120000</label>件</p>
-                <h4>数量</h4>
-                <div id="numberControl">
-                    <input type="button" id="reduce" value="-">
-                    <input  id="showNumber" type="text" value="1"/>
-                    <input type="button" id="add" value="+">
-                </div>
-                <div id="operation">
-                    <button>立即购买</button>
-                    <button><span></span>加入购物车</button>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div id="choose">
-                <div id="productD">产品详情</div>
-                <div id="comment">商品评论</div>
-            </div>
-            <!-- 产品详情-->
-            <div id="Details">
-                <div id="DetailShow">
-                    <div class="dashedDiv"><img src="images/teaProduct/tea1Img1.jpg" id="img5"/></div>
-                    <div class="vertical">
-                        <h2><img src="images/teaProduct/circle.png" />器型之美  匠心而制</h2>
-                        <p>茶香沁心，器没养眼，</br>厚重之美，朴实无华</p>
-                    </div>
-                </div>
-                <!-- 商品参数-->
-                <div id="DetailNum">
-                        <div>
-                            <div>
-                                <p>PRADUCT PARAMETERS</p>
-                                <h3>
-                                    产<label>|</label>品<label>|</label>
-                                    <label class="red">参</label><label>|</label><label class="red">数</label>
-                                </h3>
-                            </div>
-                        <div>
-                            <h3> 饮茶 | 论世 | 沉思</h3>
-                            <p>
-                                以茶可行道，以茶可雅志</br>
-                                茶道被视为一种烹茶饮茶的生活艺术</br>
-                                一种以茶修身的生活方式
-                            </p>
-                        </div>
-                    </div>
-                        <img src="images/teaProduct/tea1Img2.png" id="img6" />
-                        <div>
-                            <h4>品名： <label>骨瓷复古茶具</label> 品牌：<label>素瓷</label></h4>
-                            <h4>材质： <label>骨瓷</label>  规格：<label>茶壶（9*7cm）*1 个、品茗杯（6*3cm）*2 个</label></h4>
-                            <h4>养护：<label>使用后需要用清水洗净，避免残留茶渍，使用后茶具会越来越润。</label></h4>
-                        </div>
-                </div>
-                <div id="detailDisplay">
-                    <div>产品细节展示</div>
                     <div>
-                        <div class="dashedDiv"><img src="images/teaProduct/tea1Img3.png" id="img7" class="image1"/></div>
-                        <div class="dashedDiv"><img src="images/teaProduct/tea1Img4.png" id="img8" class="image2"/></div>
-                        <div>
-                            <h2>
-                                <img src="images/teaProduct/circle.png" />壶嘴
-                            </h2>
-                            <p>
-                                匠心独具，茶壶的精巧设计，让倒茶水时茶水流畅。<br>
-                                一杯好茶，与身边的那个人在闲暇时一同分享，回忆<br>
-                                过往的酸甜苦辣。
-                            </p>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <p>
-                                整体造型饱满圆润  精巧可爱。壶身两侧象形文把手  展现水流动弯<br>
-                                曲之美，把手特殊绑线，美观实用 可止滑隔热。祥云造型壶盖钮，与<br>
-                                把手相互映衬，带出行云流水之意境。
-                            </p>
-                            <h2>
-                                <img src="images/teaProduct/circle.png" />把手和壶盖造型
-                            </h2>
-                        </div>
-                        <div>
-                            <div class="dashedDiv"><img src="images/teaProduct/tea1Img5.jpg" id="img9"/></div>
-                            <div class="dashedDiv"><img src="images/teaProduct/tea1Img6.jpg" id="img10"/></div>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div class="dashedDiv"><img src="images/teaProduct/tea1Img7.jpg" id="img11" class="image1"/></div>
-                            <div class="dashedDiv"><img src="images/teaProduct/tea1Img8.jpg" id="img12" class="image2"/></div>
-                        </div>
-                        <div>
-                            <h2>
-                                <img src="images/teaProduct/circle.png" />品茗杯
-                            </h2>
-                            <p>
-                                品茗杯，又称茶杯，一只小小的茶杯蕴含无穷的<br>
-                                奥秘，它不仅是茶道泡茶不可缺少的器件，更能<br>
-                                使品茶者感受到它的精致和细腻所在。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div id="package">
-                    <div>
-                        <p>EXQUISITE PACKAGING</p>
+                        <p>PRADUCT PARAMETERS</p>
                         <h3>
-                            精<label>|</label>美<label>|</label>
-                            <label class="red">包</label><label>|</label><label class="red">装</label>
+                            产<label>|</label>品<label>|</label>
+                            <label class="red">参</label><label>|</label><label class="red">数</label>
                         </h3>
                     </div>
-                    <img src="images/package.jpg"/>
-                </div>
-            </div>
-            <!-- 商品评论-->
-            <div id="productComment">
-                <div id="commentNum">
-                    共有135条评论
-                </div>
-                <ul>
-                    <li>
-                        <img src="images/buyerImg/buyer1.jpg" />
-                        <!-- 评论-->
-                        <div class="comm">
-                            <h4>威尼斯的大卫</h4>
-                            <p>包装精美，材质质地优良，设计合理，干泡盘很实用。送了一个旅行包适合外出携带使用，配套齐<br>
-                                全，随时随地都能在品茶中感悟人生，满意。</p>
-                        </div>
-                        <!-- 时间-->
-                        <div class="commtime">
-                            2018-03-29
-                        </div>
-                    </li>
-                    <li>
-                        <img src="images/buyerImg/buyer2.jpg" />
-                        <!-- 评论-->
-                        <div class="comm">
-                            <h4>演艺圈的小彭彭</h4>
-                            <p>
-                                收到货有点小惊喜，茶具晶莹剔透，很白，手感非常好。搭配的茶盘挺有分量的，也是质感十足，<br>
-                                已收藏店铺，还会再来的~
-                            </p>
-                        </div>
-                        <!-- 时间-->
-                        <div class="commtime">
-                            2018-02-24
-                        </div>
-                    </li>
-                    <li class="replycomm">
-                        <img src="images/buyerImg/buyer3.jpg" />
-                        <!-- 评论-->
-                        <div class="comm">
-                            <h4>卖火柴的小女孩</h4>
-                            <p>
-                                宝贝收到了，很漂亮，收到后就迫不及待的打开用了用，挺方便的，质量看上去很不错，价格还实惠，<br>
-                                真心的值得，值得好评。
-                            </p>
-                        </div>
-                        <!-- 时间-->
-                        <div class="commtime">
-                            2018-02-24
-                        </div>
-                        <div class="reply">
-                            <h4>掌柜回复：</h4>
-                            <p>感谢您的评论，欢迎您的下次光临！</p>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="images/buyerImg/buyer4.jpg" />
-                        <div class="comm">
-                            <h4>那年初夏</h4>
-                            <p>
-                                爸爸喜欢喝茶，我就给他买了一套，宝贝拿回来小巧玲珑的非常精致，一点瑕疵都没有，连我自己<br>
-                                都喜欢的不行，很满意。
-                            </p>
-                        </div>
-                        <div class="commtime">
-                            2018-02-29
-                        </div>
-                    </li>
-                    <li>
-                        <img src="images/buyerImg/buyer5.jpg" />
-                        <div class="comm">
-                            <h4>东京在下雨</h4>
-                            <p>
-                                宝贝收到了，要的侧把壶，非常漂亮，实物更喜欢西施壶，就不退换的了，挺满意的，包装严实，<br>
-                                没有破损。
-                            </p>
-                        </div>
-                        <div class="commtime">
-                            2018-02-29
-                        </div>
-                    </li>
-                    <li>
-                        <img src="images/buyerImg/buyer6.jpg" />
-                        <div class="comm">
-                            <h4>疯疯癫癫的小可爱</h4>
-                            <p>
-                                包装精美，材质质地优良，设计合理，干泡盘很实用。送了一个旅行包适合外出携带使用，配套齐<br>
-                                全，随时随地都能在品茶中感悟人生，满意。
-                            </p>
-                        </div>
-                        <div class="commtime">
-                            2018-04-13
-                        </div>
-                    </li>
-                    <li class="replycomm">
-                        <img src="images/buyerImg/buyer7.jpg" />
-                        <div class="comm">
-                            <h4>记忆中漫步</h4>
-                            <p>
-                                物有所值，平时自己用的话很方便，来客人一般也够用。收纳简单不占地方。茶具很漂亮，冲壶茶<br>
-                                入下茶气先。
-                            </p>
-                        </div>
-                        <div class="commtime">
-                            2018-03-23
-                        </div>
-                        <div class="reply">
-                            <h4>掌柜回复：</h4>
-                            <p>感谢您的评论，欢迎您的下次光临！</p>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="images/buyerImg/buyer8.jpg" />
-                        <div class="comm">
-                            <h4>青春壹個敷衍的年華</h4>
-                            <p>
-                                收到货有点小惊喜，茶具晶莹剔透，很白，手感非常好。搭配的茶盘挺有分量的，也是质感十足，<br>
-                                已收藏店铺，还会再来的。
-                            </p>
-                        </div>
-                        <div class="commtime">
-                            2018-01-12
-                        </div>
-                    </li>
-                </ul>
-                <!-- 分页-->
-                <div id="paging">
-                    <select name="" id="">
-                        <option value="">15</option>
-                        <option value="">10</option>
-                    </select>
-                    <button>共135条/15条</button>
-                    <button>首页</button>
-                    <button>上一页</button>
-                    <!-- 页码-->
-                    <div id="pageNum">
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                        <button>5</button>
-                        <button>...</button>
-                        <button>23</button>
-                        <button>24</button>
-                        <button>25</button>
-                        <button>26</button>
+                    <div>
+                        <h3> <%=titlelist[1] %></h3>
+                        <p>
+                            <%=descriptlist[1] %>
+                        </p>
                     </div>
-                    <button>下页</button>
-                    <button>末页</button>
+                </div>
+                <img src="<%=imgurllist[5]%>" id="img6" />
+                <div>
+                    <h4>品名： <p><%=name %></p> 品牌：<p>素瓷</p></h4>
+                    <h4>材质： <p><%=material %></p>  规格：<p><%=size %></p></h4>
+                    <h4>养护：<p><%=detail %></p></h4>
                 </div>
             </div>
-        </section>
-    </div>
-    <!--尾部-->
-    <footer class="footer">
-        <div>
-            <img src="images/logo.png">
+            <div id="detailDisplay">
+                <div>产品细节展示</div>
+                <div>
+                    <div class="dashedDiv"><img src="<%=imgurllist[6]%>" id="img7" class="image1"/></div>
+                    <div class="dashedDiv"><img src="<%=imgurllist[7]%>" id="img8" class="image2"/></div>
+                    <div>
+                        <h2>
+                            <img src="images/teaProduct/circle.png" /><%=titlelist[2] %>
+                        </h2>
+                        <p><%=descriptlist[2] %></p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p><%=descriptlist[3] %></p>
+                        <h2><img src="images/teaProduct/circle.png" /><%=titlelist[3] %></h2>
+                    </div>
+                    <div>
+                        <div class="dashedDiv"><img src="<%=imgurllist[8]%>" id="img9"/></div>
+                        <div class="dashedDiv"><img src="<%=imgurllist[9]%>" id="img10"/></div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div class="dashedDiv"><img src="<%=imgurllist[10]%>" id="img11" class="image1"/></div>
+                        <div class="dashedDiv"><img src="<%=imgurllist[11]%>" id="img12" class="image2"/></div>
+                    </div>
+                    <div>
+                        <h2>
+                            <img src="images/teaProduct/circle.png" /><%=titlelist[4] %>
+                        </h2>
+                        <p><%=descriptlist[4] %></p>
+                    </div>
+                </div>
+            </div>
+            <div id="package">
+                <div>
+                    <p>EXQUISITE PACKAGING</p>
+                    <h3>
+                        精<label>|</label>美<label>|</label>
+                        <label class="red">包</label><label>|</label><label class="red">装</label>
+                    </h3>
+                </div>
+                <img src="images/package.jpg"/>
+            </div>
         </div>
-        <div>
-            <p>
-                <span><a href="#">花瓶</a></span><i> · </i>
-                <span><a href="#">茶具</a></span><i> · </i>
-                <span><a href="#">摆件</a></span><i> · </i>
-                <span><a href="#">爆款推荐</a></span><i> · </i>
-                <span><a href="#">品牌故事</a></span><i> · </i>
-                <span><a href="#">艺术馆</a></span>
-            </p>
+        <!-- 商品评论-->
+        <div id="productComment">
+            <div id="commentNum">
+                共有<label class="sumcomment"></label>条评论
+            </div>
+            <ul id="commentli"></ul>
+            <!-- 分页-->
+            <div id="paging">
+                <select name="" id="size">
+                    <option value="">15</option>
+                    <option value="">10</option>
+                </select>
+                <button id="num">共<label class="sumcomment"></label>条/<label id="pagesize"></label>条</button>
+                <button id="firstpage">首页</button>
+                <button id="prepage">上一页</button>
+                <!-- 页码-->
+                <div id="pageNum"></div>
+                <button id="nextpage">下页</button>
+                <button id="lastpage">末页</button>
+            </div>
         </div>
-        <div>
-            <p>地址：四川省高新区成都市高新区云华路222号14栋603</p>
-            <p><span>电话：028-8238482 </span>   <span>传真：028-2344567</span></p>
-        </div>
-        <div>
-            <ul>
-                <li><a href="#">&#xe61c;</a></li>
-                <li><a href="#">&#xe658;</a></li>
-                <li><a href="#">&#xe630;</a></li>
-            </ul>
-        </div>
-        <div>
-            <p> Copyright © 2007-2018 www.anjuke.com All Rights Reserved   ICP</p>
-        </div>
-    </footer>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/productDetails.js"></script>
-    <script src="js/less.min.js" type="text/javascript"></script>
+    </section>
+</div>
+<!--尾部-->
+<%-include footer.html %>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/ajax.js"></script>
+<script src="js/productDetails.js"></script>
+<script src="js/less.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var pro_id=8;     //当前商品的编号
+    var totalCount;  //总评论数
+    var pagesize=15; //每一页的评论数
+    var totalPage;    //总页数
+    var currentPage=1;  //当前页
+    $("#comment").on('click',function(){
+        getTotalCount();
+        commentList();
+        reply();
+    });
+    //获取总的数量
+    function getTotalCount(){
+        ajaxFn({
+            "param": "pro_id=" + pro_id + "&pagesize=" + pagesize,
+            "callback": function (xmlHttp) {
+                var obj= JSON.parse(xmlHttp.responseText);
+               totalCount=obj.totalcount;
+                $(".sumcomment").text(totalCount);
+                $("#pagesize").text(pagesize);      //每一页显示的数据量
+                page();
+            },
+            "method": "post",
+            "url": "/gettotalcount.do"
+        })
+    }
+    function commentList(){
+        ajaxFn({
+            "param":"pro_id="+pro_id+"&pagesize="+pagesize+"&currentpage="+currentPage,
+            "callback":function(xmlHttp){
+                var comment=document.getElementById("commentli");
+                comment.innerHTML="";
+                var obj=JSON.parse(xmlHttp.responseText);
+                var commentid=obj.commentId;
+                var usernamelist=obj.usernameList;
+                var  commenttextlist=obj.commenttextList;
+                var commenttimelist=obj.commenttimeList;
+                var userpiclist=obj.userpicList;
+                for(var i=0;i<usernamelist.length;i++){
+                    var time=commenttimelist[i].replace('T',' ').replace('Z','').replace('.000','');
+                    comment.innerHTML+="<li id='"+commentid[i]+"'><img src='"+userpiclist[i]+"'/><div class='comm'><h4>"+usernamelist[i]+"</h4><p>"+commenttextlist[i]+"</p></div>" +
+                    "<div class='commtime'>"+time+"</div></li>";
+                }
+            },
+            "method":"post",
+            "url":"/comment.do"
+        })
+    }
+
+    //回复
+    function reply(){
+        ajaxFn({
+            "param":"pro_id="+pro_id,
+            "callback":function(xmlHttp){
+                var obj=JSON.parse(xmlHttp.responseText);
+                var commentid=obj.comId;
+                var reply=obj.reply;
+                for(var i=0;i<commentid.length;i++){
+                    $("#"+commentid[i]).css({"height":"160px"})
+                    $("#"+commentid[i]).append("<div class='reply'><h4>商家回复：</h4><p>"+reply[i]+"</p></div>")
+                }
+            },
+            "method":"post",
+            "url":"/reply.do"
+        })
+    }
+//    获取总的页数，并且将页码按钮显示
+    function page(){
+        var init=document.getElementById('pageNum');
+        init.innerHTML="";
+        if(totalCount%pagesize==0){
+            totalPage=totalCount/pagesize;     //总页数
+        }else{
+            totalPage=Math.ceil(totalCount/pagesize);
+        }
+        for(var j=1;j<=totalPage;j++){
+            init.innerHTML+="<button class='btn'>"+j+"</button>"
+        }
+    }
+    $("#size").change(function(){
+        var sizenum=$("#size option:selected").text(); //拿到选中项的文本
+        pagesize=sizenum;
+        currentPage=1;
+        $("#pagesize").text(pagesize);
+        page();
+        commentList();
+    });
+//点击页码按钮，让自身颜色改变，其他按钮初始化，并且获取当前页
+    $("#pageNum").on('click',".btn",function(){
+        var pagebtnlist=$(".btn");
+        for(var i=0;i<pagebtnlist.length;i++){
+            $(pagebtnlist[i]).css({"background-color":"white","color":"black"});
+        }
+        $(this).css({"background-color":"#273b5e","color":"white"});
+        currentPage=$(this).text();
+        commentList();
+    });
+    //下一页
+    $('#nextpage').click(function(){
+        if(currentPage<totalPage){
+            currentPage++;
+            commentList()
+        }
+    });
+    //最后一页
+    $('#lastpage').click(function(){
+        currentPage=totalPage;
+        commentList();
+    });
+    //上一页
+    $("#prepage").click(function(){
+        if(currentPage>1){
+            currentPage--;
+            commentList();
+        }
+    });
+    //第一页
+    $("#firstpage").click(function(){
+        currentPage=1;
+        commentList();
+    });
+</script>
 </body>
 </html>

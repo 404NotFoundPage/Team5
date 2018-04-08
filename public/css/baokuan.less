@@ -16,6 +16,14 @@ body{
   font-family: icontforme;
   src: url("../font/iconfont.ttf");
 }
+@font-face {
+  font-family: 'iconfont';  /* project id 616061 */
+  src: url('//at.alicdn.com/t/font_616061_l8bliix9rflp7gb9.eot');
+  src: url('//at.alicdn.com/t/font_616061_l8bliix9rflp7gb9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_616061_l8bliix9rflp7gb9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_616061_l8bliix9rflp7gb9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_616061_l8bliix9rflp7gb9.svg#iconfont') format('svg');
+}
 //banner通用文本流
 .size{
   width: 1349px;
@@ -64,7 +72,6 @@ body{
   margin-left: 50px;
 }
 .banner_1{
-  background-image: url("../images/baozhaoBanner1.jpg");
   background-size: cover;
   background-position: -200px 0;
   .size;
@@ -104,7 +111,6 @@ body{
   }
 }
 .banner_2{
-  background-image: url("../images/baozhaobanner2.jpg");
   background-size: cover;
   background-position: 0px 0;
   .size;
@@ -144,7 +150,6 @@ body{
   }
 }
 .banner_3{
-  background-image: url("../images/baozhaoBanner3.jpg");
   background-size:1349px 655px;
   .size;
   p{
@@ -270,6 +275,32 @@ section{
     height: 323px;
     top: 130px;
     left: 550px;
+    z-index: 0;
+  }
+  .toumingceng{
+    position: absolute;
+    width: 348px;
+    height: 323px;
+    top: 130px;
+    left: 550px;
+    background-color: black;
+    opacity: 0;
+    z-index: 1;
+    -webkit-transition: all .2s linear;
+    &:hover{
+      opacity: 0.5;
+    }
+    p{
+      width: 50px;
+      font-family: iconfont;
+      color: white;
+      //line-height: 323px;
+      text-align: center;
+      float: left;
+      font-size: 30px;
+      cursor: pointer;
+      margin-top: 150px;
+    }
   }
   .img6{
     position: absolute;
@@ -293,6 +324,7 @@ section{
   height: 165px;
   color: white;
   background-color: #273B5E;
+  z-index: 2;
   div{
     width: 38px;
     height: 154px;
@@ -300,9 +332,10 @@ section{
     margin: 5px auto;
     p{
       width: 10px;
+      height: 140px;
       font-size: 18px;
       font-family: titleFont;
-      margin-top: 12px;
+      margin-top: 18px;
       margin-left: 7px;
     }
   }

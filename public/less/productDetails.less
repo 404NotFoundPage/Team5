@@ -110,56 +110,56 @@
         height: @divheight;
         width: 100%;
         >div{
-           height:@divheight;
+            height:@divheight;
             float: left;
         }
     }
     #showImg{
-    margin-left:@marginwidth;
-    width: @divwidth;
-    div:nth-child(1){
-        margin-top: 60px;
-        position: relative;
-        div{
-            position: absolute;
-            color: white;
-            font-family: 'direction';
-            font-size: 45px;
-            top: 170px;
-            display:none;
-        }
-        img{
-            .Size(620px,410px);
-        }
-        #left{
-            left: 10px;
-        }
-        #right{
-            right: 10px;
-        }
-    }
-    div:nth-child(1):hover div{
-        display: block;
-    }
-    div:nth-child(2){
-        height: 100px;
-        margin-top: 5px;
-        li{
-            float: left;
-            margin: 0px 2px;
+        margin-left:@marginwidth;
+        width: @divwidth;
+        div:nth-child(1){
+            margin-top: 60px;
+            position: relative;
+            div{
+                position: absolute;
+                color: white;
+                font-family: 'direction';
+                font-size: 45px;
+                top: 170px;
+                display:none;
+            }
             img{
-                width: 152px;
-                height: 100px;
+                .Size(620px,410px);
+            }
+            #left{
+                left: 10px;
+            }
+            #right{
+                right: 10px;
             }
         }
-        li:nth-child(1){
-            margin-left: 0px;
+        div:nth-child(1):hover div{
+            display: block;
         }
-        li:nth-child(4){
-            margin-right: 0px;
+        div:nth-child(2){
+            height: 100px;
+            margin-top: 5px;
+            li{
+                float: left;
+                margin: 0px 2px;
+                img{
+                    width: 152px;
+                    height: 100px;
+                }
+            }
+            li:nth-child(1){
+                margin-left: 0px;
+            }
+            li:nth-child(4){
+                margin-right: 0px;
+            }
         }
     }
-}
     #productInfo{
         margin-left: 50px;
         color: @pointColor;
@@ -188,24 +188,24 @@
             font-size: 16px;
         }
         #numberControl{
-        margin-top: 10px;
-        #reduce,#add,#showNumber{
-            float: left;
-            width: 20px;
-            height: 26px;
-            background-color: white;
-            margin: 0px 2px;
-            border: 1px solid black;
+            margin-top: 10px;
+            #reduce,#add,#showNumber{
+                float: left;
+                width: 20px;
+                height: 26px;
+                background-color: white;
+                margin: 0px 2px;
+                border: 1px solid black;
+            }
+            #showNumber{
+                width: 51px;
+                height: 24px;
+                text-align: center;
+            }
         }
-        #showNumber{
-            width: 51px;
-            height: 24px;
-            text-align: center;
-        }
-    }
         #operation{
             margin-top: 100px;
-           .buttonHover;
+            .buttonHover;
         }
     }
     //商品详情和评论
@@ -254,11 +254,8 @@
                     }
                 }
                 .vertical{
-                    border: none;
                     top: 120px;
-                    .Size(120px,280px);
                     line-height: 40px;
-                    //垂直文本
                     right:150px;
                     writing-mode:vertical-rl;
                     h2{
@@ -266,6 +263,7 @@
                         font-family: myfont;
                     }
                     p{
+                        .Size(200px,180px);
                         font-size: 18px;
                     }
                 }
@@ -312,13 +310,18 @@
                         line-height: 50px;
                         border-bottom: @borderStyle;
                         font-size: 22px;
-                        label{
+                        p{
+                            display: inline-block;
                             font-size: 18px;
                         }
                     }
+                    h4:nth-child(2){
+                        p:nth-child(2){
+                            display: inline-block;
+                        }
+                    }
                     h4:nth-child(3){
-                        color: red;
-                        label{
+                        p{
                             color: black;
                         }
                     }
@@ -353,7 +356,10 @@
                         margin-left: 20px;
                     }
                     div:nth-child(3){
-                        .vertical(250px,450px)
+                        .vertical(250px,450px);
+                        p{
+                            height: 420px;
+                        }
                     }
                 }
                 div:nth-child(3){
@@ -365,6 +371,10 @@
                         background-color: white;
                         margin-top: 40px;
                         float: left;
+                        p{
+                            //border: 1px solid red;
+                            height: 400px;
+                        }
                     }
                     div:nth-child(2){
                         .Size(705px,700px);
@@ -417,6 +427,9 @@
                     div:nth-child(2){
                         .vertical(250px,400px);
                         margin: 50px 0px 0px 120px;
+                        p{
+                            height: 380px;
+                        }
                     }
                 }
             }
@@ -434,7 +447,6 @@
         //商品评论
         #productComment{
             display: none;
-            height: 1380px;
             //评论总数
             #commentNum{
                 height: 45px;
@@ -445,47 +457,10 @@
                 line-height: 45px;
                 padding-left: 20px;
             }
-            //评论列表
-            ul>li{
-                height: 120px;
-                border-bottom: 1px solid @colorLayout;
-                img,div{
-                    float: left;
-                    margin-top: 20px;
-                }
-                img{
-                    margin: 20px 0px 30px 32px;
-                }
-                .comm{
-                    margin-left: 15px;
-                   .commfontstyle;
-                }
-                .commtime{
-                    position: absolute;
-                    font-size: 12px;
-                    color: #a2a2a2;
-                    right:130px;
-                }
-                .reply{
-                    height: 77px;
-                    clear: both;
-                    margin: 0px 0px 0px 150px;
-                    width: 945px;
-                    background-color: @colorLayout;
-                    .commfontstyle;
-                    h4{
-                        margin: 15px 0px 0px  12px;
-                    }
-                    p{
-                        margin-left: 50px;
-                    }
-                }
-            }
-            .replycomm{
-                height: 215px;
-            }
             #paging{
-                margin: 50px 150px;
+                width: 1098px;
+                height: 30px;
+                padding: 30px 0px;
                 select,button,div{
                     float: left;
                     height: 28px;
@@ -500,18 +475,50 @@
                     button:nth-child(1){
                         background-color: @pointColor;
                         color: white;
-                        border: none;
                     }
                 }
             }
         }
     }
 }
-//.dashedDiv{
-//    &:hover{
-//        box-shadow:-6px 8px 11px @pointColor;
-//        margin-top: -10px;
-//        position: relative;
-//        top: -10px;
-//    }
-//}
+#commentli{
+    width: 1098px;
+}
+#commentli>li{
+    clear:both;
+    border-bottom: 1px solid @colorLayout;
+    height: 80px;
+    padding: 20px 0px 10px 10px;
+    img,div{
+        float: left;
+    }
+    .comm{
+        width: 700px;
+        .commfontstyle;
+        margin-left: 20px;
+        p{
+            margin-top: 10px;
+        }
+    }
+    .commtime{
+        width: 170px;
+        margin-left: 120px;
+        font-size: 12px;
+        color: #a2a2a2;
+    }
+}
+#describe{
+    width: 400px;
+}
+.reply{
+    padding: 10px 10px;
+    clear: both;
+    margin-left:90px;
+    margin-top: 10px;
+    width: 975px;
+    background-color:#f2f2f2 ;
+    p{
+        margin-top: 10px;
+        margin-left: 25px;
+    }
+}
