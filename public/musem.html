@@ -78,7 +78,25 @@
         <img  id="vr3" class="vrpro3" src="images/vr3.png" alt="">
     </div>
     <div id="hiddenBox">
-
+        <h1>
+            兰州拉面
+        </h1>
+        <p>
+            《兰州拉面》作者亚力山德罗斯，创作于约公元前150
+        </p>
+        <p>
+            年左右，高达204cm，大理石雕像，被公认为是
+        </p>
+        <p>
+            迄今为止希腊女性雕像
+        </p>
+        <p>
+            中最美的一尊。现收藏于法国巴黎
+        </p>
+        <p>
+            卢浮宫，卢浮宫的三大镇馆之宝。
+        </p>
+        <video width="150" height="150" controls="controls" src="video/sixsixsix.mp4"></video>
     </div>
 </div>
 <footer class="footer">
@@ -164,16 +182,25 @@
         $(this).toggleClass("vrpro1");
         if($(this).get(0).className=="toggle_vrpro1"){
             $(this).css("left",150-parseInt($("#bgBox").css("left")+"px"));
-            $("#bgBox").unbind("mousemove",fn)
+            $("#bgBox").unbind("mousemove",fn);
+            $("#hiddenBox").css({
+                "z-index":3,
+                "opacity":1
+            })
+
         }else {
             $(this).css("left","220px")
-            $("#bgBox").bind("mousemove",fn)
+            $("#bgBox").bind("mousemove",fn);
+            $("#hiddenBox").css({
+                "z-index":0,
+                "opacity":0
+            })
         }
         event.stopPropagation();
         $("#bgBox *").not(this).each(function(){
             $(this).css("-webkit-transition","all .2s linear")
             $(this).toggleClass("opacity");
-            $(this).toggleClass("opcityno")
+            $(this).toggleClass("opcityno");
         })
     });
     $("#vr2").click(function(event){
@@ -181,16 +208,25 @@
         $(this).toggleClass("vrpro2")
         if($(this).get(0).className=="toggle_vrpro2"){
             $(this).css("left",150-parseInt($("#bgBox").css("left")+"px"));
-            $("#bgBox").unbind("mousemove",fn)
+            $("#bgBox").unbind("mousemove",fn);
+            $("#hiddenBox").css({
+                "z-index":3,
+                "opacity":1
+            })
         }else {
             $(this).css("left","935px")
-            $("#bgBox").bind("mousemove",fn)
+            $("#bgBox").bind("mousemove",fn);
+            $("#hiddenBox").css({
+                "z-index":0,
+                "opacity":0
+            })
         }
         event.stopPropagation();
         $("#bgBox *").not(this).each(function(){
             $(this).css("-webkit-transition","all .2s linear")
             $(this).toggleClass("opacity");
-            $(this).toggleClass("opcityno")
+            $(this).toggleClass("opcityno");
+
         })
     });
     $("#vr3").click(function(event){
@@ -198,10 +234,18 @@
         $(this).toggleClass("vrpro3")
         if($(this).get(0).className=="toggle_vrpro3"){
             $(this).css("left",150-parseInt($("#bgBox").css("left")+"px"));
-            $("#bgBox").unbind("mousemove",fn)
+            $("#bgBox").unbind("mousemove",fn);
+            $("#hiddenBox").css({
+                "z-index":3,
+                "opacity":1
+            })
         }else {
             $(this).css("left","665px");
-            $("#bgBox").bind("mousemove",fn)
+            $("#bgBox").bind("mousemove",fn);
+            $("#hiddenBox").css({
+                "z-index":0,
+                "opacity":0
+            })
         }
 
         event.stopPropagation();

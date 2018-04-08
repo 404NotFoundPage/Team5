@@ -1,5 +1,5 @@
 /* Created by lixin on 2018/4/3.*/
-const productModal=require('../dao/productModal.js');
+const productModal=require('./../modal/productModal.js');
 module.exports={
     Product:function(request,response){
         if(request.session.user){

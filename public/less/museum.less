@@ -4,6 +4,10 @@
   height: 768px;
   overflow: hidden;
 }
+@font-face {
+  font-family: titleFont;
+  src: url("../font/方正清刻本悦宋简体_2.TTF");
+}
 #bgBox{
   position: absolute;
   top:0;
@@ -12,6 +16,7 @@
   width: 6000px;
   height: 768px;
   cursor: url("../images/加号.png"),auto;
+  //background-color: darkgrey;
   z-index: 2;
   img {
     position: absolute;
@@ -20,12 +25,30 @@
 #hiddenBox{
   position: absolute;
   top: 0;
-  left: 0;
-  width: 1349px;
+  left: 700px;
+  width: 500px;
   height: 768px;
-  background-color: #00A489;
+  background-color: white;
   opacity: 0;
-  cursor: url("../images/减号.png"),auto;
+  //z-index: 3;
+  h1{
+    height: 200px;
+    font-family: titleFont;
+    font-size: 50px;
+    line-height: 250px;
+    text-align: center;
+    font-weight: bolder;
+  }
+  p{
+    font-family:"宋体";
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+  video{
+    margin-left: 180px;
+    margin-top: 50px;
+  }
 }
 #img1{
   top: 100px;
