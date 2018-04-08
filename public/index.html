@@ -64,9 +64,7 @@
 				</div>
 			</li>
 		</ul>
-		<ul class="cycle">
-
-		</ul>
+		<ul class="cycle"></ul>
 	</div>
 </section>
 
@@ -92,10 +90,11 @@
 			<div class="news2_product">
 				<a class="img_wrap" href=""><img src="<%=newimg[0] %>" alt=""/></a>
 				<!--蒙版层-->
-				<div class="in_cpmb1 new" uid="<%=newid[1] %>">
+				<div class="in_cpmb1">
 					<div class="mb_bb"></div>
 					<div class="mb_sj">
-						<a href="">&#xe61c</a>
+						<span class="nocollect" uid="<%=newid[1] %>">&#xe61c</span>
+						<span class="collect" uid="<%=newid[1] %>">&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -112,10 +111,11 @@
 			<div class="news2_product">
 				<a class="img_wrap" href="#"><img src="<%=newimg[1][0] %>" alt=""/></a>
 				<!--蒙版层-->
-				<div class="in_cpmb1 new" uid="<%=newid[1] %>">
+				<div class="in_cpmb1">
 					<div class="mb_bb"></div>
 					<div class="mb_sj">
-						<a href="">&#xe61c</a>
+						<span class="nocollect" uid="<%=newid[1] %>">&#xe61c</span>
+						<span class="collect" uid="<%=newid[1] %>">&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -132,10 +132,11 @@
 			<div class="news2_product">
 				<a class="img_wrap" href=""><img src="<%=newimg[2] %>" alt=""/></a>
 				<!--蒙版层-->
-				<div class="in_cpmb1 new" uid="<%=newid[1] %>">
+				<div class="in_cpmb1">
 					<div class="mb_bb"></div>
 					<div class="mb_sj">
-						<a href="">&#xe61c</a>
+						<span class="nocollect" uid="<%=newid[1] %>">&#xe61c</span>
+						<span class="collect" uid="<%=newid[1] %>">&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -174,10 +175,11 @@
 		<div class="sec_one">
 			<a class="bkimg_wrap"  href=""><img src="<%=baoimg[0][0]%>" alt=""/></a>
 			<!--蒙版层-->
-			<div class="bao in_bkmb1" uid="<%=baoid[1] %>">
+			<div class="in_bkmb1">
 				<div class="bkmb_bb"></div>
 				<div class="mb_sj">
-					<a href="">&#xe61c</a>
+					<span class="nocollect" uid="<%=baoid[1] %>">&#xe61c</span>
+					<span class="collect" uid="<%=baoid[1] %>">&#xe61d;</span>
 				</div>
 				<h2>瓷韵夏日青莲系列</h2>
 				<div class="in_ljBuy">
@@ -201,10 +203,11 @@
 			<div class="t_left">
 				<a class="t_img_wrap" href=""><img src="<%=baoimg[1][1]%>" alt=""/></a>
 				<!--蒙版层-->
-				<div class="bao in_t_mb1" uid="<%=baoid[1] %>">
+				<div class="in_t_mb1">
 					<div class="t_mb_bb"></div>
 					<div class="mb_sj">
-						<a href="">&#xe61c</a>
+						<span class="nocollect" uid="<%=baoid[1] %>">&#xe61c</span>
+						<span class="collect" uid="<%=baoid[1] %>">&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -220,10 +223,11 @@
 			<div class="t_right">
 				<a class="tr_img_wrap" href=""><img src="<%=baoimg[2]%>" alt=""/></a>
 				<!--蒙版层-->
-				<div class="bao in_tr_mb1" uid="<%=baoid[1] %>">
+				<div class="in_tr_mb1">
 					<div class="tr_mb_bb"></div>
 					<div class="mb_sj">
-						<a href="">&#xe61c</a>
+						<span class="nocollect" uid="<%=baoid[1] %>">&#xe61c</span>
+						<span class="collect" uid="<%=baoid[1] %>">&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -410,14 +414,30 @@
 			myvar=window.setInterval(autoscroll,8000);
 		});
 	});
-	$('.new,.newbuy').each(function(index,element){
+	$('.newbuy').each(function(index,element){
 		$(element).click(function(){
 			location.href="productDetails.html?pro_id=" +$(this).attr('uid');
 		})
 	});
 
+	//收藏
+	$('.mb_sj').each(function(index,element){
+		$(element).click(function(){
+			var nocollect=$($(this).children()[0]).css('display');
+			var collect=$($(this).children()[1]).css('display');
+			if(nocollect=='block'&&collect=='none'){
+				$($(this).children()[0]).css({'display':'none'});
+				$($(this).children()[1]).css({'display':'block'});
+			}else if(nocollect=='none'&&collect=='block'){
+				$($(this).children()[0]).css({'display':'block'});
+				$($(this).children()[1]).css({'display':'none'});
+			}
+		})
+	});
+//将收藏商品插入数据库
+
 	//立即购买
-	$('.buy,.bao').each(function(index,element){
+	$('.buy').each(function(index,element){
 		$(element).click(function(){
 			location.href="productDetails.html?pro_id=" +$(this).attr('uid');
 		})
@@ -425,7 +445,7 @@
 	//更多瓷器文化
 	$('#cultureMore').click(function(){
 		location.href='ciqiwenhua_zx.html';
-	})
+	});
 </script>
 </body>
 </html>
