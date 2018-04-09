@@ -93,8 +93,8 @@
 				<div class="in_cpmb1">
 					<div class="mb_bb"></div>
 					<div class="mb_sj">
-						<span class="nocollect" uid="<%=newid[1] %>">&#xe61c</span>
-						<span class="collect" uid="<%=newid[1] %>">&#xe61d;</span>
+						<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
+						<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -114,8 +114,8 @@
 				<div class="in_cpmb1">
 					<div class="mb_bb"></div>
 					<div class="mb_sj">
-						<span class="nocollect" uid="<%=newid[1] %>">&#xe61c</span>
-						<span class="collect" uid="<%=newid[1] %>">&#xe61d;</span>
+						<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
+						<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -135,8 +135,8 @@
 				<div class="in_cpmb1">
 					<div class="mb_bb"></div>
 					<div class="mb_sj">
-						<span class="nocollect" uid="<%=newid[1] %>">&#xe61c</span>
-						<span class="collect" uid="<%=newid[1] %>">&#xe61d;</span>
+						<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
+						<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -178,8 +178,8 @@
 			<div class="in_bkmb1">
 				<div class="bkmb_bb"></div>
 				<div class="mb_sj">
-					<span class="nocollect" uid="<%=baoid[1] %>">&#xe61c</span>
-					<span class="collect" uid="<%=baoid[1] %>">&#xe61d;</span>
+					<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
+					<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
 				</div>
 				<h2>瓷韵夏日青莲系列</h2>
 				<div class="in_ljBuy">
@@ -206,8 +206,8 @@
 				<div class="in_t_mb1">
 					<div class="t_mb_bb"></div>
 					<div class="mb_sj">
-						<span class="nocollect" uid="<%=baoid[1] %>">&#xe61c</span>
-						<span class="collect" uid="<%=baoid[1] %>">&#xe61d;</span>
+						<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
+						<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -226,8 +226,8 @@
 				<div class="in_tr_mb1">
 					<div class="tr_mb_bb"></div>
 					<div class="mb_sj">
-						<span class="nocollect" uid="<%=baoid[1] %>">&#xe61c</span>
-						<span class="collect" uid="<%=baoid[1] %>">&#xe61d;</span>
+						<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
+						<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -323,7 +323,10 @@
 		</div>
 	</div>
 </section>
+<!-- 提示-->
+<div id="prompt">
 
+</div>
 <!--引入底部文件-->
 <%-include footer.html %>
 
@@ -340,112 +343,167 @@
 			$("#load").fadeOut(400).hide();
 			$("header,footer,section").fadeIn(600).show();
 		},1500);
-	});
-	function scroll(eid){
-		$(".cycle li").removeClass("active");
-		$(".cycle li").eq(eid).addClass("active");
-		marginLeft="-"+eid*1349+"px";
-		$(".imgs").css("marginLeft",marginLeft);
-	}
-	function autoscroll(){
-		nowid=$(".cycle li.active").index();
-		maxid=$(".imgs li").length-1;
-		if(nowid<maxid){
-			getid=nowid+1;
+		function scroll(eid){
+			$(".cycle li").removeClass("active");
+			$(".cycle li").eq(eid).addClass("active");
+			marginLeft="-"+eid*1349+"px";
+			$(".imgs").css("marginLeft",marginLeft);
 		}
-		else{
-			getid=0;
-		}
-		scroll(getid);
-	}
-	function left_scroll(){
-		nowid=$(".cycle li.active").index();
-		maxid=$(".imgs li").length-1;
-		if(nowid>0){
-			getid=nowid-1;
-		}
-		else{
-			getid=maxid;
-		}
-		scroll(getid);
-	}
-	function right_scroll(){
-		nowid=$(".cycle li.active").index();
-		maxid=$(".imgs li").length-1;
-		if(nowid<maxid){
-			getid=nowid+1;
-		}
-		else{
-			getid=0;
-		}
-		scroll(getid);
-	}
-	$(document).ready(function(){
-		xnums=$(".imgs li").length;
-		for(i=1;i<=xnums;i++){
-			if(i==1){
-				str='<li class="active"></li>';
-			}else{
-				str=str+"<li></li>";
+		function autoscroll(){
+			nowid=$(".cycle li.active").index();
+			maxid=$(".imgs li").length-1;
+			if(nowid<maxid){
+				getid=nowid+1;
 			}
-		}
-		maxwidth=xnums*1349+"px";
-		$(".imgs").css("width",maxwidth);
-		$(".cycle").html(str);
-
-		$(".cycle li").on("click",function(){
-			xid=$(this).index();
-			scroll(xid);
-		});
-		myvar=window.setInterval(autoscroll,8000);
-
-		$(".ib_left").click(function(){
-			clearInterval(myvar);
-			left_scroll();
-		});
-		$(".ib_right").click(function(){
-			clearInterval(myvar);
-			right_scroll();
-		});
-		$(".ib_left").mouseleave(function(){
-			myvar=window.setInterval(autoscroll,8000);
-		});
-		$(".ib_right").mouseleave(function(){
-			myvar=window.setInterval(autoscroll,8000);
-		});
-	});
-	$('.newbuy').each(function(index,element){
-		$(element).click(function(){
-			location.href="productDetails.html?pro_id=" +$(this).attr('uid');
-		})
-	});
-
-	//收藏
-	$('.mb_sj').each(function(index,element){
-		$(element).click(function(){
-			var nocollect=$($(this).children()[0]).css('display');
-			var collect=$($(this).children()[1]).css('display');
-			if(nocollect=='block'&&collect=='none'){
-				$($(this).children()[0]).css({'display':'none'});
-				$($(this).children()[1]).css({'display':'block'});
-			}else if(nocollect=='none'&&collect=='block'){
-				$($(this).children()[0]).css({'display':'block'});
-				$($(this).children()[1]).css({'display':'none'});
+			else{
+				getid=0;
 			}
-		})
-	});
-//将收藏商品插入数据库
+			scroll(getid);
+		}
+		function left_scroll(){
+			nowid=$(".cycle li.active").index();
+			maxid=$(".imgs li").length-1;
+			if(nowid>0){
+				getid=nowid-1;
+			}
+			else{
+				getid=maxid;
+			}
+			scroll(getid);
+		}
+		function right_scroll(){
+			nowid=$(".cycle li.active").index();
+			maxid=$(".imgs li").length-1;
+			if(nowid<maxid){
+				getid=nowid+1;
+			}
+			else{
+				getid=0;
+			}
+			scroll(getid);
+		}
+		$(document).ready(function(){
+			xnums=$(".imgs li").length;
+			for(i=1;i<=xnums;i++){
+				if(i==1){
+					str='<li class="active"></li>';
+				}else{
+					str=str+"<li></li>";
+				}
+			}
+			maxwidth=xnums*1349+"px";
+			$(".imgs").css("width",maxwidth);
+			$(".cycle").html(str);
 
-	//立即购买
-	$('.buy').each(function(index,element){
-		$(element).click(function(){
-			location.href="productDetails.html?pro_id=" +$(this).attr('uid');
-		})
+			$(".cycle li").on("click",function(){
+				xid=$(this).index();
+				scroll(xid);
+			});
+			myvar=window.setInterval(autoscroll,8000);
+
+			$(".ib_left").click(function(){
+				clearInterval(myvar);
+				left_scroll();
+			});
+			$(".ib_right").click(function(){
+				clearInterval(myvar);
+				right_scroll();
+			});
+			$(".ib_left").mouseleave(function(){
+				myvar=window.setInterval(autoscroll,8000);
+			});
+			$(".ib_right").mouseleave(function(){
+				myvar=window.setInterval(autoscroll,8000);
+			});
+		});
+		$('.newbuy').each(function(index,element){
+			$(element).click(function(){
+				location.href="productDetails.html?pro_id=" +$(this).attr('uid');
+			})
+		});
+
+		var pro_id;
+		//收藏
+		$('.mb_sj').each(function(index,element){
+			$(element).click(function(){
+				pro_id=$($(this).children()[0]).attr('uid');
+				var nocollect=$($(this).children()[0]).css('display');
+				var collect=$($(this).children()[1]).css('display');
+				collectpro();
+				if(state==0){
+					if(nocollect=='block'&&collect=='none'){
+						$($(this).children()[0]).css({'display':'none'});
+						$($(this).children()[1]).css({'display':'block'});
+					}else if(nocollect=='none'&&collect=='block'){
+						$($(this).children()[0]).css({'display':'block'});
+						$($(this).children()[1]).css({'display':'none'});
+					}
+					$('#prompt').css({"display":"block","top":"1400px"}).text("完成收藏");
+					setTimeout(function(){
+						$('#prompt').css({"display":"none"})
+					},1500);
+				}else if(state==-1){
+					$('#prompt').css({"display":"block","top":"1400px"}).text('请登录');
+					setTimeout(function(){
+						$('#prompt').css({"display":"none"})
+					},1500);
+				}else if(state==1){
+					if(nocollect=='block'&&collect=='none'){
+						$($(this).children()[0]).css({'display':'none'});
+						$($(this).children()[1]).css({'display':'block'});
+						$('#prompt').css({"display":"block","top":"1400px"}).text("已经收藏过了");
+						setTimeout(function(){
+							$('#prompt').css({"display":"none"})
+						},1500);
+					}
+				}
+			})
+		});
+		//将收藏商品插入数据库
+		var state=1;
+		function collectpro(){
+			ajaxFn({
+				"param":"pro_id="+parseInt(pro_id),
+				"callback":function(xmlHttp){
+					var obj=xmlHttp.responseText;
+					if(obj=='ok'){
+						state=0;
+					}else if(obj=='fail'){
+						state=1;
+					}else if(obj=='notLogin'){
+						state=-1;
+					}
+				},
+				"method":"get",
+				"url":"/collectpro.do"
+			})
+		}
+//取消收藏
+		function deleteCollect(){
+			ajaxFn({
+				"param":"pro_id="+parseInt(pro_id),
+				"callback":function(xmlHttp){
+					var obj=xmlHttp.responseText;
+					if(obj=='ok'){
+						alert("删除")
+					}
+				},
+				"method":"get",
+				"url":"/nocollect.do"
+			})
+		}
+		//立即购买
+		$('.buy').each(function(index,element){
+			$(element).click(function(){
+				location.href="productDetails.html?pro_id=" +$(this).attr('uid');
+			})
+		});
+		//更多瓷器文化
+		$('#cultureMore').click(function(){
+			location.href='ciqiwenhua_zx.html';
+		});
 	});
-	//更多瓷器文化
-	$('#cultureMore').click(function(){
-		location.href='ciqiwenhua_zx.html';
-	});
+
 </script>
 </body>
 </html>

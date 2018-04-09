@@ -1,6 +1,4 @@
-/**
- * Created by Administrator on 2018/4/8.
- */
+/*Created by lixin on 2018/4/8.*/
 const indexModal=require('./../dao/indexModal.js');
 module.exports={
     index:function(request,response){
@@ -29,5 +27,38 @@ module.exports={
                     "newname":newname, "newprice":newprice,"newimg":newimg,"newid":newid,"username":request.session.user})
             }
         })
+    },
+    collectpro:function(request,response){
+        let user_id=request.session.userid;
+        let pro_id=request.query.pro_id;
+        user_id=1;
+        if(user_id){
+            indexModal.collectpro(user_id,pro_id,function(err,data){
+                if(err==null){
+                    response.send('ok');
+                }else{
+                    response.send('fail');
+                }
+            });
+        }else{
+            response.send('notLogin');
+        }
+
+    },
+    nocollect:function(request,response){
+        let user_id=request.session.userid;
+        let pro_id=request.query.pro_id;
+        user_id=1;
+        if(user_id){
+            indexModal.nocollect(user_id,pro_id,function(err,data){
+                if(err==null){
+                    response.send('ok');
+                }else{
+                    response.send('fail');
+                }
+            });
+        }else{
+            response.send('notLogin');
+        }
     }
 };
