@@ -1,13 +1,7 @@
 /* Created by lixin on 2018/4/3.*/
 const productModal=require('./../modal/productModal.js');
 module.exports={
-    Product:function(request,response){
-        if(request.session.user){
-            response.render('product',{"username":request.session.user.username});
-        }else{
-            response.redirect('login.html')
-        }
-    },
+    //商品详情页面
     productDetails:function(request,response){
         request.session.pro_id=request.query.pro_id;
         let pro_id=parseInt(request.session.pro_id);
@@ -23,16 +17,17 @@ module.exports={
             let detail=data[0].pro_detail;                  //养护
             let material=data[0].pro_material;              //材质
             if(request.session.user){
-                response.render("productDetails.html",{"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
+                response.render("productDetails.html",{"pro_id":pro_id,"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
                     "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
                     "material":material,"username":request.session.user})
             }else{
-                response.render("productDetails.html",{"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
+                response.render("productDetails.html",{"pro_id":pro_id,"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
                     "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
                     "material":material,"username":request.session.user})
             }
         })
     },
+    //评论
     comment:function(request,response){
         let pro_id=request.body.pro_id;
         let pagesize=request.body.pagesize;
@@ -53,6 +48,7 @@ module.exports={
             response.send({usernameList,commenttextList,commenttimeList,userpicList,commentId});
         });
     },
+    //获取评论总数
     gettotalcount:function(request,response){
         let pro_id=request.body.pro_id;
         productModal.gettotalcount(pro_id,function(err,data){
@@ -60,6 +56,7 @@ module.exports={
             response.send({totalcount});
         });
     },
+    //回复
     reply:function(request,response){
         let pro_id=request.body.pro_id;
         productModal.reply(pro_id,function(err,data){

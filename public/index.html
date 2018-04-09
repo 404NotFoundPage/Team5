@@ -88,7 +88,7 @@
 		</div>
 		<div class="news2">
 			<div class="news2_product">
-				<a class="img_wrap" href=""><img src="<%=newimg[0] %>" alt=""/></a>
+				<a class="img_wrap"><img src="<%=newimg[0] %>" alt=""/></a>
 				<!--蒙版层-->
 				<div class="in_cpmb1">
 					<div class="mb_bb"></div>
@@ -104,7 +104,7 @@
 				<div class="news2_jg">
 					<p><%=newname[0] %></p>
 					<div class="news2_buy">
-						<a href="#">加入购物车</a>
+						<a class="t_buylj" uid="<%=newid[1] %>">加入购物车</a>
 					</div>
 				</div>
 			</div>
@@ -125,7 +125,7 @@
 				<div class="news2_jg">
 					<p><%=newname[1] %></p>
 					<div class="news2_buy">
-						<a href="#">加入购物车</a>
+						<a class="t_buylj" uid="<%=newid[1] %>">加入购物车</a>
 					</div>
 				</div>
 			</div>
@@ -146,7 +146,7 @@
 				<div class="news2_jg">
 					<p><%=newname[2] %></p>
 					<div class="news2_buy">
-						<a href="#">加入购物车</a>
+						<a class="t_buylj" uid="<%=newid[1] %>">加入购物车</a>
 					</div>
 				</div>
 			</div>
@@ -178,18 +178,18 @@
 			<div class="in_bkmb1">
 				<div class="bkmb_bb"></div>
 				<div class="mb_sj">
-					<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
-					<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
+					<span class="nocollect" uid="<%=baoid[1] %>" >&#xe61c</span>
+					<span class="collect" uid="<%=baoid[1] %>" >&#xe61d;</span>
 				</div>
 				<h2>瓷韵夏日青莲系列</h2>
 				<div class="in_ljBuy">
-					<a href="#" class="buy" uid="<%=baoid[1] %>">立即购买</a>
+					<a class="buy" uid="<%=baoid[1] %>">立即购买</a>
 				</div>
 			</div>
 			<div class="right">
 				<div>
 					<p class="rtx-1"><%=baoname[0] %></p>
-					<a href="#">加入购物车</a>
+					<a class="t_buylj" uid="<%=baoid[1] %>">加入购物车</a>
 					<p class="xx">朴，未加工的木头。<br/>
 					素，没染色的白绢。<br/>
 					朴素是一种大美，是一种朴拙，<br/>
@@ -206,8 +206,8 @@
 				<div class="in_t_mb1">
 					<div class="t_mb_bb"></div>
 					<div class="mb_sj">
-						<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
-						<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
+						<span class="nocollect" uid="<%=baoid[1] %>" >&#xe61c</span>
+						<span class="collect" uid="<%=baoid[1] %>" >&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -215,7 +215,7 @@
 					</div>
 				</div>
 				<div class="t_buy">
-					<a href="#" class="t_buylj">加入购物车</a>
+					<a  class="t_buylj" uid="<%=baoid[1] %>">加入购物车</a>
 					<p class="price"><span class="sp1">￥</span><span class="sp2"><%=baoprice[1] %></span></p>
 					<p><%=baoname[1] %> </p>
 				</div>
@@ -226,8 +226,8 @@
 				<div class="in_tr_mb1">
 					<div class="tr_mb_bb"></div>
 					<div class="mb_sj">
-						<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
-						<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
+						<span class="nocollect" uid="<%=baoid[1] %>" >&#xe61c</span>
+						<span class="collect" uid="<%=baoid[1] %>" >&#xe61d;</span>
 					</div>
 					<h2>瓷韵夏日青莲系列</h2>
 					<div class="in_ljBuy">
@@ -235,7 +235,7 @@
 					</div>
 				</div>
 				<div class="t_buy">
-					<a href="#" class="t_buylj">加入购物车</a>
+					<a class="t_buylj" uid="<%=baoid[1] %>">加入购物车</a>
 					<p class="price"><span class="sp1">￥</span><span class="sp2"><%=baoprice[2] %></span></p>
 					<p><%=baoname[2] %> </p>
 				</div>
@@ -421,8 +421,11 @@
 				location.href="productDetails.html?pro_id=" +$(this).attr('uid');
 			})
 		});
-
-		var pro_id;
+		var pro_id;//点击收藏获取当前商品的pro_id
+		var scrolly;//窗口滚动长度
+		window.onscroll=function(){
+			scrolly=window.scrollY;
+		};
 		//收藏
 		$('.mb_sj').each(function(index,element){
 			$(element).click(function(){
@@ -438,23 +441,14 @@
 						$($(this).children()[0]).css({'display':'block'});
 						$($(this).children()[1]).css({'display':'none'});
 					}
-					$('#prompt').css({"display":"block","top":"1400px"}).text("完成收藏");
-					setTimeout(function(){
-						$('#prompt').css({"display":"none"})
-					},1500);
+					displayPrompt('收藏成功');
 				}else if(state==-1){
-					$('#prompt').css({"display":"block","top":"1400px"}).text('请登录');
-					setTimeout(function(){
-						$('#prompt').css({"display":"none"})
-					},1500);
+					displayPrompt('请登录');
 				}else if(state==1){
 					if(nocollect=='block'&&collect=='none'){
 						$($(this).children()[0]).css({'display':'none'});
 						$($(this).children()[1]).css({'display':'block'});
-						$('#prompt').css({"display":"block","top":"1400px"}).text("已经收藏过了");
-						setTimeout(function(){
-							$('#prompt').css({"display":"none"})
-						},1500);
+						displayPrompt('已经收藏过了');
 					}
 				}
 			})
@@ -478,19 +472,12 @@
 				"url":"/collectpro.do"
 			})
 		}
-//取消收藏
-		function deleteCollect(){
-			ajaxFn({
-				"param":"pro_id="+parseInt(pro_id),
-				"callback":function(xmlHttp){
-					var obj=xmlHttp.responseText;
-					if(obj=='ok'){
-						alert("删除")
-					}
-				},
-				"method":"get",
-				"url":"/nocollect.do"
-			})
+//		显示收藏提醒
+		function displayPrompt(str){
+			$('#prompt').css({"display":"block","top":parseInt(scrolly)+100+"px"}).text(str);
+			setTimeout(function(){
+				$('#prompt').css({"display":"none"})
+			},1200);
 		}
 		//立即购买
 		$('.buy').each(function(index,element){
@@ -502,6 +489,28 @@
 		$('#cultureMore').click(function(){
 			location.href='ciqiwenhua_zx.html';
 		});
+
+//		加到购物车
+		$('.t_buylj').each(function(index,element){
+			$(element).click(function(){
+				var pro=$($(this)).attr('uid');
+				ajaxFn({
+					"param":"pro_id="+parseInt(pro)+"&num=1",
+					"callback":function(xmlHttp){
+						var obj=xmlHttp.responseText;
+						if(obj=='ok'){
+							displayPrompt('加入成功')
+						}else if(obj=='fail'){
+							displayPrompt('购物车中存在此商品');
+						}else if(obj=='notLogin'){
+							location.href="login.html";
+						}
+					},
+					"method":"get",
+					"url":"/addcart.do"
+				})
+			});
+		})
 	});
 
 </script>

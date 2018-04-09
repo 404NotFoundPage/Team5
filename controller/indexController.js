@@ -2,7 +2,6 @@
 const indexModal=require('./../dao/indexModal.js');
 module.exports={
     index:function(request,response){
-        console.log(request.query)
         indexModal.index(function(err,data){
             let newimg=[],newid=[],newprice=[],newname=[];//新品
             let baoimg=[],baoid=[],baoprice=[],baoname=[]; //爆款
@@ -28,6 +27,7 @@ module.exports={
             }
         })
     },
+    //收藏  最后修改if(user_id)为if(request.session.userid),删除user_id=1;
     collectpro:function(request,response){
         let user_id=request.session.userid;
         let pro_id=request.query.pro_id;
@@ -45,12 +45,14 @@ module.exports={
         }
 
     },
-    nocollect:function(request,response){
+//    加入购物车  最后要修改
+    addcart:function(request,response){
         let user_id=request.session.userid;
-        let pro_id=request.query.pro_id;
-        user_id=1;
+        user_id=2;
+        let num=request.query.num;
+        let pro_id=parseInt(request.query.pro_id);
         if(user_id){
-            indexModal.nocollect(user_id,pro_id,function(err,data){
+            indexModal.addcart(user_id,pro_id,num,function(err,data){
                 if(err==null){
                     response.send('ok');
                 }else{
