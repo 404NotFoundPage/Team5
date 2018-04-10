@@ -5,16 +5,8 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet/less" href="less/productDetails.less"/>
-    <link rel="stylesheet" href="css/load.css">
 </head>
 <body>
-<div id="load">
-    <div id="facebook">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-</div>
 <!--头部-->
 <%-include head.html %>
 <!-- 内容-->
@@ -37,7 +29,7 @@
             </div>
         </div>
         <!--产品信息展示-->
-        <div id="productInfo">
+        <div id="productInfo" uid="<%=pro_id %>">
             <h2><%=name %></h2>
             <p id="describe"><%=info %>
             </p>
@@ -51,7 +43,7 @@
             </div>
             <div id="operation">
                 <button>立即购买</button>
-                <button><span></span>加入购物车</button>
+                <button id="addcart"><span></span>加入购物车</button>
             </div>
         </div>
     </section>
@@ -289,6 +281,28 @@
         currentPage=1;
         commentList();
     });
+
+    //加入购物车
+    $('#addcart').click(function(){
+        var price=$('#productInfo h3>label').text();
+        var num=$('#showNumber').attr('value');
+        var pro_id=$('#productInfo').attr('uid');
+        ajaxFn({
+            "param":"pro_id="+parseInt(pro_id)+"&num="+num,
+            "callback":function(xmlHttp){
+                var obj=xmlHttp.responseText;
+                if(obj=='ok'){
+//                    location.href=''
+                }else if(obj=='fail'){
+
+                }else if(obj=='notLogin'){
+                    location.href="login.html";
+                }
+            },
+            "method":"get",
+            "url":"/addcart.do"
+        })
+    })
 </script>
 </body>
 </html>

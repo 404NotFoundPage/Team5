@@ -20,7 +20,7 @@ router.get("/person.do",bf_tj_controller.person);
 router.get("/shoppingCart.do",bf_tj_controller.shoppingCart);
 
 /*---------------------首页拦截------------------------------------------*/
-router.get("/index.html",bf_tj_controller.index);
+//router.get("/index.html",bf_tj_controller.index);
 /*------------------------茶具*/
 
 /*------------------------花瓶*/

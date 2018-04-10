@@ -13,6 +13,7 @@ const logger = require("morgan");
 const bf_router=require("./routes/bf_tuijianRouters");
 const productRouter=require('./routes/productRouter.js');
 const router=require("./routes/baokuanrouter.js");
+const indexRouter=require('./routes/indexRouter.js')
 
 
 const app = express();
@@ -28,6 +29,7 @@ app.use(session({
 app.use(router);
 app.use(bf_router);
 app.use(productRouter);
+app.use(indexRouter);
 app.use(cookie());
 
 //将post数据储存为json数据
@@ -43,3 +45,4 @@ app.use(express.static(path.join(__dirname,"public/html")));
 
 //监听端口
 app.listen(1111,()=>{console.log("服务器1111启动")});
+

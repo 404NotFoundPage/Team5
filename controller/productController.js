@@ -1,48 +1,50 @@
 /* Created by lixin on 2018/4/3.*/
+<<<<<<< HEAD
 
 const productModal=require('./../modal/productModal.js');
 
 
+=======
+const productModal=require('./../modal/productModal.js');
+>>>>>>> c2b8ab42049b44becc71bbac31c540cefbe4253f
 module.exports={
-    Product:function(request,response){
-        if(request.session.user){
-            response.render('productDetails',{"username":request.session.user.username});
-        }else{
-            response.redirect('login.html')
-        }
-    },
+    //ÉÌÆ·ÏêÇéÒ³Ãæ
     productDetails:function(request,response){
-        request.session.pro_id=8;
-        request.session.user ="tom";
-        let pro_id=request.session.pro_id;
+        request.session.pro_id=request.query.pro_id;
+        let pro_id=parseInt(request.session.pro_id);
         productModal.productDetail(pro_id,function(err,data){
-            console.log(data[0].pro_img_url);
-
-            let imgUrlList=data[0].pro_img_url.split(',');//äº§å“çš„å›¾ç‰‡è·¯åŠ²
-            let titleList=data[0].pro_text_title.split('@');//äº§å“å„æ¨¡å—çš„æ ‡é¢˜
-            let descriptList=data[0].pro_text_discribe.split('@');//äº§å“å„æ¨¡å—çš„æè¿°
-            let productInfo=data[0].pro_info;               //äº§å“çš„æè¿°
-            let price=data[0].pro_price;                    //äº§å“çš„ä»·æ ¼
-            let name=data[0].pro_name;                      //äº§å“çš„åç§°
-            let size=data[0].pro_size;                      //äº§å“çš„å°ºå¯¸
-            let salesNum=data[0].pro_deal_amount;           //äº§å“é”€é‡
-            let detail=data[0].pro_detail;                  //å…»æŠ¤
-            let material=data[0].pro_material;              //æè´¨
-            response.render('productDetails',{"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
-                "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
-                "material":material,"username":request.session.user});
+            let imgUrlList=data[0].pro_img_url.split(',');//²úÆ·µÄÍ¼Æ¬Â·¾¢
+            let titleList=data[0].pro_text_title.split('@');//²úÆ·¸÷Ä£¿éµÄ±êÌâ
+            let descriptList=data[0].pro_text_discribe.split('@');//²úÆ·¸÷Ä£¿éµÄÃèÊö
+            let productInfo=data[0].pro_info;               //²úÆ·µÄÃèÊö
+            let price=data[0].pro_price;                    //²úÆ·µÄ¼Û¸ñ
+            let name=data[0].pro_name;                      //²úÆ·µÄÃû³Æ
+            let size=data[0].pro_size;                      //²úÆ·µÄ³ß´ç
+            let salesNum=data[0].pro_deal_amount;           //²úÆ·ÏúÁ¿
+            let detail=data[0].pro_detail;                  //Ñø»¤
+            let material=data[0].pro_material;              //²ÄÖÊ
+            if(request.session.user){
+                response.render("productDetails.html",{"pro_id":pro_id,"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
+                    "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
+                    "material":material,"username":request.session.user})
+            }else{
+                response.render("productDetails.html",{"pro_id":pro_id,"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
+                    "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
+                    "material":material,"username":request.session.user})
+            }
         })
     },
+    //ÆÀÂÛ
     comment:function(request,response){
         let pro_id=request.body.pro_id;
         let pagesize=request.body.pagesize;
         let currentpage=request.body.currentpage;
         productModal.comment(pro_id,pagesize,currentpage,function(err,data){
-            let commentId=[];            //è¯„è®ºç¼–å·
-            let usernameList=[];        //è¯„è®ºç”¨æˆ·åæ•°ç»„
-            let commenttextList=[];     //è¯„è®ºæ•°ç»„
-            let commenttimeList=[];     //è¯„è®ºæ—¶é—´æ•°ç»„
-            let userpicList=[];         //ç”¨æˆ·å¤´åƒæ•°ç»„
+            let commentId=[];            //ÆÀÂÛ±àºÅ
+            let usernameList=[];        //ÆÀÂÛÓÃ»§ÃûÊı×é
+            let commenttextList=[];     //ÆÀÂÛÊı×é
+            let commenttimeList=[];     //ÆÀÂÛÊ±¼äÊı×é
+            let userpicList=[];         //ÓÃ»§Í·ÏñÊı×é
             for(var j=0;j<data.length;j++){
                 usernameList.push(data[j].user_name);
                 commenttextList.push([data[j].com_message_count]);
@@ -53,13 +55,15 @@ module.exports={
             response.send({usernameList,commenttextList,commenttimeList,userpicList,commentId});
         });
     },
+    //»ñÈ¡ÆÀÂÛ×ÜÊı
     gettotalcount:function(request,response){
         let pro_id=request.body.pro_id;
         productModal.gettotalcount(pro_id,function(err,data){
-            let totalcount=data.length;        //è¯„è®ºæ€»æ•°
+            let totalcount=data.length;        //ÆÀÂÛ×ÜÊı
             response.send({totalcount});
         });
     },
+    //»Ø¸´
     reply:function(request,response){
         let pro_id=request.body.pro_id;
         productModal.reply(pro_id,function(err,data){

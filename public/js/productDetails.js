@@ -3,15 +3,15 @@ var autoPlay;//轮播定时器
 var z=0;//当前轮播图的编号
 var changediv=$("#choose>div");//功能切换div
 //在加载时隐藏内容
-$(document).ready(function(){
-    $("header,footer,#container").hide();
-});
+//$(document).ready(function(){
+//    $("header,footer,#container").hide();
+//});
 $(function(){
     //加载完成后，加载DIV隐藏，内容显示
-    setTimeout(function(){
-        $("#load").fadeOut(400).hide();
-        $("header,footer,#container").fadeIn(600).show();
-    },1500);
+    //setTimeout(function(){
+    //    $("#load").fadeOut(400).hide();
+    //    $("header,footer,#container").fadeIn(600).show();
+    //},1500);
     autoPlay=setInterval(changeImg,1500);
 
     //切换商品详情和评论
@@ -34,7 +34,7 @@ $(function(){
         });
     });
 
-   //点击小图切换大图片
+    //点击小图切换大图片
     $("#showImg ul img").each(function(index,ele){
         $(ele).click(function(){
             var imgsrc=$(ele).attr('src');//获取点击图片的路径
@@ -42,7 +42,7 @@ $(function(){
             z=index;
         })
     });
-   //图片轮播
+    //图片轮播
     var imglist=$("#showImg ul img");//要轮播图的路径
     var imgSrclist=[];//轮播图的路径数组
     for(var i=0;i<imglist.length;i++){//获取要进行轮播的图片路径，存放在数组中
