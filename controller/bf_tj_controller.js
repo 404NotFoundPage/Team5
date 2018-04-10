@@ -103,7 +103,6 @@ const bf_tj_contro ={
       res.redirect("person.html")
     },
     "shoppingCart":function (req,res) {
-        req.session.user= 1;
         if(req.session.user){
             res.redirect("person.html")
         }else {
