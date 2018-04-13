@@ -12,7 +12,8 @@ const logger = require("morgan");
 const bf_router=require("./routes/bf_tuijianRouters");
 const productRouter=require('./routes/productRouter.js');
 const router=require("./routes/baokuanrouter.js");
-const indexRouter=require('./routes/indexRouter.js')
+const indexRouter=require('./routes/indexRouter.js');
+const orderRouter=require('./routes/orderRouter.js');
 
 
 const app = express();
@@ -28,6 +29,7 @@ app.use(session({
 app.use(router);
 app.use(bf_router);
 app.use(productRouter);
+app.use(orderRouter);
 app.use(indexRouter);
 app.use(cookie());
 
