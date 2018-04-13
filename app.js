@@ -26,6 +26,7 @@ app.use(session({
     rolling:true,
     saveUninitialized:true
 }));
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(router);
 app.use(bf_router);
 app.use(productRouter);
@@ -33,7 +34,7 @@ app.use(indexRouter);
 app.use(cookie());
 
 //将post数据储存为json数据
-app.use(bodyParser.urlencoded({extended:false}));
+
 app.use(bodyParser.json());
 //配置ejs
 app.set("views",__dirname+"/public");//配置模板所在路径

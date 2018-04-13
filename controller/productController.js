@@ -1,28 +1,24 @@
 /* Created by lixin on 2018/4/3.*/
-<<<<<<< HEAD
+
 
 const productModal=require('./../modal/productModal.js');
 
-
-=======
-const productModal=require('./../modal/productModal.js');
->>>>>>> c2b8ab42049b44becc71bbac31c540cefbe4253f
 module.exports={
-    //ÉÌÆ·ÏêÇéÒ³Ãæ
+    //ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½
     productDetails:function(request,response){
         request.session.pro_id=request.query.pro_id;
         let pro_id=parseInt(request.session.pro_id);
         productModal.productDetail(pro_id,function(err,data){
-            let imgUrlList=data[0].pro_img_url.split(',');//²úÆ·µÄÍ¼Æ¬Â·¾¢
-            let titleList=data[0].pro_text_title.split('@');//²úÆ·¸÷Ä£¿éµÄ±êÌâ
-            let descriptList=data[0].pro_text_discribe.split('@');//²úÆ·¸÷Ä£¿éµÄÃèÊö
-            let productInfo=data[0].pro_info;               //²úÆ·µÄÃèÊö
-            let price=data[0].pro_price;                    //²úÆ·µÄ¼Û¸ñ
-            let name=data[0].pro_name;                      //²úÆ·µÄÃû³Æ
-            let size=data[0].pro_size;                      //²úÆ·µÄ³ß´ç
-            let salesNum=data[0].pro_deal_amount;           //²úÆ·ÏúÁ¿
-            let detail=data[0].pro_detail;                  //Ñø»¤
-            let material=data[0].pro_material;              //²ÄÖÊ
+            let imgUrlList=data[0].pro_img_url.split(',');//ï¿½ï¿½Æ·ï¿½ï¿½Í¼Æ¬Â·ï¿½ï¿½
+            let titleList=data[0].pro_text_title.split('@');//ï¿½ï¿½Æ·ï¿½ï¿½Ä£ï¿½ï¿½Ä±ï¿½ï¿½ï¿½
+            let descriptList=data[0].pro_text_discribe.split('@');//ï¿½ï¿½Æ·ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            let productInfo=data[0].pro_info;               //ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            let price=data[0].pro_price;                    //ï¿½ï¿½Æ·ï¿½Ä¼Û¸ï¿½
+            let name=data[0].pro_name;                      //ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            let size=data[0].pro_size;                      //ï¿½ï¿½Æ·ï¿½Ä³ß´ï¿½
+            let salesNum=data[0].pro_deal_amount;           //ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½
+            let detail=data[0].pro_detail;                  //ï¿½ï¿½ï¿½ï¿½
+            let material=data[0].pro_material;              //ï¿½ï¿½ï¿½ï¿½
             if(request.session.user){
                 response.render("productDetails.html",{"pro_id":pro_id,"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
                     "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
@@ -34,17 +30,18 @@ module.exports={
             }
         })
     },
-    //ÆÀÂÛ
+    //ï¿½ï¿½ï¿½ï¿½
     comment:function(request,response){
+        console.log(request.body)
         let pro_id=request.body.pro_id;
         let pagesize=request.body.pagesize;
         let currentpage=request.body.currentpage;
         productModal.comment(pro_id,pagesize,currentpage,function(err,data){
-            let commentId=[];            //ÆÀÂÛ±àºÅ
-            let usernameList=[];        //ÆÀÂÛÓÃ»§ÃûÊý×é
-            let commenttextList=[];     //ÆÀÂÛÊý×é
-            let commenttimeList=[];     //ÆÀÂÛÊ±¼äÊý×é
-            let userpicList=[];         //ÓÃ»§Í·ÏñÊý×é
+            let commentId=[];            //ï¿½ï¿½ï¿½Û±ï¿½ï¿½
+            let usernameList=[];        //ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            let commenttextList=[];     //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            let commenttimeList=[];     //ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            let userpicList=[];         //ï¿½Ã»ï¿½Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             for(var j=0;j<data.length;j++){
                 usernameList.push(data[j].user_name);
                 commenttextList.push([data[j].com_message_count]);
@@ -55,15 +52,15 @@ module.exports={
             response.send({usernameList,commenttextList,commenttimeList,userpicList,commentId});
         });
     },
-    //»ñÈ¡ÆÀÂÛ×ÜÊý
+    //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     gettotalcount:function(request,response){
         let pro_id=request.body.pro_id;
         productModal.gettotalcount(pro_id,function(err,data){
-            let totalcount=data.length;        //ÆÀÂÛ×ÜÊý
+            let totalcount=data.length;        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             response.send({totalcount});
         });
     },
-    //»Ø¸´
+    //ï¿½Ø¸ï¿½
     reply:function(request,response){
         let pro_id=request.body.pro_id;
         productModal.reply(pro_id,function(err,data){

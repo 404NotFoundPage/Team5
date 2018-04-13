@@ -3,8 +3,8 @@ const indexModal=require('./../dao/indexModal.js');
 module.exports={
     index:function(request,response){
         indexModal.index(function(err,data){
-            let newimg=[],newid=[],newprice=[],newname=[];//ÐÂÆ·
-            let baoimg=[],baoid=[],baoprice=[],baoname=[]; //±¬¿î
+            let newimg=[],newid=[],newprice=[],newname=[];//ï¿½ï¿½Æ·
+            let baoimg=[],baoid=[],baoprice=[],baoname=[]; //ï¿½ï¿½ï¿½ï¿½
             for(var i=0;i<data.length;i++){
                 if(data[i].pro_bao==1&&data[i].pro_new==0){
                     baoname.push(data[i].pro_name);
@@ -27,7 +27,7 @@ module.exports={
             }
         })
     },
-    //ÊÕ²Ø  ×îºóÐÞ¸Äif(user_id)Îªif(request.session.userid),É¾³ýuser_id=1;
+    //ï¿½Õ²ï¿½  ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½if(user_id)Îªif(request.session.userid),É¾ï¿½ï¿½user_id=1;
     collectpro:function(request,response){
         let user_id=request.session.userid;
         let pro_id=request.query.pro_id;
@@ -45,7 +45,7 @@ module.exports={
         }
 
     },
-//    ¼ÓÈë¹ºÎï³µ  ×îºóÒªÐÞ¸Ä
+//    ï¿½ï¿½ï¿½ë¹ºï¿½ï³µ  ï¿½ï¿½ï¿½Òªï¿½Þ¸ï¿½
     addcart:function(request,response){
         let user_id=request.session.userid;
         user_id=2;

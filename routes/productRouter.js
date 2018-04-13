@@ -6,4 +6,4 @@ router.get('/productDetails.html',productController.productDetails);
 router.post('/comment.do',productController.comment);
 router.post('/gettotalcount.do',productController.gettotalcount);
 router.post('/reply.do',productController.reply);
-module.exports=router;//¶ÔÂ·ÓÉ½øÐÐ±©Â¶
+module.exports=router;//ï¿½ï¿½Â·ï¿½É½ï¿½ï¿½Ð±ï¿½Â¶
