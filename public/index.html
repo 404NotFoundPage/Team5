@@ -5,7 +5,6 @@
 	<link rel="stylesheet/less" href="less/common.less"/>
 	<link rel="stylesheet/less" href="less/index.less"/>
 	<link rel="stylesheet" href="css/load.css">
-
 </head>
 <body>
 <div id="load">
@@ -67,7 +66,6 @@
 		<ul class="cycle"></ul>
 	</div>
 </section>
-
 <!--新品上线-->
 <section>
 	<div class="kb"></div>
@@ -158,7 +156,7 @@
 	<div class="in_bf">
 		<div class="tm_bg">
 			<img src="images/in_tm2.png" alt=""/>
-			<a href="#" class="bf_btn"><span>&#xe642</span> 我要设计</a>
+			<a href="baifangtuijian.html" class="bf_btn"><span>&#xe642</span> 我要设计</a>
 		</div>
 	</div>
 </section>
@@ -244,7 +242,6 @@
 	</div>
 	<div class="kb_h60"></div>
 </section>
-
 <!---制作工艺--->
 <section>
 	<div class="in_gy">
@@ -311,21 +308,19 @@
 		</div>
 	</div>
 </section>
-
 <!---瓷器文化---->
 <section>
 	<div class="commonwidth">
 		<div class="cqwh">
 			<p class="cqwh_ix">瓷器<br>文化</p>
 			<div class="cqwh_text">
-				中华礼仪之大谓之夏，有服章之美谓之华，乃华夏也。奉神人之事谓之礼，来而不往非礼也，乃礼之源。过手七十二，方可成器，瓦之坚者-瓷也。“礼”和“瓷”皆是中华名族优秀文化的灿烂积淀，以瓷成礼，以礼全德，瓷为礼之体，礼为瓷之用，体用相符，名实相契。两百多年来，骨质瓷经过一代代名匠之手，逐渐发展成为世界陶瓷珍品......<a href="#" id="cultureMore">查看更多</a>
+				中华礼仪之大谓之夏，有服章之美谓之华，乃华夏也。奉神人之事谓之礼，来而不往非礼也，乃礼之源。过手七十二，方可成器，瓦之坚者-瓷也。“礼”和“瓷”皆是中华名族优秀文化的灿烂积淀，以瓷成礼，以礼全德，瓷为礼之体，礼为瓷之用，体用相符，名实相契。两百多年来，骨质瓷经过一代代名匠之手，逐渐发展成为世界陶瓷珍品......<a href="ciqiwenhua_zx.html" id="cultureMore">查看更多</a>
 			</div>
 		</div>
 	</div>
 </section>
 <!-- 提示-->
 <div id="prompt">
-
 </div>
 <!--引入底部文件-->
 <%-include footer.html %>
@@ -335,14 +330,46 @@
 <script src="js/ajax.js"></script>
 <script src="js/jquery.min.js"></script>
 <script>
+	/*页面加载动画*/
+	$(document).ready(function () {
+        setTimeout(function () {
+            $("header").css("opacity", 1)
+        }, 200);
+        setTimeout(function () {
+            $("section:nth-of-type(1)").css("opacity", 1)
+        }, 300);
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 500) {
+                console.log($(this).scrollTop());
+                $("section:nth-of-type(2)").css("opacity", 1);
+            }
+            if ($(this).scrollTop() > 1500) {
+                $("section:nth-of-type(3)").css("opacity", 1);
+            }
+            if ($(this).scrollTop() > 2200) {
+                $("section:nth-of-type(4)").css("opacity", 1);
+            }
+            if ($(this).scrollTop() > 3350) {
+                $("section:nth-of-type(5)").css("opacity", 1);
+            }
+            if ($(this).scrollTop() > 3900) {
+                $("section:nth-of-type(6)").css("opacity", 1);
+            }
+            if ($(this).scrollTop() > 4000) {
+                $("footer").css("opacity", 1);
+            }
+        })
+    })
 	$(document).ready(function(){
 		$("header,footer,section").hide();
 	});
+
 	$(function(){
 		setTimeout(function(){
-			$("#load").fadeOut(400).hide();
+			$("#load").fadeOut(500).hide();
 			$("header,footer,section").fadeIn(600).show();
-		},1500);
+		},5000);
 		function scroll(eid){
 			$(".cycle li").removeClass("active");
 			$(".cycle li").eq(eid).addClass("active");

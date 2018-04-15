@@ -131,6 +131,49 @@ const bf_tj_contro ={
             res.render("ciqiwenhua_zx.html",{"username":req.session.user})
         }
     },
+    "OrderGeneration":function (req,res) {
+        if(req.session.user){
+            res.render("OrderGeneration.html",{"username":req.session.user})
+        }else {
+            res.render("OrderGeneration.html",{"username":req.session.user})
+        }
+    },
+    "OrderPayment":function (req,res) {
+        if(req.session.user){
+            res.render("OrderPayment.html",{"username":req.session.user})
+        }else {
+            res.render("OrderPayment.html",{"username":req.session.user})
+        }
+    },
+    "PaymentSuccess":function (req,res) {
+        if(req.session.user){
+            res.render("PaymentSuccess.html",{"username":req.session.user})
+        }else {
+            res.render("PaymentSuccess.html",{"username":req.session.user})
+        }
+    },
+    "weixinPayment":function (req,res) {
+        if(req.session.user){
+            res.render("weixinPayment.html",{"username":req.session.user})
+        }else {
+            res.render("weixinPayment.html",{"username":req.session.user})
+        }
+    },
+    "zfbPayment":function (req,res) {
+        if(req.session.user){
+            res.render("zfbPayment.html",{"username":req.session.user})
+        }else {
+            res.render("zfbPayment.html",{"username":req.session.user})
+        }
+    },
+    "baokuan":function (req,res) {
+        console.log(1);
+        if(req.session.user){
+            res.render("baokuan.html",{"username":req.session.user})
+        }else {
+            res.render("baokuan.html",{"username":req.session.user})
+        }
+    }
 
 };
 
