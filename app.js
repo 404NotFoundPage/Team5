@@ -1,4 +1,4 @@
-
+﻿
 /**
  * Created by Administrator on 2018/3/30 0030.
  */
@@ -15,6 +15,11 @@ const productRouter=require('./routes/productRouter.js');
 const router=require("./routes/baokuanrouter.js");
 const indexRouter=require('./routes/indexRouter.js');
 const orderRouter=require('./routes/orderRouter.js');
+
+const routerRL=require("./routes/loginRegister.js");// 登录注册页面的路由
+const Personal=require("./routes/Personal.js"); //个人中心路由
+var AV = require('leanengine'); //引用短信模块
+AV.initialize("B5XdiuFWib69Dyr9wgAJYPPQ-gzGzoHsz","Q5FlPGAmOoWMKociWGgNyjKU");
 
 
 const app = express();
@@ -34,6 +39,9 @@ app.use(productRouter);
 app.use(orderRouter);
 app.use(indexRouter);
 app.use(cookie());
+
+app.use(routerRL);// 登录注册！！！！！
+app.use(Personal); //个人中心
 
 //将post数据储存为json数据
 

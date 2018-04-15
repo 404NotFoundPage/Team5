@@ -1,6 +1,10 @@
 @font-face {
   font-family: titleFont;
-  src: url("../font/fz.TTF");
+  src: url("../font/方正清刻本悦宋简体_2.TTF");
+}
+@font-face {
+  font-family: titl;
+  src: url("../font/iconfont.ttf");
 }
 section{
   overflow: hidden;
@@ -69,12 +73,19 @@ body{
       width: 35px;
       height: 47px;
       background-color: #f3f3f3;
+      font-family: "titl";
+      text-align: center;
+      line-height: 47px;
       border-radius: 5px 0 0 5px;
     }
     .connt2-2{
-      width: 263px;
+      width: 273px;
+      height: 47px;
       outline: none;
-      padding: 15px 0 15px 20px;
+      border: none;
+      border-radius:5px ;
+      padding-left: 10px;
+      font-size: 20px;
     }
   }
 }
@@ -124,24 +135,40 @@ body{
       margin: 0;
       width: 35px;
       height: 47px;
+      font-family: "titl";
+      text-align: center;
+      line-height: 47px;
       background-color: #f3f3f3;
       border-radius: 5px 0 0 5px;
     }
     .yan2-2{
       margin: 0;
       outline: none;
-      width: 95px;
-      padding: 15px 0 15px 20px;
+      border: none;
+      width: 105px;
+      padding-left: 10px;
+      border-radius:5px ;
+      height: 47px;
+      font-size: 20px;
     }
   }
   .yanimg{
     overflow: hidden;
     width: 100px;
     height: 47px;
+    cursor: pointer;
     text-align: center;
+    border-radius: 5px;
+    color: white;
     line-height: 47px;
-    background-color: #0086b3;
+    background-color: #273B5E;
     margin-left: 5px;
+    border: 1px solid #273B5E;
+    -webkit-transition: all .1s linear;
+    &:hover{
+      background-color: white;
+      color:#273B5E;
+    }
   }
   .yantext{
     overflow: hidden;
@@ -162,4 +189,10 @@ body{
     border-radius: 5px;
     margin: 20px 0 0 106px;
     cursor: pointer;
+  border: 1px solid #273B5E;
+  -webkit-transition: all .1s linear;
+  &:hover{
+    background-color: white;
+    color:#273B5E;
+  }
 }

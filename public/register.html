@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>注册</title>
-    <link rel="stylesheet/less" href="less/common.less">
     <link rel="stylesheet/less" href="less/register.less">
 </head>
 <body>
-<%-include head.html%>
+<%-include head.html %>
 <section>
     <div id="regi-div">
         <div class="regi-div-div1">
@@ -15,65 +14,41 @@
             <p>MEMBER REGISTER</p>
         </div>
         <div class="connt">
-            <div class="connt1">会员账号:</div>
+            <div class="connt1" >手机号码:</div>
             <div class="connt2">
-                <div class="connt2-1"></div>
-                <div class="connt2-2" name="username" contenteditable="true"></div>
+                <div class="connt2-1">&#xe605;</div>
+                <input name="username" maxlength="11" class="connt2-2" type="text"/>
             </div>
         </div>
         <div class="connt shehimima">
             <div class="connt1">设置密码:</div>
             <div class="connt2">
-                <div class="connt2-1"></div>
-                <div class="connt2-2" name="password" contenteditable="true"></div>
+                <div class="connt2-1">&#xe65d;</div>
+                <input name="password" class="connt2-2" type="password"/>
             </div>
         </div>
         <div class="connt shehimima2">
             <div class="connt1">确认密码:</div>
             <div class="connt2">
-                <div class="connt2-1"></div>
-                <div class="connt2-2" name="passwordcopy" contenteditable="true"></div>
+                <div class="connt2-1">&#xe65d;</div>
+                <input name="passwordcopy" class="connt2-2" type="password"/>
             </div>
         </div>
         <div class="yanzhengma">
             <div class="yan1">验证码:</div>
             <div class="yan2">
-                <div class="yan2-1"></div>
-                <div class="yan2-2" name="VerificationCode" contenteditable="true"></div>
+                <div class="yan2-1">&#xe646;</div>
+                <input name="VerCode" class="yan2-2" type="text"/>
             </div>
-            <div class="yanimg">验证码</div>
-            <div class="yantext"><a href="#">换一张!</a></div>
+            <div class="yanimg">发送验证码</div>
         </div>
         <div class="reg-but">
             立即注册
         </div>
     </div>
 </section>
-
-
 <script src="js/less.min.js" type="text/javascript"></script>
 <script src="js/jquery-1.11.3.js"></script>
-<script>
-
-    $(".connt2-2").focus(function(){
-        console.log(222);
-        $(this).parent().css({border:"1px solid #273B5E"})
-    });
-    $(".connt2-2").blur(function(){
-        console.log(222);
-        $(this).parent().css({border:"1px solid #d4d4d4"})
-    });
-    $(".yan2-2").focus(function(){
-        console.log(222);
-        $(this).parent().css({border:"1px solid #273B5E"})
-    });
-    $(".yan2-2").blur(function(){
-        console.log(222);
-        $(this).parent().css({border:"1px solid #d4d4d4"})
-    });
-    $(".reg-but").on("click",function(){
-
-    })
-</script>
+<script src="js/register.js"></script>
 </body>
 </html>
