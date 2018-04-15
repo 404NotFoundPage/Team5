@@ -35,7 +35,7 @@ const baokuanController={
         let userId=request.session.user.user_id;
         let sql='UPDATE t_user SET user_psw = ? WHERE user_id=?';
         PersonalModel.PersonalInit(sql,[pwd,userId]).then((data)=>{
-            console.log(data);
+            // console.log(data);
             if(data){
                 response.send("ok");
             }else{
@@ -53,13 +53,13 @@ const baokuanController={
         console.log("页码"+yema);
         let  xiabiao=(yema-1)*tiaoshu;
         let userId=request.session.user.user_id;
-        console.log(tiaoshu,
-        yema,
-        xiabiao,"2222222222222222222222222222222222222222222222222222222222"
-    )
+    //     console.log(tiaoshu,
+    //     yema,
+    //     xiabiao,"2222222222222222222222222222222222222222222222222222222222"
+    // )
         let sql='SELECT * FROM t_address where user_id=? and add_codition=0 limit ?,?';
         PersonalModel.Readaddress(sql,[userId,xiabiao,tiaoshu]).then((data)=>{
-            console.log(data);
+            // console.log(data);
             response.send(data);
             //成功？
         }).catch((err)=>{//失败
@@ -68,7 +68,7 @@ const baokuanController={
     },
     delete(request,response){
         let uid=request.query.uid;
-        console.log(uid);
+        // console.log(uid);
         let sql=' DELETE FROM t_address WHERE addr_id =?';
         PersonalModel.delete(sql,[uid]).then((data)=>{
             response.send("ok");
@@ -87,7 +87,7 @@ const baokuanController={
             sql='UPDATE t_address SET add_default = 0 WHERE addr_id = ?'
         }
         PersonalModel.Readaddress(sql,[uid]).then((data)=>{
-            console.log(data);
+            // console.log(data);
            console.log("成功");
             response.send(data);
             //成功？
@@ -104,12 +104,12 @@ const baokuanController={
         let PhoneNumber = request.body.PhoneNumber;
         let add_default = request.body.add_default;
         let userId=request.session.user.user_id;
-        console.log(addr_pro,
-        addr_city,
-        addr_area,
-        addr_detail,
-        PhoneNumber,
-        add_default);
+        // console.log(addr_pro,
+        // addr_city,
+        // addr_area,
+        // addr_detail,
+        // PhoneNumber,
+        // add_default);
         let sql;
         if(add_default==1){
             sql='UPDATE t_address SET add_default = 0 WHERE 1 = 1;INSERT INTO t_address VALUES(?,?,?,?,?,?,?,?,?,?,?)'
@@ -117,13 +117,13 @@ const baokuanController={
             sql='INSERT INTO t_address VALUES(?,?,?,?,?,?,?,?,?,?,?)';
         }
         PersonalModel.Readaddress(sql,[null,userId,addr_pro,addr_city,addr_area,addr_detail,null,PhoneNumber,addr_person,add_default,0]).then((data)=>{
-            console.log(data);
-            console.log("好");
+            // console.log(data);
+            // console.log("好");
             response.send("ok");
             //成功？
         }).catch((err)=>{//失败
-            console.log(err);
-            console.log("不好");
+            // console.log(err);
+            // console.log("不好");
             response.send("no")
         })
     },
@@ -255,7 +255,7 @@ const baokuanController={
         let sql="UPDATE t_orderdetail SET order_detail_condition =1 WHERE order_id=?";
 
         PersonalModel.QueryOrder(sql,[uid]).then((data)=>{
-            console.log(data);
+            // console.log(data);
             response.send("ok");
         }).catch((err)=>{//失败
             console.log(err);

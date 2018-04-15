@@ -14,6 +14,7 @@ const loginRegisterController={
                 console.log("错误")
             }else{
                 if(data.length>0){
+                    console.log(data[0]);
                     req.session.user=data[0];
                     res.send("ok");
                 }else{

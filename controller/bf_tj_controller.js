@@ -11,7 +11,7 @@ const bf_tj_contro ={
             let imgtext = data[0].pro_text_title;
             let itext = imgtext.split(",");
             if(req.session.user){
-                res.render("baifangtuijian.html",{isrc:isrc,itext:itext,"username": req.session.user})
+                res.render("baifangtuijian.html",{isrc:isrc,itext:itext,"username": req.session.user.user_name})
             }else{
                 res.render("baifangtuijian.html",{isrc:isrc,itext:itext,"username": req.session.user})
             }
@@ -86,32 +86,36 @@ const bf_tj_contro ={
         }
     },
     "sign":function (req,res) {
-        if(req.session.username){
-            res.render("register.html",{"username":req.session.username});
+        if(req.session.user){
+            res.render("register.html",{"username":req.session.user.user_name});
         }else{
-            res.render("register.html",{"username":req.session.username});
+            res.render("register.html",{"username":req.session.user});
         }
     },
     "logo":function (req,res) {
-        if(req.session.username){
-            res.render("login.html",{"username":req.session.username});
+        if(req.session.user){
+            res.render("index.html",{"username":req.session.user.user_name});
         }else{
-            res.render("login.html",{"username":req.session.username});
+            res.render("login.html",{"username":req.session.user});
         }
     },
     "person":function (req,res) {
-      res.redirect("person.html")
+        if(req.session.user){
+            res.render("PersonalCenter.html",{"username":req.session.user.user_name})
+        }else {
+            res.render("PersonalCenter.html",{"username":req.session.user.user_name})
+        }
     },
     "shoppingCart":function (req,res) {
         if(req.session.user){
-            res.redirect("person.html")
+            res.redirect("PersonalCenter.html")
         }else {
             res.redirect("login.html")
         }
     },
     "index":function (req,res) {
         if(req.session.user){
-            res.render("index.html",{"username":req.session.user});
+            res.render("index.html",{"username":req.session.user.user_name});
         }else {
             res.render("index.html",{"username":req.session.user})
         }
@@ -119,49 +123,49 @@ const bf_tj_contro ={
     },
     "brandstory":function (req,res) {
         if(req.session.user){
-            res.render("brandstory.html",{"username":req.session.user})
+            res.render("brandstory.html",{"username":req.session.user.user_name})
         }else {
             res.render("brandstory.html",{"username":req.session.user})
         }
     },
     "ciqiwenhua":function (req,res) {
         if(req.session.user){
-            res.render("ciqiwenhua_zx.html",{"username":req.session.user})
+            res.render("ciqiwenhua_zx.html",{"username":req.session.user.user_name})
         }else {
             res.render("ciqiwenhua_zx.html",{"username":req.session.user})
         }
     },
     "OrderGeneration":function (req,res) {
         if(req.session.user){
-            res.render("OrderGeneration.html",{"username":req.session.user})
+            res.render("OrderGeneration.html",{"username":req.session.user.user_name})
         }else {
             res.render("OrderGeneration.html",{"username":req.session.user})
         }
     },
     "OrderPayment":function (req,res) {
         if(req.session.user){
-            res.render("OrderPayment.html",{"username":req.session.user})
+            res.render("OrderPayment.html",{"username":req.session.user.user_name})
         }else {
             res.render("OrderPayment.html",{"username":req.session.user})
         }
     },
     "PaymentSuccess":function (req,res) {
         if(req.session.user){
-            res.render("PaymentSuccess.html",{"username":req.session.user})
+            res.render("PaymentSuccess.html",{"username":req.session.user.user_name})
         }else {
             res.render("PaymentSuccess.html",{"username":req.session.user})
         }
     },
     "weixinPayment":function (req,res) {
         if(req.session.user){
-            res.render("weixinPayment.html",{"username":req.session.user})
+            res.render("weixinPayment.html",{"username":req.session.user.user_name})
         }else {
             res.render("weixinPayment.html",{"username":req.session.user})
         }
     },
     "zfbPayment":function (req,res) {
         if(req.session.user){
-            res.render("zfbPayment.html",{"username":req.session.user})
+            res.render("zfbPayment.html",{"username":req.session.user.user_name})
         }else {
             res.render("zfbPayment.html",{"username":req.session.user})
         }
@@ -169,7 +173,7 @@ const bf_tj_contro ={
     "baokuan":function (req,res) {
         console.log(1);
         if(req.session.user){
-            res.render("baokuan.html",{"username":req.session.user})
+            res.render("baokuan.html",{"username":req.session.user.user_name})
         }else {
             res.render("baokuan.html",{"username":req.session.user})
         }

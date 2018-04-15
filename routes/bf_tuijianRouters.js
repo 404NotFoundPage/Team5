@@ -30,6 +30,8 @@ router.get("/baokuan.html",bf_tj_controller.baokuan);
 /*------------------------/*登录*/
 router.get("/login.html",bf_tj_controller.logo);
 router.get("/register.html",bf_tj_controller.sign);
+/*个人中心*/
+router.get("/PersonalCenter.html",bf_tj_controller.person)
 /*------------------------品牌故事*/
 router.get("/brandstory.html",bf_tj_controller.brandstory);
 router.get("/ciqiwenhua_zx.html",bf_tj_controller.ciqiwenhua);
