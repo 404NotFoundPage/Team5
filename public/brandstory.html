@@ -83,5 +83,31 @@
 <%-include footer.html%>
 
 <script src="js/less.min.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $("header").css("opacity",1)
+        },200);
+        setTimeout(function () {
+            $("#section1").css("opacity",1)
+        },300);
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 380) {
+                $("#section2").css("opacity", 1);
+            }
+            if ($(this).scrollTop() > 1100) {
+                $("#section3").css("opacity", 1);
+            }
+            if ($(this).scrollTop() > 1700) {
+                $("#section4").css("opacity", 1);
+            }
+            if ($(this).scrollTop() > 2200) {
+                $("footer").css("opacity", 1);
+            }
+        })
+    });
+</script>
 </body>
 </html>

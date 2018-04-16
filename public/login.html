@@ -1,14 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>登录</title>
-	<link rel="stylesheet/less" href="less/common.less">
 	<link rel="stylesheet/less" href="less/loginfjile.less"/>
 </head>
 <body>
-<%-include head.html%>
-<!--<img src="images/loginBg1.jpg" alt=""/>-->
+<%-include head.html %>
 <section>
 	<div class="login-div">
 		<div class="login-h1-p">
@@ -18,37 +16,29 @@
 		<div class="login-in">
 			<div class="login-user">登录账号:</div>
 			<div class="input">
-				<div class="tubia"></div>
-				<div class="inp" contenteditable="true"></div>
+				<div class="tubia">&#xe605;</div>
+				<input name="username" class="inp" maxlength="11" type="text"/>
 			</div>
 		</div>
 		<div class="login-in">
 			<div class="login-user logw2">登录密码:</div>
 			<div class="input input1">
-				<div class="tubia"></div>
-				<div class="inp" contenteditable="true"></div>
+				<div class="tubia">&#xe65d;</div>
+				<!--<input class="inp" type="password"/>-->
+				<input name="password" class="inp" maxlength="18" type="password"/>
 			</div>
 		</div>
 		<div class="xiaci">
-			<input class="check" type="checkbox"/>
+			<input class="check" checked="checked" type="checkbox"/>
 			<div>下次自动登录</div>
 		</div>
 		<div id="but">登录</div>
-		<div class="zhuce">还没账号？ <a href="#">立即注册</a></div>
+		<div class="zhuce">还没账号？ <a href="/register.html">立即注册</a></div>
 	</div>
 </section>
 
 <script src="js/less.min.js" type="text/javascript"></script>
 <script src="js/jquery-1.11.3.js"></script>
-<script>
-	$(".inp").focus(function(){
-			console.log(222);
-			$(this).parent().css({border:"1px solid #273B5E"})
-	});
-	$(".inp").blur(function(){
-		console.log(222);
-		$(this).parent().css({border:"1px solid #d4d4d4"})
-	})
-</script>
+<script src="js/login.js"></script>
 </body>
 </html>

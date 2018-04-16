@@ -108,29 +108,6 @@ $(document).ready(function () {
 
     });
 
-    // $("body").on("mousedown", ".moveImg", function (e) {
-    //     let _self = this;
-    //     let isMove = true;
-    //     let div_x = e.pageX - $(this).offset().left;
-    //     let div_y = e.pageY - $(this).offset().top;
-    //     console.log($(this).offset().left);
-    //     $(document).mousemove(function (e1) {
-    //         // console.log(e1.pageY);
-    //         // console.log(e1.pageY-div_y+"_____________");
-    //         if (isMove) {
-    //             let obj = $(_self);
-    //             let left = e1.pageX - div_x;
-    //             if (left < 125) left = '125px';
-    //             if (left > 680) left = '680px';
-    //             let top = e1.pageY - div_y;
-    //             if (top > 1335) top = '1335px';
-    //             if (top < 985) top = '985px';
-    //             obj.css({"position": "absolute", "left": left, "top": top});
-    //         }
-    //     }).mouseup(function (e) {
-    //         isMove = false;
-    //     })
-    // });
 /*--------------商品切换-------------------*/
     $(".custom_right-top li").each(function (i, e) {
         $(e).click(function () {

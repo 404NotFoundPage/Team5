@@ -2,113 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>head</title>
+    <title>支付方式</title>
     <link rel="stylesheet/less" href="less/common.less">
     <link rel="stylesheet/less" href="less/OrderGeneration.less">
 </head>
 <body>
-<header>
-    <nav class="nav">
-        <div class="nav_logo">
-            <h1>
-                <a href="#">
-                    <img src="images/logo.png">
-                </a>
-            </h1>
-        </div>
-        <div class="nav_right">
-            <div class="nav_log">
-                <ul>
-                    <li><a href="#">注册</a></li>
-                    <li>|</li>
-                    <li><a href="#">登录</a></li>
-                    <li><a href="#">&#xe606;</a></li>
-                </ul>
-            </div>
-            <div class="nav_bar">
-                <ul>
-                    <li><a href="#">首页</a></li>
-                    <li><a href="#">花瓶</a></li>
-                    <li><a href="#">茶具</a></li>
-                    <li><a href="#">摆件</a></li>
-                    <li><a href="#"><span>&#xe689;</span>爆款推荐</a></li>
-                    <li><a href="#">品牌故事</a></li>
-                    <li><a href="#">艺术馆</a></li>
-                    <li>
-                        <div class="search">
-                            <span><a href="#">&#xe517;</a></span>
-                            <input type="text" placeholder="输入搜索内容">
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+<%-include head.html%>
 
 <section>
     <div id="divauto">
+        <img id="img1" src="images/dingdan/支付生成.png" alt=""/>
         <div id="top">
             <p>您的订单已生成，请尽快支付!</p>
+            <p>订 单 号: <span id="s1"></span></p>
             <div>
-                <p>订 单 号: <span></span></p>
-                <p>收 件 人: <span></span></p>
-                <p>收货地址: <span></span></p>
-                <p>联系电话: <span></span></p>
+                <p>
+                    收 件 人: <span>沈敏</span>
+                </p>
+                <p>
+                    收货地址: <span>四川省成都市航空港街道</span>
+                </p>
+                <p>
+                    联系电话: <span>13545673567</span>
+                </p>
             </div>
         </div>
         <div id="bot">
             <p>支付方式:</p>
             <div>
-                <div class="order"></div>
-                <div class="order"></div>
-                <div class="order"></div>
-                <div class="order"></div>
-                <div class="order"></div>
-                <div class="order"></div>
-                <div class="order"></div>
+                <div class="order" onclick="order5()"><img src="images/dingdan/weixin.png" alt=""/></div>
+                <div class="order" onclick="order6()"><img src="images/dingdan/zhifubao.png" alt=""/></div>
             </div>
         </div>
-        <div id="orderBot">立即支付</div>
     </div>
 </section>
 
-<footer class="footer">
-    <div>
-        <img src="images/logo.png">
-    </div>
-    <div>
-        <p>
-            <span><a href="#">花瓶</a></span><i> · </i>
-            <span><a href="#">茶具</a></span><i> · </i>
-            <span><a href="#">摆件</a></span><i> · </i>
-            <span><a href="#">爆款推荐</a></span><i> · </i>
-            <span><a href="#">品牌故事</a></span><i> · </i>
-            <span><a href="#">艺术馆</a></span>
-        </p>
-    </div>
-    <div>
-        <p>地址：四川省高新区成都市高新区云华路222号14栋603</p>
-        <p><span>电话：028-8238482 </span>   <span>传真：028-2344567</span></p>
-    </div>
-    <div>
-        <ul>
-            <li><a href="#">&#xe61c;</a></li>
-            <li><a href="#">&#xe658;</a></li>
-            <li><a href="#">&#xe630;</a></li>
-        </ul>
-    </div>
-    <div>
-        <p> Copyright © 2007-2018 www.anjuke.com All Rights Reserved   ICP</p>
-    </div>
-</footer>
+<%-include footer.html%>
 
 <script src="js/less.min.js" type="text/javascript"></script>
 <script src="js/jquery-1.11.3.js"></script>
 <script>
     $(".order").on("click",function(){
-        $(".order").css({border:"1px solid red"});
-        $(this).css({border:"1px solid #000000"})
+        $(this).css({border:"1px solid #cccccc"})
+    });
+    function order5(){
+        window.location.href="http://localhost:1111/weixinPayment.html?order_id="+ $("#s1").text();
+    }
+    function order6(){
+        window.location.href="http://localhost:1111/zfbPayment.html?zorder_id="+$("#s1").text();
+    }
+    function uuid(){
+        var s = [];
+        var hexDigits = "0123456789";
+        for (var i =0; i<=20; i++) {
+            s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+        }
+        s[4] = "4";  // bits 12-15 of the time_hi_and_version field to 0010
+        s[9] = hexDigits.substr((s[9] & 0x3) | 0x8, 1);  // bits 6-7 of the clock_seq_hi_and_reserved to 01
+//        s[8] = s[13] = s[18] = s[23] = "-";
+
+        var uuid = s.join("");
+        $("#s1").text(uuid);
+        return uuid;
+    }
+    uuid();
+    $("#xz").on('click',function(){
+        $("#xinzeng").css({"visibility":"visible"})
     })
 </script>
 </body>

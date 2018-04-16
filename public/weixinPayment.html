@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>微信支付</title>
+    <link rel="stylesheet/less" href="less/common.less">
+    <link rel="stylesheet/less" href="less/weixinPayment.less">
+</head>
+<body>
+<%-include head.html%>
+
+<section>
+        <div id="section1">
+        <div>
+            <p class="p1">订单提交成功，请尽快付款！订单号: <span id="s2"></span></p>
+            <p class="p2">应付金额:  <span id="je">1200</span> 元</p>
+        </div>
+        <div class="twoma">
+            <img src="images/dingdan/weixin.jpg" alt=""/>
+            <div>
+                <h6>&#xe661;</h6>
+                <p>请使用微信“扫一扫” <br/>
+                    扫描二维码支付
+            </p>
+               </div>
+            <img class="shouji" src="images/phone.png" alt=""/>
+    </div>
+        </div>
+</section>
+
+<%-include footer.html%>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/less.min.js" type="text/javascript"></script>
+<script>
+//    window.setTimeout(function(){
+//        window.location.href="http://localhost:1111/PaymentSuccess.html?Payment_id="+ $("#s2").text()+'&Payment_je='+$("#je").text();
+//    },10000)
+</script>
+</body>
+</html>

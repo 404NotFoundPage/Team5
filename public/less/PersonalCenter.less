@@ -1,0 +1,528 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+@font-face{
+  font-family: "person";
+  src: url("../font/iconfont.ttf");
+  url:"iconfont.eot";
+  url:"iconfont.ttf";
+}
+@font-face{
+  font-family: "iconfont";
+  src: url("../font/iconfont.ttf");
+}
+
+body{
+  background-color: #F5F5F5;
+}
+section{
+    .jia,.jian{
+      font-size: 20px;
+      font-family: iconfont;
+      cursor: pointer;
+      color: #000;
+      font-weight: 900;
+    }
+}
+@pc-height:700px;
+@pc-width:1349px;
+
+//个人中心左边的列表
+.pcleft_liebiao{
+  float:left;
+  width: 200px;
+  height: 700px;
+  background-color: #ffffff;
+  margin: 50px 0 0 170px;
+  h4{
+    margin: 50px 0 0 10px;
+    cursor: pointer;
+  }
+  p{
+    margin:15px 0 0 30px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+}
+
+
+//个人中心右边的列表
+// 隐藏个人资料
+.pcright_liebiao{
+  float:right;
+  width: 855px;
+  height:700px;
+  background-color: #ffffff;
+  margin: 50px 80px 50px 0;
+  //display: none;
+  .pcphone_box{
+    border-bottom: 1px solid #0f0f0f;
+  }
+  div{
+    width: 755px;
+    height: 300px;
+    margin: 25px auto;
+    .pchead_phone{
+      width: 266px;
+      height: 230px;
+      float: left;
+      img{
+        width: 266px;
+        height: 230px;
+      }
+    }
+    .pchead_ziliao{
+      width: 465px;
+      height: 210px;
+      float: left;
+      margin-left: 20px;
+      padding: 20px 0 0 0;
+      p{
+        padding-top:20px;
+        .xiugai{
+          margin-left: 290px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .pcright_down{
+    width: 755px;
+    height: 300px;
+    margin: 30px auto;
+    .pcdingdan_phone{
+      width: 90px;
+      height: 90px;
+      border-radius: 90px;
+      border: 1px solid darkviolet;
+      float: left;
+      font-family: "person";
+      text-align:center;
+      line-height:90px;
+      font-size: 40px;
+    }
+    .pcdingdan_phone2{
+      margin-left: 150px;
+    }
+    .pcdingdan_phone3{
+      clear: both;
+    }
+    .pcdiangdan_chaxun{
+      width: 150px;
+      height: 50px;
+      float: left;
+      margin: 50px 0 0 10px;
+      p:last-child{
+        font-size: 12px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+//修改密码
+.pcright_liebiao1 {
+  float: right;
+  width: 600px;
+  height: 400px;
+  background-color: #ffffff;
+  margin: 50px 300px 0 0;
+  display: none;
+  p{
+   color: red;
+   margin-left: 249px;
+   display: none;
+  }
+  div{
+    padding:50px 0 0 0;
+    margin: 0 0 0 135px;
+    input{
+      width: 180px;
+      height:25px;
+    }
+    button{
+      width:125px;
+      height: 40px;
+      background-color: #273B5E;
+      margin-left: 20px;
+      color: white;
+      outline: none;
+      border: 1px solid #273B5E;
+      border-radius: 5px;
+      cursor: pointer;
+      -webkit-transition: all .1s linear;
+      &:hover{
+        background-color: white;
+        color:#273B5E;
+      }
+    }
+  }
+}
+
+//我的地址
+.pcright_liebiao2{
+  float: right;
+  width: 855px;
+  min-height: 870px;
+  background-color: #ffffff;
+  margin: 50px 80px 50px 0;
+  display: none;
+  position: relative;
+  span{
+    color:red;
+  }
+  .pcright_xgdz{
+    width:780px;
+    height:48px;
+    background-color: #273b5e;
+    margin: 35px auto;
+    p{
+      color: #ffffff;
+      line-height: 48px;
+      margin-left: 30px;
+    }
+  }
+  p{
+    margin-left: 90px;
+  }
+  //所在地区
+  .pcright_szdq{
+    margin: 20px 0 0 120px;
+    #pcright_county{
+      margin-left:4px;
+      width: 106px;
+      height: 39px;
+      position: relative;
+    }
+  }
+  //详细地址
+  .pcright_adress{
+    margin: 20px 0 0 120px;
+    p{
+      margin: 30px 0 0 0;
+    }
+    textarea{
+      width: 460px;
+      height: 150px;
+      position: relative;
+      left:80px;
+      top:-20px;
+      line-height: 20px;
+    }
+  }
+
+  //邮政编码
+  .pcright_code{
+    margin: 20px 0 0 123px;
+    input{
+      width: 270px;
+      height: 27px;
+      margin-left: 7px;
+    }
+  }
+
+  //收件人
+  .pcright_addressee{
+    margin: 20px 0 0 123px;
+    input{
+      width: 270px;
+      height: 27px;
+      margin-left: 0px;
+    }
+  }
+
+  //默认地址
+  .pcright_defalut{
+    margin: 20px 0 0 135px;
+    input{
+      margin-left: 77px;
+    }
+    button{
+      width: 130px;
+      height: 47px;
+      font-size: 24px;
+      margin:20px 0 0 77px;
+      border-radius: 5px;
+      border: 1px solid #273B5E;
+      background-color: #273B5E;
+      cursor: pointer;
+      color: white;
+      -webkit-transition: all .1s linear;
+      &:hover{
+        background-color: white;
+        color:#273B5E;
+      }
+    }
+  }
+
+  //地址的表格
+.pcright_xgdz1{
+    width:780px;
+    height:48px;
+    background-color: #273b5e;
+    margin: 35px auto;
+    color: #ffffff;
+    line-height: 48px;
+    table{
+      width: 780px;
+      tr{
+        th{
+          text-align: center;
+        }
+        td{
+          color: #0f0f0f;
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  //翻页序号
+  .pcright_xuhao{
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+
+//我的订单
+.pcright_order{
+  float: right;
+  width: 855px;
+  height: 800px;
+  background-color: #ffffff;
+  margin: 50px 80px 50px 0;
+  display: none;
+  .pcright_wddz{
+    width:780px;
+    height:48px;
+    background-color: #273b5e;
+    margin: 35px auto;
+    color: #ffffff;
+    line-height: 48px;
+    table{
+      width: 780px;
+      text-align: center;
+      img{
+        width: 100px;
+        height: auto;
+      }
+    }
+    .pcright_ddcx{
+      margin: 30px 0 0 70px;
+      font-size: 0px;
+      input{
+        width: 270px;
+        height: 40px;
+        display: block;
+        float: left;
+      }
+      button{
+        width: 95px;
+        height: 44px;
+        font-size: 16px;
+        color: white;
+        background-color: #273B5E;
+        border: 1px solid #273B5E;
+        -webkit-transition: all .1s linear;
+        cursor: pointer;
+        &:hover{
+          background-color: white;
+          color:#273B5E;
+        }
+      }
+    }
+  }
+}
+
+//我的收藏
+.pcright_wdsc{
+  float: right;
+  width: 855px;
+  height: 800px;
+  background-color: #ffffff;
+  margin: 50px 80px 50px 0;
+  display: none;
+  .pcright_wdscimg{
+    float: left;
+    margin: 50px 0 0 50px;
+    width: 200px;
+    height: 220px;
+
+    overflow: hidden;
+    p{
+      font-family: "";
+      color: red;
+      text-align: right;
+      padding: 10px;
+      span{
+        cursor: pointer;
+      }
+    }
+    img{
+      width: 200px;
+      height: 200px;
+    }
+    p{
+      text-align: right;
+      span{
+        color: red;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+//我的订单
+.pcright_wddd{
+  float: right;
+  width: 855px;
+  height: 800px;
+  background-color: #ffffff;
+  margin: 50px 80px 50px 0;
+  display: none;
+  position: relative;
+  .pcright_wdddlb{
+    width:780px;
+    height:48px;
+    background-color: #273b5e;
+    tbody{
+      background-color: white;
+    }
+    img{
+      margin: 10px 20px;
+      width: auto;
+      height: 100px;
+      vertical-align:middle;
+    }
+    margin: 35px auto;
+    color: #ffffff;
+    line-height: 48px;
+    .pcright_wdddlb{
+      width: 780px;
+      tr{
+        th{
+          text-align: center;
+        }
+      }
+    }
+  }
+  .pcright_wdddjs{
+    position: absolute;
+    bottom: 100px;
+    right: 40px;
+    p{
+      margin:0 0 40px 650px;
+    }
+    button{
+      width: 140px;
+      height:40px;
+      font-size: 16px;
+      background-color: #273B5E;
+      color: white;
+      border: 1px solid  #273B5E;
+      border-radius: 5px;
+      -webkit-transition: all .1s linear;
+      &:hover{
+        background-color: white;
+        color:#273B5E;
+
+      }
+    }
+    .pcright_wdddjsbtn{
+      margin-left: 440px;
+    }
+  }
+}
+select {
+  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+  border: solid 1px #000;
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  /*在选择框的最右侧中间显示小箭头图片*/
+  background: none;
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  padding-right: 14px;
+}
+.tbodygou{
+  line-height: normal;
+  color: #000;
+  text-align: center;
+
+  p{
+    cursor: pointer;
+  }
+}
+.jiange{
+  padding: 0 10px;
+}
+.tbody2{
+  background-color: white;
+  color: #000;
+  line-height: normal;
+  p{
+    cursor: pointer;
+  }
+  img{
+    margin: 10px 20px;
+    width: auto;
+    height: 100px;
+    vertical-align:middle;
+
+  }
+}
+.cus{
+  cursor: pointer;
+}
+.cha:hover{
+  color: #273B5E;
+}
+//弹框
+#alert{
+  width: 280px;
+  height: 160px;
+  position: fixed;
+  top: 50%;
+  text-align: center;
+  line-height: 160px;
+  border-radius: 5px;
+  color: #273b5e;
+  left: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+}
+#zhezhaoceng{
+  width: 1349px;
+  height: 768px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(0,0,0,0.5);
+}
+//分页的哦
+.fenye,.fenye1{
+  width: 855px;
+  height: 50px;
+  overflow: hidden;
+  text-align: center;
+  line-height: 50px;
+  position: absolute;
+  bottom: 0;
+}
+.fenye,.fenye1 p span{
+  color: #000;
+}
+.fenye,.fenye1 .click{
+  cursor: pointer;
+  color: #000
+}
+.fenye,.fenye1 .click1{
+  color: #273B5E;
+}
+.fenye1{
+  bottom: 250px;
+}

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+﻿
+>>>>>>> 539a1aaf3fd9634e95f4cf87de7d772fd410b2c5
 /**
  * Created by Administrator on 2018/3/30 0030.
  */
@@ -12,6 +16,16 @@ const logger = require("morgan");
 const bf_router=require("./routes/bf_tuijianRouters");
 const productRouter=require('./routes/productRouter.js');
 const router=require("./routes/baokuanrouter.js");
+<<<<<<< HEAD
+=======
+const indexRouter=require('./routes/indexRouter.js');
+const orderRouter=require('./routes/orderRouter.js');
+
+const routerRL=require("./routes/loginRegister.js");// 登录注册页面的路由
+const Personal=require("./routes/Personal.js"); //个人中心路由
+var AV = require('leanengine'); //引用短信模块
+AV.initialize("B5XdiuFWib69Dyr9wgAJYPPQ-gzGzoHsz","Q5FlPGAmOoWMKociWGgNyjKU");
+>>>>>>> 539a1aaf3fd9634e95f4cf87de7d772fd410b2c5
 
 
 const app = express();
@@ -24,13 +38,19 @@ app.use(session({
     rolling:true,
     saveUninitialized:true
 }));
+app.use(bodyParser.urlencoded({extended:false}));
 app.use(router);
 app.use(bf_router);
 app.use(productRouter);
+app.use(orderRouter);
+app.use(indexRouter);
 app.use(cookie());
 
+app.use(routerRL);// 登录注册！！！！！
+app.use(Personal); //个人中心
+
 //将post数据储存为json数据
-app.use(bodyParser.urlencoded({extended:false}));
+
 app.use(bodyParser.json());
 //配置ejs
 app.set("views",__dirname+"/public");//配置模板所在路径
