@@ -263,66 +263,66 @@
                 success:function (data) {
                     console.log(data);
                     $(".sec2").html(
-                        '<div class="sp_sec2_left"><img src="'+data[18].pro_img_url+'"></div>'
+                        '<div class="sp_sec2_left"><img src="'+data[30].pro_img_url+'"></div>'
                         +'<div class="sp_sec2_info">' +
-                        '<button class="chaJu1" chaju1="'+data[18].pro_id+'">立即购买</button>'+
-                        '<p>'+data[18].pro_name+'</p>'+
-                        '<p>'+data[18].pro_info.split("，")[0]+'</p>'+
-                        '<p>'+data[18].pro_info.split("，")[1]+'</p>'+
+                        '<button class="chaJu1" chaju1="'+data[30].pro_id+'">立即购买</button>'+
+                        '<p>'+data[30].pro_name+'</p>'+
+                        '<p>'+data[30].pro_info.split("，")[0]+'</p>'+
+                        '<p>'+data[30].pro_info.split("，")[1]+'</p>'+
                         '</div>'+
                         '<div class="sp_sec2_right"><img src="images/sp_sec2_right.png"></div>'
                     );
                     $(".sec3").html(
                         '<div class="sec3_info">' +
                         '<div><img src="images/suci_dj.png"></div>' +
-                        '<p>'+data[19].pro_info+'</p>' +
-                        '<p>￥'+data[19].pro_price+'</p>' +
-                        '<button class="chaJu2" chaju2="'+data[19].pro_id+'">立即购买 &gt;</button></div>' +
-                        '<div class="sec_img"><img src="'+data[19].pro_img_url+'"></div>'
+                        '<p>'+data[31].pro_info+'</p>' +
+                        '<p>￥'+data[31].pro_price+'</p>' +
+                        '<button class="chaJu2" chaju2="'+data[31].pro_id+'">立即购买 &gt;</button></div>' +
+                        '<div class="sec_img"><img src="'+data[31].pro_img_url+'"></div>'
                     );
                     $(".sec4").html(
                         '<div class="sec4_left">' +
-                        '<h3>'+data[20].pro_name+'</h3>' +
-                        '<p>'+data[20].pro_info+'</p>' +
-                        '<img src="'+data[20].pro_img_url+'">' +
-                        '<p>￥'+data[20].pro_price+'</p>' +
-                        '<button class="chaJu3" chaju3="'+data[20].pro_id+'">立即购买 &gt;</button></div>' +
+                        '<h3>'+data[32].pro_name+'</h3>' +
+                        '<p>'+data[32].pro_info+'</p>' +
+                        '<img src="'+data[32].pro_img_url+'">' +
+                        '<p>￥'+data[32].pro_price+'</p>' +
+                        '<button class="chaJu3" chaju3="'+data[32].pro_id+'">立即购买 &gt;</button></div>' +
                         '<div class="sec4_right">' +
-                        '<h3>'+data[21].pro_name+'</h3>' +
-                        '<p>'+data[21].pro_info+'</p>' +
-                        '<p>￥'+data[21].pro_price+'</p>' +
-                        '<button class="chaJu4" chaju4="'+data[21].pro_id+'">立即购买</button>' +
-                        '<div class="sec4_right_left"><img src="'+data[21].pro_img_url.split(",")[0]+'"></div>' +
-                        '<div class="sec4_right_right"><img src="'+data[21].pro_img_url.split(",")[1]+'"></div></div>'
+                        '<h3>'+data[33].pro_name+'</h3>' +
+                        '<p>'+data[33].pro_info+'</p>' +
+                        '<p>￥'+data[33].pro_price+'</p>' +
+                        '<button class="chaJu4" chaju4="'+data[33].pro_id+'">立即购买</button>' +
+                        '<div class="sec4_right_left"><img src="'+data[33].pro_img_url.split(",")[0]+'"></div>' +
+                        '<div class="sec4_right_right"><img src="'+data[33].pro_img_url.split(",")[1]+'"></div></div>'
                     );
                     $(".sec6").html(
                         '<div class="sec6_left">' +
-                        '<img src="'+data[22].pro_img_url.split(",")[0]+'">' +
+                        '<img src="'+data[34].pro_img_url.split(",")[0]+'">' +
                         '<p><span>一盏</span>一千年</p></div>' +
                         '<div class="sec6_info">' +
-                        '<div><p>TBYNN</p><p>'+data[22].pro_name+'</p></div>' +
-                        '<div><p>'+data[22].pro_info.split("，")[0]+'</p><p>'+data[22].pro_info.split("，")[1]+'</p><p>'+data[22].pro_info.split("，")[2]+'</p></div></div>' +
-                        '<div class="sec6_right"><img src="'+data[22].pro_img_url.split(",")[1]+'"><p>￥'+data[22].pro_price+'</p><button class="chaJu5" chaju5="'+data[22].pro_id+'">立即购买 &gt;</button></div>'
+                        '<div><p>TBYNN</p><p>'+data[34].pro_name+'</p></div>' +
+                        '<div><p>'+data[34].pro_info.split("，")[0]+'</p><p>'+data[34].pro_info.split("，")[1]+'</p><p>'+data[34].pro_info.split("，")[2]+'</p></div></div>' +
+                        '<div class="sec6_right"><img src="'+data[34].pro_img_url.split(",")[1]+'"><p>￥'+data[34].pro_price+'</p><button class="chaJu5" chaju5="'+data[34].pro_id+'">立即购买 &gt;</button></div>'
                     );
                     $(".sec7").html(
                         '<div class="sec7_left">' +
-                        '<img src="'+data[23].pro_img_url.split(",")[0]+'">' +
-                        '<p>￥'+data[23].pro_price+'</p>' +
-                        '<button class="chaJu6" chaju6="'+data[23].pro_id+'">立即购买 &gt;</button></div>' +
+                        '<img src="'+data[35].pro_img_url.split(",")[0]+'">' +
+                        '<p>￥'+data[35].pro_price+'</p>' +
+                        '<button class="chaJu6" chaju6="'+data[35].pro_id+'">立即购买 &gt;</button></div>' +
                         '<div class="sec7_info">' +
-                        '<div><p>TBYNN</p><p>'+data[23].pro_name+'</p></div>' +
-                        '<div><p>'+data[23].pro_info.split("，")[0]+'</p><p>'+data[23].pro_info.split("，")[1]+'</p><p>'+data[23].pro_info.split("，")[2]+'</p></div></div>' +
-                        '<div class="sec7_right"><img src="'+data[23].pro_img_url.split(",")[1]+'"></div>'
+                        '<div><p>TBYNN</p><p>'+data[35].pro_name+'</p></div>' +
+                        '<div><p>'+data[35].pro_info.split("，")[0]+'</p><p>'+data[35].pro_info.split("，")[1]+'</p><p>'+data[35].pro_info.split("，")[2]+'</p></div></div>' +
+                        '<div class="sec7_right"><img src="'+data[35].pro_img_url.split(",")[1]+'"></div>'
                     );
                     //                    ---------遮罩层处理------
-                    $(".zheZhao1")[0].setAttribute("proid",data[18].pro_id);
-                    $(".zheZhao2")[0].setAttribute("proid",data[19].pro_id);
-                    $(".zheZhao3")[0].setAttribute("proid",data[21].pro_id);
-                    $(".zheZhao4")[0].setAttribute("proid",data[21].pro_id);
-                    $(".zheZhao5")[0].setAttribute("proid",data[22].pro_id);
-                    $(".zheZhao6")[0].setAttribute("proid",data[22].pro_id);
-                    $(".zheZhao7")[0].setAttribute("proid",data[23].pro_id);
-                    $(".zheZhao8")[0].setAttribute("proid",data[23].pro_id);
+                    $(".zheZhao1")[0].setAttribute("proid",data[30].pro_id);
+                    $(".zheZhao2")[0].setAttribute("proid",data[31].pro_id);
+                    $(".zheZhao3")[0].setAttribute("proid",data[33].pro_id);
+                    $(".zheZhao4")[0].setAttribute("proid",data[33].pro_id);
+                    $(".zheZhao5")[0].setAttribute("proid",data[34].pro_id);
+                    $(".zheZhao6")[0].setAttribute("proid",data[34].pro_id);
+                    $(".zheZhao7")[0].setAttribute("proid",data[35].pro_id);
+                    $(".zheZhao8")[0].setAttribute("proid",data[35].pro_id);
                 }
             }
         )
