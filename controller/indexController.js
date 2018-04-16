@@ -3,6 +3,7 @@ const indexModal=require('./../dao/indexModal.js');
 module.exports={
     index:function(request,response){
         indexModal.index(function(err,data){
+            console.log(data)
             let newimg=[],newid=[],newprice=[],newname=[];//��Ʒ
             let baoimg=[],baoid=[],baoprice=[],baoname=[]; //����
             for(var i=0;i<data.length;i++){
@@ -20,7 +21,7 @@ module.exports={
             }
             if(request.session.user){
                 response.render('index.html',{"baoname":baoname,"baoprice":baoprice,"baoimg":baoimg,"baoid":baoid,
-                    "newname":newname, "newprice":newprice,"newimg":newimg,"newid":newid,"username":request.session.user})
+                    "newname":newname, "newprice":newprice,"newimg":newimg,"newid":newid,"username":request.session.user.user_name})
             }else{
                 response.render('index.html',{"baoname":baoname,"baoprice":baoprice,"baoimg":baoimg,"baoid":baoid,
                     "newname":newname, "newprice":newprice,"newimg":newimg,"newid":newid,"username":request.session.user})

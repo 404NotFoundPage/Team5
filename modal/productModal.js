@@ -16,9 +16,10 @@ module.exports={
     gettotalcount:function(pro_id,callback){
         let sql="select * from t_comment,t_user where t_user.user_id=t_comment.user_id and t_comment.pro_id=?";
         db.connect(sql,pro_id,callback);
-    },
-    reply:function(pro_id,callback){
-        let sql="select * from t_comment where com_reply_state=1 and pro_id=?";
-        db.connect(sql,pro_id,callback);
     }
+    // ,
+    // reply:function(pro_id,callback){
+    //     let sql="select * from t_comment where com_reply_state=1 and pro_id=?";
+    //     db.connect(sql,pro_id,callback);
+    // }
 };

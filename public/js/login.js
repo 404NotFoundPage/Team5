@@ -18,7 +18,7 @@ $("#but").on("click",function(){
     $.post("/login.do",data,function(xxxx){
         console.log(typeof xxxx);
         if(xxxx=="ok"){
-            window.location.href="PersonalCenter.html";
+            window.location.href="index.html";
         }else if(xxxx=="no"){
             $(".inp").val("");
             $(".inp").attr('placeholder',"账号或密码错误")

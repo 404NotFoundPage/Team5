@@ -1,17 +1,13 @@
 $(".connt2-2").focus(function(){
-    console.log(222);
     $(this).parent().css({border:"1px solid #273B5E"})
 });
 $(".connt2-2").blur(function(){
-    console.log(222);
     $(this).parent().css({border:"1px solid #d4d4d4"})
 });
 $(".yan2-2").focus(function(){
-    console.log(222);
     $(this).parent().css({border:"1px solid #273B5E"})
 });
 $(".yan2-2").blur(function(){
-    console.log(222);
     $(this).parent().css({border:"1px solid #d4d4d4"})
 });
 
@@ -54,7 +50,10 @@ $(".reg-but").on("click",function(){
             var VerCode=$("input[name=VerCode]").val();
             var phdata="telphone="+telphone+"&VerCode="+VerCode+"&password="+password;
             $.post("/reg.do",phdata,function(data){
-                    console.log(data)
+                    if(data=="ok"){
+
+                        window.location.href="login.html";
+                    }
             })
         }else{
             $(".yan2-2").val("");

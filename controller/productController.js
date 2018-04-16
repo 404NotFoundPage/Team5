@@ -22,7 +22,7 @@ module.exports={
             if(request.session.user){
                 response.render("productDetails.html",{"pro_id":pro_id,"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
                     "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
-                    "material":material,"username":request.session.user})
+                    "material":material,"username":request.session.user.user_name})
             }else{
                 response.render("productDetails.html",{"pro_id":pro_id,"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
                     "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
@@ -42,12 +42,14 @@ module.exports={
             let commenttextList=[];     //��������
             let commenttimeList=[];     //����ʱ������
             let userpicList=[];         //�û�ͷ������
+
             for(var j=0;j<data.length;j++){
                 usernameList.push(data[j].user_name);
                 commenttextList.push([data[j].com_message_count]);
                 commenttimeList.push(data[j].com_message_date);
                 userpicList.push(data[j].user_pic);
                 commentId.push(data[j].com_id);
+                console.log(data[j].user_pic);
             }
             response.send({usernameList,commenttextList,commenttimeList,userpicList,commentId});
         });
@@ -59,18 +61,20 @@ module.exports={
             let totalcount=data.length;        //��������
             response.send({totalcount});
         });
-    },
-    //�ظ�
-    reply:function(request,response){
-        let pro_id=request.body.pro_id;
-        productModal.reply(pro_id,function(err,data){
-            let comId=[];
-            let reply=[];
-            for(var j=0;j<data.length;j++){
-                comId.push(data[j].com_id);
-                reply.push(data[j].com_reply);
-            }
-            response.send({comId,reply})
-        })
     }
+    // ,
+    //�ظ�
+    // reply:function(request,response){
+    //     let pro_id=request.body.pro_id;
+    //     productModal.reply(pro_id,function(err,data){
+    //         let comId=[];
+    //         let reply=[];
+    //         console.log(data);
+    //         for(var j=0;j<data.length;j++){
+    //             comId.push(data[j].com_id);
+    //             reply.push(data[j].com_reply);
+    //         }
+    //         response.send({comId,reply})
+    //     })
+    // }
 };

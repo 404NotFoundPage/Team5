@@ -5,5 +5,5 @@ const productController=require('./../controller/productController.js');
 router.get('/productDetails.html',productController.productDetails);
 router.post('/comment.do',productController.comment);
 router.post('/gettotalcount.do',productController.gettotalcount);
-router.post('/reply.do',productController.reply);
+// router.post('/reply.do',productController.reply);
 module.exports=router;//��·�ɽ��б�¶

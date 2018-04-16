@@ -49,7 +49,7 @@ const loginRegisterController={
         AV.Cloud.verifySmsCode(VerCode,telphone).then(function(){
             //验证成功
             //写入数据库
-            console.log("成功");
+            // console.log("成功");
             res.send("ok");
             baokuanModel.reg(telphone,password,function (err,data) {
                 if(err){

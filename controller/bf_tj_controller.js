@@ -103,7 +103,7 @@ const bf_tj_contro ={
         if(req.session.user){
             res.render("PersonalCenter.html",{"username":req.session.user.user_name})
         }else {
-            res.render("PersonalCenter.html",{"username":req.session.user.user_name})
+            res.render("login.html",{"username":req.session.user})
         }
     },
     "shoppingCart":function (req,res) {
@@ -115,8 +115,10 @@ const bf_tj_contro ={
     },
     "index":function (req,res) {
         if(req.session.user){
+            console.log(req.session.user+"------------------------------------xwr1");
             res.render("index.html",{"username":req.session.user.user_name});
         }else {
+            console.log(req.session.user+"------------------------------------xwr2");
             res.render("index.html",{"username":req.session.user})
         }
 

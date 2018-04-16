@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>爆款推荐</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet/less" href="less/common.less">
     <link rel="stylesheet/less" type="text/less" href="css/baokuan.less" />
@@ -352,10 +352,10 @@ for(var i=1;i<$(".collecP").length+1;i++){
                 $("#Name_title3").html(data[4].pro_name);
                 $(".img5").eq(0).attr("src",data[1].pro_img_url.split(",")[0]);
                 $(".img6").eq(0).attr("src",data[1].pro_img_url.split(",")[1]);
-                $(".img5").eq(1).attr("src",data[3].pro_img_url.split("，")[0]);
-                $(".img6").eq(1).attr("src",data[3].pro_img_url.split("，")[1]);
-                $(".img5").eq(2).attr("src",data[5].pro_img_url.split("，")[0]);
-                $(".img6").eq(2).attr("src",data[5].pro_img_url.split("，")[1]);
+                $(".img5").eq(1).attr("src",data[3].pro_img_url.split(",")[0]);
+                $(".img6").eq(1).attr("src",data[3].pro_img_url.split(",")[1]);
+                $(".img5").eq(2).attr("src",data[5].pro_img_url.split(",")[0]);
+                $(".img6").eq(2).attr("src",data[5].pro_img_url.split(",")[1]);
             }
         })
     })
