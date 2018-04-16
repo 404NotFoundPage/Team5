@@ -11,6 +11,17 @@ const shangpinDao={
                 }
             })
         })
+    },
+    shoppingcar(sql,params){
+        return new Promise(function(resolve,reject){
+            db.connect(sql,params,(err,data)=>{
+                if (!err){
+                    resolve(data)
+                }else {
+                    reject(err)
+                }
+            })
+        })
     }
 };
 module.exports=shangpinDao;

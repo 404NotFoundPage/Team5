@@ -60,6 +60,63 @@
         <p>像流水一样的生活</p>
     </div>
 </section>
+<!--遮罩层1-->
+<div class="zheZhao1">
+    <div class="kuang1">
+        <span>&#xe61c;</span>
+        <span>&#xe624;</span>
+    </div>
+</div>
+<!--遮罩层2-->
+<div class="zheZhao2">
+    <div class="kuang2">
+        <span>&#xe61c;</span>
+        <span>&#xe624;</span>
+    </div>
+</div>
+<!--遮罩层3-->
+<div class="zheZhao3">
+    <div class="kuang3">
+        <span>&#xe61c;</span>
+        <span>&#xe624;</span>
+    </div>
+</div>
+<!--遮罩层4-->
+<div class="zheZhao4">
+    <div class="kuang4">
+        <span>&#xe61c;</span>
+        <span>&#xe624;</span>
+    </div>
+</div>
+<!--遮罩层5-->
+<div class="zheZhao5">
+    <div class="kuang5">
+        <span>&#xe61c;</span>
+        <span>&#xe624;</span>
+    </div>
+</div>
+<!--遮罩层6-->
+<div class="zheZhao6">
+    <div class="kuang6">
+        <span>&#xe61c;</span>
+        <span>&#xe624;</span>
+    </div>
+</div>
+<!--遮罩层7-->
+<div class="zheZhao7">
+    <div class="kuang7">
+        <span>&#xe61c;</span>
+        <span>&#xe624;</span>
+    </div>
+</div>
+<!--遮罩层8-->
+<div class="zheZhao8">
+    <div class="kuang8">
+        <span>&#xe61c;</span>
+        <span>&#xe624;</span>
+    </div>
+</div>
+
 <section class="sec2">
     <div class="sp_sec2_left">
         <img src="images/sec2_left.jpg">
@@ -257,6 +314,15 @@
                     '<div><p>'+data[17].pro_info.split("，")[0]+'</p><p>'+data[17].pro_info.split("，")[1]+'</p><p>'+data[17].pro_info.split("，")[2]+'</p></div></div>' +
                     '<div class="sec7_right"><img src="'+data[17].pro_img_url.split(",")[1]+'"></div>'
                 )
+                //                    ---------遮罩层处理------
+                $(".zheZhao1")[0].setAttribute("proid",data[12].pro_id);
+                $(".zheZhao2")[0].setAttribute("proid",data[13].pro_id);
+                $(".zheZhao3")[0].setAttribute("proid",data[15].pro_id);
+                $(".zheZhao4")[0].setAttribute("proid",data[15].pro_id);
+                $(".zheZhao5")[0].setAttribute("proid",data[16].pro_id);
+                $(".zheZhao6")[0].setAttribute("proid",data[16].pro_id);
+                $(".zheZhao7")[0].setAttribute("proid",data[17].pro_id);
+                $(".zheZhao8")[0].setAttribute("proid",data[17].pro_id);
             }
             }
         );
@@ -290,6 +356,434 @@
             // console.log(data);
             window.location="productDetails.html,"+data;
         })
+    }
+
+    $(".zheZhao1 span").click(shoppingcar1);
+    $(".zheZhao2 span").click(shoppingcar2);
+    $(".zheZhao3 span").click(shoppingcar3);
+    $(".zheZhao4 span").click(shoppingcar4);
+    $(".zheZhao5 span").click(shoppingcar5);
+    $(".zheZhao6 span").click(shoppingcar6);
+    $(".zheZhao7 span").click(shoppingcar7);
+    $(".zheZhao8 span").click(shoppingcar8);
+
+    $(".zheZhao1 span").attr("target","false");
+    $(".zheZhao2 span").attr("target","false");
+    $(".zheZhao3 span").attr("target","false");
+    $(".zheZhao4 span").attr("target","false");
+    $(".zheZhao5 span").attr("target","false");
+    $(".zheZhao6 span").attr("target","false");
+    $(".zheZhao7 span").attr("target","false");
+    $(".zheZhao8 span").attr("target","false");
+
+    $(".zheZhao1 span").eq(0).attr("col",88);
+    $(".zheZhao2 span").eq(0).attr("col",88);
+    $(".zheZhao3 span").eq(0).attr("col",88);
+    $(".zheZhao4 span").eq(0).attr("col",88);
+    $(".zheZhao5 span").eq(0).attr("col",88);
+    $(".zheZhao6 span").eq(0).attr("col",88);
+    $(".zheZhao7 span").eq(0).attr("col",88);
+    $(".zheZhao8 span").eq(0).attr("col",88);
+
+    function shoppingcar1(){
+        var proid=this.parentNode.parentNode.getAttribute("proid");
+        var col=this.getAttribute("col");
+        console.log(this.getAttribute("target"))
+        var Iscol;
+        // 判定是属于购物车还是收藏
+        if(col==null){
+            Iscol=false
+        }else {
+            Iscol=true
+        }
+        if(this.getAttribute("target")=="false"){
+            // 加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"false","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao1 span").eq(1).html('&#xe600')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao1 span").eq(0).html('&#xe61d')
+                    }
+                }
+            });
+            this.setAttribute("target","true");
+            console.log(this.getAttribute("target"))
+
+        }else {
+            // 取消加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"true","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    console.log("已从购物车中移除")
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao1 span").eq(1).html('&#xe624')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao1 span").eq(0).html('&#xe61c')
+                    }
+                }
+            });
+            this.setAttribute("target","false");
+        }
+    }
+    function shoppingcar2(){
+        var proid=this.parentNode.parentNode.getAttribute("proid");
+        var col=this.getAttribute("col");
+        console.log(this.getAttribute("target"))
+        var Iscol;
+        // 判定是属于购物车还是收藏
+        if(col==null){
+            Iscol=false
+        }else {
+            Iscol=true
+        }
+        if(this.getAttribute("target")=="false"){
+            // 加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"false","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao2 span").eq(1).html('&#xe600')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao2 span").eq(0).html('&#xe61d')
+                    }
+                }
+            });
+            this.setAttribute("target","true");
+            console.log(this.getAttribute("target"))
+
+        }else {
+            // 取消加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"true","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    console.log("已从购物车中移除")
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao2 span").eq(1).html('&#xe624')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao2 span").eq(0).html('&#xe61c')
+                    }
+                }
+            });
+            this.setAttribute("target","false");
+        }
+    }
+    function shoppingcar3(){
+        var proid=this.parentNode.parentNode.getAttribute("proid");
+        var col=this.getAttribute("col");
+        console.log(this.getAttribute("target"))
+        var Iscol;
+        // 判定是属于购物车还是收藏
+        if(col==null){
+            Iscol=false
+        }else {
+            Iscol=true
+        }
+        if(this.getAttribute("target")=="false"){
+            // 加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"false","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao3 span").eq(1).html('&#xe600')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao3 span").eq(0).html('&#xe61d')
+                    }
+                }
+            });
+            this.setAttribute("target","true");
+            console.log(this.getAttribute("target"))
+
+        }else {
+            // 取消加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"true","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    console.log("已从购物车中移除")
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao3 span").eq(1).html('&#xe624')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao3 span").eq(0).html('&#xe61c')
+                    }
+                }
+            });
+            this.setAttribute("target","false");
+        }
+    }
+    function shoppingcar4(){
+        var proid=this.parentNode.parentNode.getAttribute("proid");
+        var col=this.getAttribute("col");
+        console.log(this.getAttribute("target"))
+        var Iscol;
+        // 判定是属于购物车还是收藏
+        if(col==null){
+            Iscol=false
+        }else {
+            Iscol=true
+        }
+        if(this.getAttribute("target")=="false"){
+            // 加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"false","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao4 span").eq(1).html('&#xe600')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao4 span").eq(0).html('&#xe61d')
+                    }
+                }
+            });
+            this.setAttribute("target","true");
+            console.log(this.getAttribute("target"))
+
+        }else {
+            // 取消加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"true","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    console.log("已从购物车中移除")
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao4 span").eq(1).html('&#xe624')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao4 span").eq(0).html('&#xe61c')
+                    }
+                }
+            });
+            this.setAttribute("target","false");
+        }
+    }
+    function shoppingcar5(){
+        var proid=this.parentNode.parentNode.getAttribute("proid");
+        var col=this.getAttribute("col");
+        console.log(this.getAttribute("target"))
+        var Iscol;
+        // 判定是属于购物车还是收藏
+        if(col==null){
+            Iscol=false
+        }else {
+            Iscol=true
+        }
+        if(this.getAttribute("target")=="false"){
+            // 加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"false","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao5 span").eq(1).html('&#xe600')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao5 span").eq(0).html('&#xe61d')
+                    }
+                }
+            });
+            this.setAttribute("target","true");
+            console.log(this.getAttribute("target"))
+
+        }else {
+            // 取消加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"true","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    console.log("已从购物车中移除")
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao5 span").eq(1).html('&#xe624')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao5 span").eq(0).html('&#xe61c')
+                    }
+                }
+            });
+            this.setAttribute("target","false");
+        }
+    }
+    function shoppingcar6(){
+        var proid=this.parentNode.parentNode.getAttribute("proid");
+        var col=this.getAttribute("col");
+        console.log(this.getAttribute("target"))
+        var Iscol;
+        // 判定是属于购物车还是收藏
+        if(col==null){
+            Iscol=false
+        }else {
+            Iscol=true
+        }
+        if(this.getAttribute("target")=="false"){
+            // 加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"false","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao6 span").eq(1).html('&#xe600')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao6 span").eq(0).html('&#xe61d')
+                    }
+                }
+            });
+            this.setAttribute("target","true");
+            console.log(this.getAttribute("target"))
+
+        }else {
+            // 取消加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"true","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    console.log("已从购物车中移除")
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao6 span").eq(1).html('&#xe624')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao6 span").eq(0).html('&#xe61c')
+                    }
+                }
+            });
+            this.setAttribute("target","false");
+        }
+    }
+    function shoppingcar7(){
+        var proid=this.parentNode.parentNode.getAttribute("proid");
+        var col=this.getAttribute("col");
+        console.log(this.getAttribute("target"))
+        var Iscol;
+        // 判定是属于购物车还是收藏
+        if(col==null){
+            Iscol=false
+        }else {
+            Iscol=true
+        }
+        if(this.getAttribute("target")=="false"){
+            // 加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"false","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao7 span").eq(1).html('&#xe600')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao7 span").eq(0).html('&#xe61d')
+                    }
+                }
+            });
+            this.setAttribute("target","true");
+            console.log(this.getAttribute("target"))
+
+        }else {
+            // 取消加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"true","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    console.log("已从购物车中移除")
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao7 span").eq(1).html('&#xe624')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao7 span").eq(0).html('&#xe61c')
+                    }
+                }
+            });
+            this.setAttribute("target","false");
+        }
+    }
+    function shoppingcar8(){
+        var proid=this.parentNode.parentNode.getAttribute("proid");
+        var col=this.getAttribute("col");
+        console.log(this.getAttribute("target"))
+        var Iscol;
+        // 判定是属于购物车还是收藏
+        if(col==null){
+            Iscol=false
+        }else {
+            Iscol=true
+        }
+        if(this.getAttribute("target")=="false"){
+            // 加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"false","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao8 span").eq(1).html('&#xe600')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao8 span").eq(0).html('&#xe61d')
+                    }
+                }
+            });
+            this.setAttribute("target","true");
+            console.log(this.getAttribute("target"))
+
+        }else {
+            // 取消加入购物车或者收藏数据执行
+            $.ajax({
+                type:"get",
+                data:{"proid":proid,"target":"true","iscol":Iscol},
+                url:"/shoppingcar.do",
+                success:function(data){
+                    console.log("已从购物车中移除")
+                    if(col==null){
+                        console.log("已加入购物车")
+                        $(".zheZhao8 span").eq(1).html('&#xe624')
+                    }else {
+                        console.log("已加入收藏")
+                        $(".zheZhao8 span").eq(0).html('&#xe61c')
+                    }
+                }
+            });
+            this.setAttribute("target","false");
+        }
     }
 </script>
 </body>

@@ -205,7 +205,7 @@
     });
     $("#vr2").click(function(event){
         $(this).toggleClass("toggle_vrpro2");
-        $(this).toggleClass("vrpro2")
+        $(this).toggleClass("vrpro2");
         if($(this).get(0).className=="toggle_vrpro2"){
             $(this).css("left",150-parseInt($("#bgBox").css("left")+"px"));
             $("#bgBox").unbind("mousemove",fn);
