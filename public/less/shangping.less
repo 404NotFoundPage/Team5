@@ -14,11 +14,15 @@ a:hover, a:visited, a:link, a:active{
 }
 @font-face {
   font-family: myfont;
-  src: url("../font/fz.TTF");
+  src: url("../font/方正清刻本悦宋简体_2.TTF");
 }
 @font-face {
-  font-family: myfonticon;
-  src: url("../font/iconfont.ttf");
+  font-family: 'iconfont';  /* project id 616061 */
+  src: url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.eot');
+  src: url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.woff') format('woff'),
+  url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.svg#iconfont') format('svg');
 }
 /*--------------------banner开始------------------------------*/
 header{
@@ -586,8 +590,294 @@ section{
     cursor: pointer;
   }
 }
-
-
+//遮罩层1
+.zheZhao1{
+  background-color: rgba(0,0,0,0);
+  width: 550px;
+  height: 420px;
+  position: absolute;
+  top: 865px;
+  left: 125px;
+  -webkit-transition: all .3s;
+  z-index: 1;
+}
+.zheZhao1:hover{
+   background-color: rgba(0,0,0,0.5);
+}
+.kuang1{
+  border:1px solid rgba(255,255,255,0);
+  margin: 0 auto;
+  margin-top: 3.5%;
+  width: 90%;
+  height: 90%;
+  -webkit-transition: all .3s;
+  text-align: center;
+}
+.zheZhao1:hover .kuang1{
+  border:1px solid rgba(255,255,255,1);
+}
+.kuang1>span{
+  font-family: myfonticon;
+  color:rgba(255,255,255,0);
+  line-height: 400px;
+  font-size: 30px;
+  -webkit-transition: all .3s;
+}
+.zheZhao1:hover .kuang1>span{
+  color:rgba(255,255,255,1);
+}
+//遮罩层2
+.zheZhao2{
+  background-color: rgba(0,0,0,0);
+  width: 680px;
+  height: 450px;
+  position: absolute;
+  top: 1395px;
+  left: 545px;
+  z-index: 1;
+  -webkit-transition: all .3s;
+}
+.zheZhao2:hover{
+  background-color: rgba(0,0,0,0.5);
+}
+.kuang2{
+  border:1px solid rgba(255,255,255,0);
+  margin: 0 auto;
+  margin-top: 3.5%;
+  width: 90%;
+  height: 90%;
+  -webkit-transition: all .3s;
+  text-align: center;
+}
+.zheZhao2:hover .kuang2{
+  border:1px solid rgba(255,255,255,1);
+}
+.kuang2>span{
+  font-family: myfonticon;
+  color:rgba(255,255,255,0);
+  line-height: 400px;
+  font-size: 30px;
+  -webkit-transition: all .3s;
+}
+.zheZhao2:hover .kuang2>span{
+  color:rgba(255,255,255,1);
+}
+//遮罩层3
+.zheZhao3{
+  background-color: rgba(0,0,0,0);
+  width: 305px;
+  height: 305px;
+  position: absolute;
+  top: 1978px;
+  left: 548px;
+  z-index: 1;
+  -webkit-transition: all .3s;
+}
+.zheZhao3:hover{
+  background-color: rgba(0,0,0,0.5);
+}
+.kuang3{
+  border:1px solid rgba(255,255,255,0);
+  margin: 0 auto;
+  margin-top: 4.5%;
+  width: 90%;
+  height: 90%;
+  -webkit-transition: all .3s;
+  text-align: center;
+}
+.zheZhao3:hover .kuang3{
+  border:1px solid rgba(255,255,255,1);
+}
+.kuang3>span{
+  font-family: myfonticon;
+  color:rgba(255,255,255,0);
+  line-height: 290px;
+  font-size: 30px;
+  -webkit-transition: all .3s;
+}
+.zheZhao3:hover .kuang3>span{
+  color:rgba(255,255,255,1);
+}
+//遮罩层4
+.zheZhao4{
+  background-color: rgba(0,0,0,0);
+  width: 306px;
+  height: 305px;
+  position: absolute;
+  top: 2191px;
+  left: 918px;
+  z-index: 1;
+  -webkit-transition: all .3s;
+}
+.zheZhao4:hover{
+  background-color: rgba(0,0,0,0.5);
+}
+.kuang4{
+  border:1px solid rgba(255,255,255,0);
+  margin: 0 auto;
+  margin-top: 4.5%;
+  width: 90%;
+  height: 90%;
+  -webkit-transition: all .3s;
+  text-align: center;
+}
+.zheZhao4:hover .kuang4{
+  border:1px solid rgba(255,255,255,1);
+}
+.kuang4>span{
+  font-family: myfonticon;
+  color:rgba(255,255,255,0);
+  line-height: 290px;
+  font-size: 30px;
+  -webkit-transition: all .3s;
+}
+.zheZhao4:hover .kuang4>span{
+  color:rgba(255,255,255,1);
+}
+//遮罩层5
+.zheZhao5{
+  background-color: rgba(0,0,0,0);
+  width: 540px;
+  height: 360px;
+  position: absolute;
+  top: 2960px;
+  left: 125px;
+  z-index: 1;
+  -webkit-transition: all .3s;
+}
+.zheZhao5:hover{
+  background-color: rgba(0,0,0,0.5);
+}
+.kuang5{
+  border:1px solid rgba(255,255,255,0);
+  margin: 0 auto;
+  margin-top: 3%;
+  width: 90%;
+  height: 90%;
+  -webkit-transition: all .3s;
+  text-align: center;
+}
+.zheZhao5:hover .kuang5{
+  border:1px solid rgba(255,255,255,1);
+}
+.kuang5>span{
+  font-family: myfonticon;
+  color:rgba(255,255,255,0);
+  line-height: 340px;
+  font-size: 30px;
+  -webkit-transition: all .3s;
+}
+.zheZhao5:hover .kuang5>span{
+  color:rgba(255,255,255,1);
+}
+//遮罩层6
+.zheZhao6{
+  background-color: rgba(0,0,0,0);
+  width: 360px;
+  height: 240px;
+  position: absolute;
+  top: 2960px;
+  left: 864px;
+  z-index: 1;
+  -webkit-transition: all .3s;
+}
+.zheZhao6:hover{
+  background-color: rgba(0,0,0,0.5);
+}
+.kuang6{
+  border:1px solid rgba(255,255,255,0);
+  margin: 0 auto;
+  margin-top: 3%;
+  width: 90%;
+  height: 90%;
+  -webkit-transition: all .3s;
+  text-align: center;
+}
+.zheZhao6:hover .kuang6{
+  border:1px solid rgba(255,255,255,1);
+}
+.kuang6>span{
+  font-family: myfonticon;
+  color:rgba(255,255,255,0);
+  line-height: 220px;
+  font-size: 30px;
+  -webkit-transition: all .3s;
+}
+.zheZhao6:hover .kuang6>span{
+  color:rgba(255,255,255,1);
+}
+//遮罩层7
+.zheZhao7{
+  background-color: rgba(0,0,0,0);
+  width: 315px;
+  height: 210px;
+  position: absolute;
+  top: 3380px;
+  left: 125px;
+  z-index: 1;
+  -webkit-transition: all .3s;
+}
+.zheZhao7:hover{
+  background-color: rgba(0,0,0,0.5);
+}
+.kuang7{
+  border:1px solid rgba(255,255,255,0);
+  margin: 0 auto;
+  margin-top: 3%;
+  width: 90%;
+  height: 90%;
+  -webkit-transition: all .3s;
+  text-align: center;
+}
+.zheZhao7:hover .kuang7{
+  border:1px solid rgba(255,255,255,1);
+}
+.kuang7>span{
+  font-family: myfonticon;
+  color:rgba(255,255,255,0);
+  line-height: 190px;
+  font-size: 30px;
+  -webkit-transition: all .3s;
+}
+.zheZhao7:hover .kuang7>span{
+  color:rgba(255,255,255,1);
+}
+//遮罩层8
+.zheZhao8{
+  background-color: rgba(0,0,0,0);
+  width: 620px;
+  height: 400px;
+  position: absolute;
+  top: 3380px;
+  left: 600px;
+  z-index: 1;
+  -webkit-transition: all .3s;
+}
+.zheZhao8:hover{
+  background-color: rgba(0,0,0,0.5);
+}
+.kuang8{
+  border:1px solid rgba(255,255,255,0);
+  margin: 0 auto;
+  margin-top: 3%;
+  width: 90%;
+  height: 90%;
+  -webkit-transition: all .3s;
+  text-align: center;
+}
+.zheZhao8:hover .kuang8{
+  border:1px solid rgba(255,255,255,1);
+}
+.kuang8>span{
+  font-family: myfonticon;
+  color:rgba(255,255,255,0);
+  line-height: 380px;
+  font-size: 30px;
+  -webkit-transition: all .3s;
+}
+.zheZhao8:hover .kuang8>span{
+  color:rgba(255,255,255,1);
+}
 
 
 
