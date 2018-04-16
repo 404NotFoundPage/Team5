@@ -1,6 +1,5 @@
 /* Created by lixin on 2018/3/12.*/
 let db = require('./../config/sqlConfig.js');
-const mysql=require('mysql');
 module.exports={
     productDetail:function(pro_id,callback){
         let sql="select * from t_productinfo,t_producttext,t_productimg where t_productinfo.pro_id=t_producttext.pro_id and " +

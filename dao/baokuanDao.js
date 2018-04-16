@@ -30,7 +30,7 @@ const baokuanDao={
         return new Promise(function(resolve,reject){
             db.connect(sql,params,(err,data)=>{
                 if (!err){
-                    console.log(data[0].pro_id)
+                  /*  console.log(data[0].pro_id)*/
                     return new Promise(function(resolve2,reject2){
                         db.connect("INSERT INTO t_collection VALUES(NULL,2,?,0)",data[0].pro_id,(err,data)=>{
                                 if(!err){
@@ -52,7 +52,7 @@ const baokuanDao={
                 if (!err){
                     console.log(data[0].pro_id)
                     return new Promise(function(resolve2,reject2){
-                        db.connect("UPDATE t_collection SET col_condition=1 WHERE user_id=2 AND pro_id=?;)",data[0].pro_id,(err,data)=>{
+                        db.connect("UPDATE t_collection SET col_condition=1 WHERE user_id=2 AND pro_id=?)",data[0].pro_id,(err,data)=>{
                             if(!err){
                                 resolve2(data)
                             }else {

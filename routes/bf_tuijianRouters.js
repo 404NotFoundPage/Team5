@@ -18,9 +18,9 @@ router.get("/sign.do",bf_tj_controller.sign);
 router.get("/logo.do",bf_tj_controller.logo);
 router.get("/person.do",bf_tj_controller.person);
 router.get("/shoppingCart.do",bf_tj_controller.shoppingCart);
-
+router.get("/baokuan.html",bf_tj_controller.baokuan);
 /*---------------------首页拦截------------------------------------------*/
-router.get("/index.html",bf_tj_controller.index);
+//router.get("/index.html",bf_tj_controller.index);
 /*------------------------茶具*/
 
 /*------------------------花瓶*/
@@ -30,9 +30,25 @@ router.get("/index.html",bf_tj_controller.index);
 /*------------------------/*登录*/
 router.get("/login.html",bf_tj_controller.logo);
 router.get("/register.html",bf_tj_controller.sign);
+/*个人中心*/
+router.get("/PersonalCenter.html",bf_tj_controller.person)
 /*------------------------品牌故事*/
 router.get("/brandstory.html",bf_tj_controller.brandstory);
 router.get("/ciqiwenhua_zx.html",bf_tj_controller.ciqiwenhua);
 /*------------------------艺术馆*/
+
+/*------支付成功页面拦截-------------*/
+router.get("/OrderGeneration.html",bf_tj_controller.OrderGeneration);
+router.get("/OrderPayment.html",bf_tj_controller.OrderPayment);
+router.get("/PaymentSuccess.html",bf_tj_controller.PaymentSuccess);
+router.get("/weixinPayment.html",bf_tj_controller.weixinPayment);
+router.get("/zfbPayment.html",bf_tj_controller.zfbPayment);
+
+
+
+
+
+
+
 
 module.exports = router;

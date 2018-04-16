@@ -1,10 +1,15 @@
 @font-face {
   font-family: titleFont;
-  src: url("../font/fz.TTF");
+  src: url("../font/方正清刻本悦宋简体_2.TTF");
+}
+@font-face {
+  font-family: title;
+  src: url("../font/iconfont.ttf");
 }
 header{
   background-color: white;
 }
+
 section{
   overflow: hidden;
   //border: 1px solid red;
@@ -24,7 +29,7 @@ section{
   height: 57px;
   //border: 1px solid red;
   h1{
-    font-family: titleFont;
+    font-family: "titleFont";
     font-size: 26px;
     padding: 18px 0 12px 18px;
     float: left;
@@ -84,16 +89,22 @@ section{
     width: 35px;
     height: 47px;
     top: 0px;
+    font-family: "title";
+    text-align: center;
+    line-height: 47px;
     background-color: #f3f3f3;
     border-radius: 5px 0 0 5px;
   }
   .inp{
     position: absolute;
-    width: 283px;
-    height: 47px;
     left: 35px;
     outline: none;
-    padding: 15px 0 15px 20px;
+    border: none;
+    padding-left: 10px;
+    font-size: 20px;
+    width: 273px;
+    height: 47px;
+    border-radius:5px ;
   }
 }
 .input1{
@@ -126,6 +137,13 @@ section{
   border-radius: 5px;
   margin: 20px 0 0 106px;
   cursor: pointer;
+  border: 1px solid #273B5E;
+  -webkit-transition: all .1s linear;
+  &:hover{
+    background-color: white;
+    color:#273B5E;
+
+  }
 }
 .zhuce{
   margin: 10px 0 0 106px;

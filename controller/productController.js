@@ -1,45 +1,55 @@
 /* Created by lixin on 2018/4/3.*/
+<<<<<<< HEAD
 const productModal=require('../modal/productModal.js');
-module.exports={
-    Product:function(request,response){
-        if(request.session.user){
-            response.render('productDetails',{"username":request.session.user.username});
-        }else{
-            response.redirect('login.html')
-        }
-    },
-    productDetails:function(request,response){
-        request.session.pro_id=8;
-        request.session.user ="tom";
-        let pro_id=request.session.pro_id;
-        productModal.productDetail(pro_id,function(err,data){
-            console.log(data[0].pro_img_url);
+=======
+<<<<<<< HEAD
+const productModal=require('./../modal/productModal.js');
+=======
 
-            let imgUrlList=data[0].pro_img_url.split(',');//产品的图片路劲
-            let titleList=data[0].pro_text_title.split('@');//产品各模块的标题
-            let descriptList=data[0].pro_text_discribe.split('@');//产品各模块的描述
-            let productInfo=data[0].pro_info;               //产品的描述
-            let price=data[0].pro_price;                    //产品的价格
-            let name=data[0].pro_name;                      //产品的名称
-            let size=data[0].pro_size;                      //产品的尺寸
-            let salesNum=data[0].pro_deal_amount;           //产品销量
-            let detail=data[0].pro_detail;                  //养护
-            let material=data[0].pro_material;              //材质
-            response.render('productDetails',{"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
-                "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
-                "material":material,"username":request.session.user});
+
+const productModal=require('./../modal/productModal.js');
+
+>>>>>>> 539a1aaf3fd9634e95f4cf87de7d772fd410b2c5
+>>>>>>> b4c2e5c03ec4a4af0ba0795d8dd8b98c7bebbd41
+module.exports={
+    //��Ʒ����ҳ��
+    productDetails:function(request,response){
+        request.session.pro_id=request.query.pro_id;
+        let pro_id=parseInt(request.session.pro_id);
+        productModal.productDetail(pro_id,function(err,data){
+            let imgUrlList=data[0].pro_img_url.split(',');//��Ʒ��ͼƬ·��
+            let titleList=data[0].pro_text_title.split('@');//��Ʒ��ģ��ı���
+            let descriptList=data[0].pro_text_discribe.split('@');//��Ʒ��ģ�������
+            let productInfo=data[0].pro_info;               //��Ʒ������
+            let price=data[0].pro_price;                    //��Ʒ�ļ۸�
+            let name=data[0].pro_name;                      //��Ʒ������
+            let size=data[0].pro_size;                      //��Ʒ�ĳߴ�
+            let salesNum=data[0].pro_deal_amount;           //��Ʒ����
+            let detail=data[0].pro_detail;                  //����
+            let material=data[0].pro_material;              //����
+            if(request.session.user){
+                response.render("productDetails.html",{"pro_id":pro_id,"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
+                    "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
+                    "material":material,"username":request.session.user})
+            }else{
+                response.render("productDetails.html",{"pro_id":pro_id,"imgurllist":imgUrlList,"titlelist":titleList,"descriptlist":descriptList,
+                    "info":productInfo,"price":price,"name":name,"size":size,"salesNum":salesNum,"detail":detail,
+                    "material":material,"username":request.session.user})
+            }
         })
     },
+    //����
     comment:function(request,response){
+        console.log(request.body)
         let pro_id=request.body.pro_id;
         let pagesize=request.body.pagesize;
         let currentpage=request.body.currentpage;
         productModal.comment(pro_id,pagesize,currentpage,function(err,data){
-            let commentId=[];            //评论编号
-            let usernameList=[];        //评论用户名数组
-            let commenttextList=[];     //评论数组
-            let commenttimeList=[];     //评论时间数组
-            let userpicList=[];         //用户头像数组
+            let commentId=[];            //���۱��
+            let usernameList=[];        //�����û�������
+            let commenttextList=[];     //��������
+            let commenttimeList=[];     //����ʱ������
+            let userpicList=[];         //�û�ͷ������
             for(var j=0;j<data.length;j++){
                 usernameList.push(data[j].user_name);
                 commenttextList.push([data[j].com_message_count]);
@@ -50,13 +60,15 @@ module.exports={
             response.send({usernameList,commenttextList,commenttimeList,userpicList,commentId});
         });
     },
+    //��ȡ��������
     gettotalcount:function(request,response){
         let pro_id=request.body.pro_id;
         productModal.gettotalcount(pro_id,function(err,data){
-            let totalcount=data.length;        //评论总数
+            let totalcount=data.length;        //��������
             response.send({totalcount});
         });
     },
+    //�ظ�
     reply:function(request,response){
         let pro_id=request.body.pro_id;
         productModal.reply(pro_id,function(err,data){
