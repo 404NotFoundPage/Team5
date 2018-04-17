@@ -1,16 +1,7 @@
 /* Created by lixin on 2018/4/3.*/
-<<<<<<< HEAD
-const productModal=require('../modal/productModal.js');
-=======
-<<<<<<< HEAD
-const productModal=require('./../modal/productModal.js');
-=======
-
 
 const productModal=require('./../modal/productModal.js');
 
->>>>>>> 539a1aaf3fd9634e95f4cf87de7d772fd410b2c5
->>>>>>> b4c2e5c03ec4a4af0ba0795d8dd8b98c7bebbd41
 module.exports={
     //��Ʒ����ҳ��
     productDetails:function(request,response){

@@ -263,66 +263,66 @@
                 success:function (data) {
                     console.log(data);
                     $(".sec2").html(
-                        '<div class="sp_sec2_left"><img src="'+data[24].pro_img_url+'"></div>'
+                        '<div class="sp_sec2_left"><img src="'+data[15].pro_img_url+'"></div>'
                         +'<div class="sp_sec2_info">' +
-                        '<button class="baiJian1" baijian1="'+data[24].pro_id+'">立即购买</button>'+
-                        '<p>'+data[24].pro_name+'</p>'+
-                        '<p>'+data[24].pro_info.split("，")[0]+'</p>'+
-                        '<p>'+data[24].pro_info.split("，")[1]+'</p>'+
+                        '<button class="baiJian1" baijian1="'+data[15].pro_id+'">立即购买</button>'+
+                        '<p>'+data[15].pro_name+'</p>'+
+                        '<p>'+data[15].pro_info.split("，")[0]+'</p>'+
+                        '<p>'+data[15].pro_info.split("，")[1]+'</p>'+
                         '</div>'+
                         '<div class="sp_sec2_right"><img src="images/sp_sec2_right.png"></div>'
                     );
                     $(".sec3").html(
                         '<div class="sec3_info">' +
                         '<div><img src="images/suci_dj.png"></div>' +
-                        '<p>'+data[25].pro_info+'</p>' +
-                        '<p>￥'+data[25].pro_price+'</p>' +
-                        '<button class="baiJian2" baijian2="'+data[25].pro_id+'">立即购买 &gt;</button></div>' +
-                        '<div class="sec_img"><img src="'+data[25].pro_img_url+'"></div>'
+                        '<p>'+data[16].pro_info+'</p>' +
+                        '<p>￥'+data[16].pro_price+'</p>' +
+                        '<button class="baiJian2" baijian2="'+data[16].pro_id+'">立即购买 &gt;</button></div>' +
+                        '<div class="sec_img"><img src="'+data[16].pro_img_url+'"></div>'
                     );
                     $(".sec4").html(
                         '<div class="sec4_left">' +
-                        '<h3>'+data[26].pro_name+'</h3>' +
-                        '<p>'+data[26].pro_info+'</p>' +
-                        '<img src="'+data[26].pro_img_url+'">' +
-                        '<p>￥'+data[26].pro_price+'</p>' +
-                        '<button class="baiJian3" baijian3="'+data[26].pro_id+'">立即购买 &gt;</button></div>' +
+                        '<h3>'+data[17].pro_name+'</h3>' +
+                        '<p>'+data[17].pro_info+'</p>' +
+                        '<img src="'+data[17].pro_img_url+'">' +
+                        '<p>￥'+data[17].pro_price+'</p>' +
+                        '<button class="baiJian3" baijian3="'+data[17].pro_id+'">立即购买 &gt;</button></div>' +
                         '<div class="sec4_right">' +
-                        '<h3>'+data[27].pro_name+'</h3>' +
-                        '<p>'+data[27].pro_info+'</p>' +
-                        '<p>￥'+data[27].pro_price+'</p>' +
-                        '<button class="baiJian4" baijian4="'+data[27].pro_id+'">立即购买</button>' +
-                        '<div class="sec4_right_left"><img src="'+data[27].pro_img_url.split(",")[0]+'"></div>' +
-                        '<div class="sec4_right_right"><img src="'+data[27].pro_img_url.split(",")[1]+'"></div></div>'
+                        '<h3>'+data[18].pro_name+'</h3>' +
+                        '<p>'+data[18].pro_info+'</p>' +
+                        '<p>￥'+data[18].pro_price+'</p>' +
+                        '<button class="baiJian4" baijian4="'+data[18].pro_id+'">立即购买</button>' +
+                        '<div class="sec4_right_left"><img src="'+data[18].pro_img_url.split(",")[0]+'"></div>' +
+                        '<div class="sec4_right_right"><img src="'+data[18].pro_img_url.split(",")[1]+'"></div></div>'
                     );
                     $(".sec6").html(
                         '<div class="sec6_left">' +
-                        '<img src="'+data[28].pro_img_url.split(",")[0]+'">' +
+                        '<img src="'+data[19].pro_img_url.split(",")[0]+'">' +
                         '<p><span>一器</span>一乾坤</p></div>' +
                         '<div class="sec6_info">' +
-                        '<div><p>TBYNN</p><p>'+data[28].pro_name+'</p></div>' +
-                        '<div><p>'+data[28].pro_info.split("，")[0]+'</p><p>'+data[28].pro_info.split("，")[1]+'</p><p>'+data[28].pro_info.split("，")[2]+'</p></div></div>' +
-                        '<div class="sec6_right"><img src="'+data[28].pro_img_url.split(",")[1]+'"><p>￥'+data[28].pro_price+'</p><button class="baiJian5" baijian5="'+data[28].pro_id+'">立即购买 &gt;</button></div>'
+                        '<div><p>TBYNN</p><p>'+data[19].pro_name+'</p></div>' +
+                        '<div><p>'+data[19].pro_info.split("，")[0]+'</p><p>'+data[19].pro_info.split("，")[1]+'</p><p>'+data[19].pro_info.split("，")[2]+'</p></div></div>' +
+                        '<div class="sec6_right"><img src="'+data[19].pro_img_url.split(",")[1]+'"><p>￥'+data[19].pro_price+'</p><button class="baiJian5" baijian5="'+data[19].pro_id+'">立即购买 &gt;</button></div>'
                     );
                     $(".sec7").html(
                         '<div class="sec7_left">' +
-                        '<img src="'+data[29].pro_img_url.split(",")[0]+'">' +
-                        '<p>￥'+data[29].pro_price+'</p>' +
-                        '<button class="baiJian6" baijian6="'+data[29].pro_id+'">立即购买 &gt;</button></div>' +
+                        '<img src="'+data[20].pro_img_url.split(",")[0]+'">' +
+                        '<p>￥'+data[20].pro_price+'</p>' +
+                        '<button class="baiJian6" baijian6="'+data[20].pro_id+'">立即购买 &gt;</button></div>' +
                         '<div class="sec7_info">' +
-                        '<div><p>TBYNN</p><p>'+data[29].pro_name+'</p></div>' +
-                        '<div><p>'+data[29].pro_info.split("，")[0]+'</p><p>'+data[29].pro_info.split("，")[1]+'</p><p>'+data[29].pro_info.split("，")[2]+'</p></div></div>' +
-                        '<div class="sec7_right"><img src="'+data[29].pro_img_url.split(",")[1]+'"></div>'
+                        '<div><p>TBYNN</p><p>'+data[20].pro_name+'</p></div>' +
+                        '<div><p>'+data[20].pro_info.split("，")[0]+'</p><p>'+data[20].pro_info.split("，")[1]+'</p><p>'+data[20].pro_info.split("，")[2]+'</p></div></div>' +
+                        '<div class="sec7_right"><img src="'+data[20].pro_img_url.split(",")[1]+'"></div>'
                     );
 //                    ---------遮罩层处理------
-                    $(".zheZhao1")[0].setAttribute("proid",data[24].pro_id);
-                    $(".zheZhao2")[0].setAttribute("proid",data[25].pro_id);
-                    $(".zheZhao3")[0].setAttribute("proid",data[27].pro_id);
-                    $(".zheZhao4")[0].setAttribute("proid",data[27].pro_id);
-                    $(".zheZhao5")[0].setAttribute("proid",data[28].pro_id);
-                    $(".zheZhao6")[0].setAttribute("proid",data[28].pro_id);
-                    $(".zheZhao7")[0].setAttribute("proid",data[29].pro_id);
-                    $(".zheZhao8")[0].setAttribute("proid",data[29].pro_id);
+                    $(".zheZhao1")[0].setAttribute("proid",data[15].pro_id);
+                    $(".zheZhao2")[0].setAttribute("proid",data[16].pro_id);
+                    $(".zheZhao3")[0].setAttribute("proid",data[18].pro_id);
+                    $(".zheZhao4")[0].setAttribute("proid",data[18].pro_id);
+                    $(".zheZhao5")[0].setAttribute("proid",data[19].pro_id);
+                    $(".zheZhao6")[0].setAttribute("proid",data[19].pro_id);
+                    $(".zheZhao7")[0].setAttribute("proid",data[20].pro_id);
+                    $(".zheZhao8")[0].setAttribute("proid",data[20].pro_id);
                 }
             }
         )
