@@ -3,6 +3,7 @@ const indexModal=require('./../dao/indexModal.js');
 module.exports={
     index:function(request,response){
         indexModal.index(function(err,data){
+            console.log("1--------------------------------------");
             console.log(data)
             let newimg=[],newid=[],newprice=[],newname=[];//��Ʒ
             let baoimg=[],baoid=[],baoprice=[],baoname=[]; //����

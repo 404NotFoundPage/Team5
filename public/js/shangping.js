@@ -37,7 +37,6 @@ $(document).ready(function () {
     }).mouseout(function () {
         $(this).css("animation-play-state","running")
     });
-
     $(".returnTop").click(function () {
         $('html,body').animate({scrollTop:0},'slow');
     });

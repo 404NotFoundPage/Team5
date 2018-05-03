@@ -173,14 +173,41 @@ const bf_tj_contro ={
         }
     },
     "baokuan":function (req,res) {
-        console.log(1);
         if(req.session.user){
             res.render("baokuan.html",{"username":req.session.user.user_name})
         }else {
             res.render("baokuan.html",{"username":req.session.user})
         }
+    },
+    "chajuzx":function (req,res) {
+        if(req.session.user){
+            res.render("chaju.html",{"username":req.session.user.user_name})
+        }else {
+            res.render("chaju.html",{"username":req.session.user})
+        }
+    },
+    "huapingzx":function (req,res) {
+        if(req.session.user){
+            res.render("huaping.html",{"username":req.session.user.user_name})
+        }else {
+            res.render("huaping.html",{"username":req.session.user})
+        }
+    },
+    "baijianzx":function (req,res) {
+        if(req.session.user){
+            res.render("baijian.html",{"username":req.session.user.user_name})
+        }else {
+            res.render("baijian.html",{"username":req.session.user})
+        }
+    },
+    /*艺术馆*/
+    "musem":function (req,res) {
+        if(req.session.user){
+            res.render("musem.html",{"username":req.session.user.user_name})
+        }else {
+            res.render("musem.html",{"username":req.session.user})
+        }
     }
-
 };
 
 module.exports = bf_tj_contro;

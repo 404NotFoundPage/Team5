@@ -9,9 +9,17 @@ const session = require("express-session");//session引入
 const cookie = require("cookie-parser");
 const shangpinRouter=require("./routes/shangpin.js");
 const logger = require("morgan");
-const bf_router=require("./routes/bf_tuijianRouters");
+
+const bf_router=require("./routes/bf_tuijianRouters.js");
 const productRouter=require('./routes/productRouter.js');
 const router=require("./routes/baokuanrouter.js");
+const indexrouter = require("./routes/indexRouter.js");
+const loginregister = require("./routes/loginRegister.js");
+const personal = require("./routes/Personal.js");
+var AV = require('leanengine'); //引用短信模块
+AV.initialize("B5XdiuFWib69Dyr9wgAJYPPQ-gzGzoHsz","Q5FlPGAmOoWMKociWGgNyjKU");
+
+
 
 const app = express();
 app.use(logger('dev'));
@@ -23,14 +31,18 @@ app.use(session({
     rolling:true,
     saveUninitialized:true
 }));
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(cookie());
 app.use(router);
 app.use(bf_router);
 app.use(productRouter);
-app.use(cookie());
 app.use(shangpinRouter);
+app.use(indexrouter);
+app.use(loginregister);
+app.use(personal);
 
 //将post数据储存为json数据
-app.use(bodyParser.urlencoded({extended:false}));
+
 app.use(bodyParser.json());
 //配置ejs
 app.set("views",__dirname+"/public");//配置模板所在路径

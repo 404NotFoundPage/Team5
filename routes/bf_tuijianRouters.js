@@ -22,11 +22,11 @@ router.get("/baokuan.html",bf_tj_controller.baokuan);
 /*---------------------首页拦截------------------------------------------*/
 //router.get("/index.html",bf_tj_controller.index);
 /*------------------------茶具*/
-
+router.get("/chaju.html",bf_tj_controller.chajuzx)
 /*------------------------花瓶*/
-
+router.get("/huaping.html",bf_tj_controller.huapingzx)
 /*------------------------摆件*/
-
+router.get("/baijian.html",bf_tj_controller.baijianzx)
 /*------------------------/*登录*/
 router.get("/login.html",bf_tj_controller.logo);
 router.get("/register.html",bf_tj_controller.sign);
@@ -36,7 +36,7 @@ router.get("/PersonalCenter.html",bf_tj_controller.person)
 router.get("/brandstory.html",bf_tj_controller.brandstory);
 router.get("/ciqiwenhua_zx.html",bf_tj_controller.ciqiwenhua);
 /*------------------------艺术馆*/
-
+router.get("/musem.html",bf_tj_controller.musem);
 /*------支付成功页面拦截-------------*/
 router.get("/OrderGeneration.html",bf_tj_controller.OrderGeneration);
 router.get("/OrderPayment.html",bf_tj_controller.OrderPayment);
