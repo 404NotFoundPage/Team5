@@ -30,10 +30,10 @@ module.exports={
         })
     },
     //�ղ�  ����޸�if(user_id)Ϊif(request.session.userid),ɾ��user_id=1;
-    collectpro:function(request,response){
+    collectpro:function(request,response){ // 商品收藏
         let user_id=request.session.userid;
         let pro_id=request.query.pro_id;
-        user_id=1;
+        //user_id=1;
         if(user_id){
             indexModal.collectpro(user_id,pro_id,function(err,data){
                 if(err==null){
@@ -48,9 +48,10 @@ module.exports={
 
     },
 //    ���빺�ﳵ  ���Ҫ�޸�
-    addcart:function(request,response){
+
+    addcart:function(request,response){ //加入购物车
         let user_id=request.session.user.user_id;
-        // user_id=2;
+        //user_id=2;
         let num=request.query.num;
         let pro_id=parseInt(request.query.pro_id);
         if(user_id){
