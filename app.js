@@ -16,6 +16,7 @@ const router=require("./routes/baokuanrouter.js");
 const indexrouter = require("./routes/indexRouter.js");
 const loginregister = require("./routes/loginRegister.js");
 const personal = require("./routes/Personal.js");
+const Ordersubmit=require("./routes/OrderSubmission.js"); // 订单提交
 var AV = require('leanengine'); //引用短信模块
 AV.initialize("B5XdiuFWib69Dyr9wgAJYPPQ-gzGzoHsz","Q5FlPGAmOoWMKociWGgNyjKU");
 
@@ -40,6 +41,7 @@ app.use(shangpinRouter);
 app.use(indexrouter);
 app.use(loginregister);
 app.use(personal);
+app.use(Ordersubmit);
 
 //将post数据储存为json数据
 
