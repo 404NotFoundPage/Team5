@@ -85,8 +85,13 @@ section{
         color:white;
         font-size:40px;
         visibility: hidden;
+        cursor: pointer;
+      }
+      #addimg:hover,#confirm:hover{
+        color: #273b5e;
       }
       #confirm{
+        cursor: pointer;
         font-family: "iconfont";;
         position: absolute;
         line-height: 230px;
@@ -106,22 +111,31 @@ section{
       float: left;
       margin-left: 20px;
       padding: 20px 0 0 0;
+      .xiugai,.queding{
+        background-color:#273b5e;
+        color: white;
+        font-size: 14px;
+        padding:6px 10px;
+        cursor: pointer;
+      }
       .queding{
         visibility: hidden;
-        margin-left:-30px;
+        margin-left:-48px;
+      }
+      .queding:hover,.xiugai:hover{
+        opacity: 0.8;
       }
       p{
         position: relative;
         padding-top:20px;
-        .xiugai{
-          margin-left: 280px;
-          cursor: pointer;
-        }
         input,span,select{
           position: absolute;
           left: 100px;
         }
-        input{
+        input,select{
+          height: 26px;
+          border-radius: 3px;
+          border:1px solid #273b5e;
           visibility: hidden;
         }
         select{
