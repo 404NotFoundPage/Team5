@@ -42,7 +42,7 @@
                 <input type="button" id="add" value="+">
             </div>
             <div id="operation">
-                <button>立即购买</button>
+                <button id="goumai">立即购买</button>
                 <button id="addcart"><span></span>加入购物车</button>
             </div>
         </div>
@@ -161,6 +161,15 @@
 <script src="js/productDetails.js"></script>
 <script src="js/less.min.js" type="text/javascript"></script>
 <script type="text/javascript">
+    //立即购买
+    $("#goumai").click(function () {
+        let pro_id = $("#productInfo").attr("uid");
+        let total = $("#showNumber").val();
+        window.location.href="OrderSubmission.html?pro_id="+pro_id+"&total="+total
+
+    })
+
+
     var pro_id=$('#productInfo').attr('uid');     //当前商品的编号
     var totalCount;  //总评论数
     var pagesize=15; //每一页的评论数

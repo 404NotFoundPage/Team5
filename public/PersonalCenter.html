@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>个人中心</title>
     <link rel="stylesheet/less" href="less/PersonalCenter.less">
     <link rel="stylesheet" href="css/pick-pcc.min.1.0.1.css">
 </head>
@@ -12,19 +12,19 @@
 <section>
 
     <div class="pcleft_liebiao">
-        <h4>我的账户</h4>
-        <p onclick="myclick(1)">个人资料</p>
-        <p onclick="myclick(2)">修改密码</p>
-        <p onclick="myclick(3)">我的地址</p>
+        <h4><span>&#xe619;</span>我的账户</h4>
+        <p onclick="myclick(1)"><span>&#xe6cc;</span>个人资料</p>
+        <p onclick="myclick(2)"><span>&#xe618;</span>修改密码</p>
+        <p onclick="myclick(3)"><span>&#xe61a;</span>我的地址</p>
 
-        <h4>订单中心</h4>
-        <p onclick="myclick(4)">我的订单</p>
-        <p onclick="myclick(5)">待付款</p>
-        <p onclick="myclick(6)">未发货</p>
-        <p onclick="myclick(7)">已完成</p>
+        <h4><span>&#xe635;</span>订单中心</h4>
+        <p onclick="myclick(4)"><span>&#xe655;</span>我的订单</p>
+        <p onclick="myclick(5)"><span>&#xe60d;</span>待付款</p>
+        <p onclick="myclick(6)"><span>&#xe6db;</span>未发货</p>
+        <p onclick="myclick(7)"><span>&#xe60e;</span>已完成</p>
 
-        <h4 onclick="myclick(8)">我的收藏</h4>
-        <h4 onclick="myclick(9)">我的购物车</h4>
+        <h4 onclick="myclick(8)"><span>&#xe622;</span>我的收藏</h4>
+        <h4 onclick="myclick(9)"><span>&#xe628;</span>我的购物车</h4>
     </div>
 
     <div class="pcright_liebiao mito">
@@ -58,7 +58,7 @@
             </div>
 
             <div class="pcdingdan_phone pcdingdan_phone3">
-                &#xe643;
+                &#xe60e;
             </div>
             <div class="pcdiangdan_chaxun">
                 <p>已完成的订单  ：</p>
@@ -223,5 +223,15 @@
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/pick-pcc.min.1.0.1.js"></script>
 <script src="js/PersonalCenter.js"></script>
+<script>
+    $(".pcleft_liebiao>p").click(function () {
+        $(this).css({"background-color":"#273B5E","color":"white"}).siblings().css({"background-color":"white","color":"black"})
+    })
+    $(".pcleft_liebiao>h4").click(function () {
+        $(this).css({"background-color":"#273B5E","color":"white"}).siblings().css({"background-color":"white","color":"black"})
+    })
+
+
+</script>
 </body>
 </html>

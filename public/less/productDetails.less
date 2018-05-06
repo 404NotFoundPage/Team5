@@ -188,6 +188,9 @@
             font-size: 16px;
         }
         #numberControl{
+            input:nth-of-type(1),input:nth-of-type(3){
+                cursor: pointer;
+            }
             margin-top: 10px;
             #reduce,#add,#showNumber{
                 float: left;
@@ -206,6 +209,9 @@
         #operation{
             margin-top: 100px;
             .buttonHover;
+            &>button{
+                cursor: pointer;
+            }
         }
     }
     //商品详情和评论
@@ -213,6 +219,9 @@
         width: @contentwidth - @marginwidth*2;
         margin: 0 auto;
         #choose{
+            #comment{
+                cursor: pointer;
+            }
             div{
                 margin-top: 0px;
                 width: 120px;
@@ -227,6 +236,7 @@
                 background-color: @pointColor;
                 color: white;
                 border: none;
+                cursor: pointer;
             }
             height: 35px;
             border: @borderStyle;

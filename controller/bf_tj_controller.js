@@ -207,6 +207,13 @@ const bf_tj_contro ={
         }else {
             res.render("musem.html",{"username":req.session.user})
         }
+    },
+    OrderSubmission:function (req,res) {
+        if(req.session.user){
+            res.render("OrderSubmission.html",{"username":req.session.user.user_name})
+        }else {
+            res.render("OrderSubmission.html",{"username":req.session.user})
+        }
     }
 };
 

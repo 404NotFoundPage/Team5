@@ -17,12 +17,12 @@ a:hover, a:visited, a:link, a:active{
   src: url("../font/方正清刻本悦宋简体_2.TTF");
 }
 @font-face {
-  font-family: 'myfonticon';  /* project id 616061 */
-  src: url('//at.alicdn.com/t/font_616061_zvh076g7vua3jtt9.eot');
-  src: url('//at.alicdn.com/t/font_616061_zvh076g7vua3jtt9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_616061_zvh076g7vua3jtt9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_616061_zvh076g7vua3jtt9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_616061_zvh076g7vua3jtt9.svg#iconfont') format('svg');
+  font-family: 'iconfont';  /* project id 616061 */
+  src: url('//at.alicdn.com/t/font_616061_oiciskw79ij2a9k9.eot');
+  src: url('//at.alicdn.com/t/font_616061_oiciskw79ij2a9k9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_616061_oiciskw79ij2a9k9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_616061_oiciskw79ij2a9k9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_616061_oiciskw79ij2a9k9.svg#iconfont') format('svg');
 }
 /*-------------------head头部---------------------*/
 @nav_height:110px;
@@ -65,14 +65,23 @@ a:hover, a:visited, a:link, a:active{
 .nav_log{
   li{
     float: right;
+    padding:0 5px;
+    cursor: pointer;
   }
 }
+.nav_log>ul>li:nth-of-type(5){
+
+}
+.nav_log>ul>li:nth-of-type(5)>a{
+  font-family: iconfont;
+  font-size: 16px;
+}
 .nav_log>ul>li:nth-of-type(4)>a{
-  font-family: myfonticon;
+  font-family: iconfont;
   font-size: 16px;
 }
 .nav_log>ul>li:nth-of-type(4){
-  margin-right: 20px;
+  margin-right: 10px;
   font-weight: bold;
 
 }
@@ -86,7 +95,7 @@ a:hover, a:visited, a:link, a:active{
   height: @nav_height - 30;
 }
 .nav_bar>ul>li:nth-of-type(5)>a>span{
-  font-family: myfonticon;
+  font-family: iconfont;
   color: black;
 }
 .nav_bar>ul>li{
@@ -111,7 +120,7 @@ a:hover, a:visited, a:link, a:active{
   }
 }
 .search>span>a{
-  font-family: myfonticon!important;
+  font-family: iconfont!important;
 }
 .search>span>a{
   position: absolute;

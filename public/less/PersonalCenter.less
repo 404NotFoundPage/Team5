@@ -10,11 +10,11 @@
 }
 @font-face {
   font-family: 'iconfont';  /* project id 616061 */
-  src: url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.eot');
-  src: url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.woff') format('woff'),
-  url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_616061_oiciskw79ij2a9k9.eot');
+  src: url('//at.alicdn.com/t/font_616061_oiciskw79ij2a9k9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_616061_oiciskw79ij2a9k9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_616061_oiciskw79ij2a9k9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_616061_oiciskw79ij2a9k9.svg#iconfont') format('svg');
 }
 
 body{
@@ -40,13 +40,31 @@ section{
   background-color: #ffffff;
   margin: 50px 0 0 170px;
   h4{
-    margin: 50px 0 0 10px;
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
     cursor: pointer;
   }
   p{
-    margin:15px 0 0 30px;
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    line-height: 40px;
+    text-align: center;
     font-size: 14px;
     cursor: pointer;
+  }
+  span{
+    font-family: iconfont;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  p:nth-of-type(1){
+    background-color: #273b5e;
+    color: white;
   }
 }
 
@@ -61,7 +79,7 @@ section{
   margin: 50px 80px 50px 0;
   //display: none;
   .pcphone_box{
-    border-bottom: 1px solid #0f0f0f;
+    border-bottom: 1px solid #EDEDED;
   }
   div{
     width: 755px;
@@ -72,8 +90,9 @@ section{
       height: 230px;
       float: left;
       img{
-        width: 266px;
+        width: 230px;
         height: 230px;
+        border-radius: 50%;
       }
     }
     .pchead_ziliao{
@@ -98,10 +117,12 @@ section{
     .pcdingdan_phone{
       width: 90px;
       height: 90px;
-      border-radius: 90px;
-      border: 1px solid darkviolet;
+      border-radius: 50%;
+      background-color: #273b5e;
+      color: white;
+      //border: 1px solid darkviolet;
       float: left;
-      font-family: "person";
+      font-family: "iconfont";
       text-align:center;
       line-height:90px;
       font-size: 40px;
@@ -115,8 +136,9 @@ section{
     .pcdiangdan_chaxun{
       width: 150px;
       height: 50px;
+      line-height: 30px;
       float: left;
-      margin: 50px 0 0 10px;
+      margin: 40px 0 0 10px;
       p:last-child{
         font-size: 12px;
         cursor: pointer;
@@ -455,7 +477,6 @@ select {
 .tbodygou{
   line-height: normal;
   color: #000;
-  text-align: center;
 
   p{
     cursor: pointer;

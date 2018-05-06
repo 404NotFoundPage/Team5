@@ -49,8 +49,8 @@ module.exports={
     },
 //    ���빺�ﳵ  ���Ҫ�޸�
     addcart:function(request,response){
-        let user_id=request.session.userid;
-        user_id=2;
+        let user_id=request.session.user.user_id;
+        // user_id=2;
         let num=request.query.num;
         let pro_id=parseInt(request.query.pro_id);
         if(user_id){
@@ -64,5 +64,10 @@ module.exports={
         }else{
             response.send('notLogin');
         }
+    },
+    //退出
+    exit:function (req,res) {
+        req.session.destroy();
+        res.redirect('/index.html');
     }
 };

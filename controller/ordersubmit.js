@@ -7,10 +7,8 @@ const  orderModel=require("../dao/orderdao.js");
 const orderController={
     hqshdz(request,response) {
         const sql = 'SELECT * FROM t_address WHERE user_id=? and add_codition=0';
-        console.log("11111111111111111111111111111111111111111111111111111111111");
         // let userid = request.session.user.user_id;    //获取用户 id
-        let userid = 1    // 模拟获取到数据
-
+        let userid = request.session.user.user_id    // 模拟获取到数据
         orderModel.orderallDao(sql, [userid]).then((data) => {
             if(data.length>0){
                 response.send(data)
@@ -34,7 +32,7 @@ const orderController={
         let  addr_id =request.query.addr_id;
 
         // let userid = request.session.user.user_id;    //获取用户 id
-        let userid = 1
+        let userid = request.session.user.user_id
 
         const sql = "INSERT INTO t_address VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         console.log(province,
@@ -62,7 +60,7 @@ const orderController={
         let  addr =request.query.addr_id;
 
         // let userid = request.session.user.user_id;    //获取用户 id
-        let userid = 1
+        let userid = request.session.user.user_id
 
         const sql = "UPDATE t_address SET addr_pro =?,addr_city=?,addr_area=?,addr_detail=?,addr_tel=?,addr_person=?,add_default=?,add_codition=? WHERE addr_id = ? AND user_id = ?"
         console.log(province,  //省
@@ -84,11 +82,13 @@ const orderController={
 
     //点击购买提交订单里面的商品表格
     dingdanbiao(request,response){
+        // console.log(request.query.pro_id);
+        let pro_id = request.query.pro_id
         // let userId=request.session.user.user_id;
-        let userId=1
+        let userId=request.session.user.user_id
         // let sql='SELECT t_collection.pro_id,t_productimg.pro_img_url FROM t_collection,t_productimg WHERE t_collection.user_id=? AND t_collection.col_condition=0 AND t_collection.pro_id=t_productimg.pro_id AND t_productimg.pro_img_coditon=0 AND pro_img_status=0 group by t_collection.pro_id';
-        let sql ="SELECT * FROM t_productInfo,t_productImg WHERE  t_productInfo.pro_id= t_productImg.pro_id AND   t_productInfo.pro_id=1  LIMIT 0,1"
-        orderModel.QueryOrder(sql,[userId]).then((data)=>{
+        let sql ="SELECT * FROM t_productInfo,t_productImg WHERE  t_productInfo.pro_id= t_productImg.pro_id AND   t_productInfo.pro_id=?  LIMIT 0,1"
+        orderModel.QueryOrder(sql,[pro_id]).then((data)=>{
             response.send(data);
         }).catch((err)=>{//失败
             console.log(err);
@@ -110,7 +110,7 @@ const orderController={
         let order_number=request.query.order_number;
 
         // let userId=request.session.user.user_id;
-        let userId=1;
+        let userId=request.session.user.user_id;
 
         const sql ="INSERT INTO t_order VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
        /* console.log(order_time, //时间
@@ -136,7 +136,7 @@ const orderController={
         }).catch((err) => {
             console.log(err)
         })
-    }
+    },
     // 查询订单id
     // queryorderid(request,response){
     //     let sql="SELECT order_id FROM t_order ORDER BY order_id  DESC  LIMIT 1"
