@@ -89,10 +89,39 @@ section{
       width: 266px;
       height: 230px;
       float: left;
+      position: relative;
       img{
         width: 230px;
         height: 230px;
         border-radius: 50%;
+      }
+      #addimg{
+        font-family: "iconfont";;
+        position: absolute;
+        line-height: 230px;
+        top:0px;
+        left:100px;
+        color:white;
+        font-size:40px;
+        visibility: hidden;
+        cursor: pointer;
+      }
+      #addimg:hover,#confirm:hover{
+        color: #273b5e;
+      }
+      #confirm{
+        cursor: pointer;
+        font-family: "iconfont";;
+        position: absolute;
+        line-height: 230px;
+        top:0px;
+        left:100px;
+        color:white;
+        font-size:40px;
+        visibility: hidden;
+      }
+      #form1{
+        opacity: 0;
       }
     }
     .pchead_ziliao{
@@ -101,11 +130,36 @@ section{
       float: left;
       margin-left: 20px;
       padding: 20px 0 0 0;
+      .xiugai,.queding{
+        background-color:#273b5e;
+        color: white;
+        font-size: 14px;
+        padding:6px 10px;
+        cursor: pointer;
+      }
+      .queding{
+        visibility: hidden;
+        margin-left:-48px;
+      }
+      .queding:hover,.xiugai:hover{
+        opacity: 0.8;
+      }
       p{
+        position: relative;
         padding-top:20px;
-        .xiugai{
-          margin-left: 290px;
-          cursor: pointer;
+        input,span,select{
+          position: absolute;
+          left: 100px;
+        }
+        input,select{
+          height: 26px;
+          border-radius: 3px;
+          border:1px solid #273b5e;
+          visibility: hidden;
+        }
+        select{
+          width: 150px;
+          visibility: hidden;
         }
       }
     }
@@ -327,11 +381,18 @@ section{
     margin: 35px auto;
     color: #ffffff;
     line-height: 48px;
+    border: 1px solid #273b5e;
+    &>table{
+      height: 48px;
+      tr{
+        height:48px;
+      }
+    }
     table{
       width: 780px;
       text-align: center;
       img{
-        width: 100px;
+        //width: 100px;
         height: auto;
       }
     }
@@ -494,9 +555,17 @@ select {
   }
   img{
     margin: 10px 20px;
-    width: auto;
-    height: 100px;
+    width: 50px;
     vertical-align:middle;
+  };
+  td:nth-of-type(6){
+    p{
+      line-height: 25px;
+      font-size: 14px;
+      &:hover{
+        color: #273B5E;
+      }
+    }
   }
 }
 .cus{

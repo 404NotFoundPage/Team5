@@ -58,6 +58,23 @@ const PersonalDao={
                 }
             })
         })
+    },
+    editPersonInfo(user_id,user_name,user_login,user_tel,user_sex){
+        let sql="update t_user set user_name=? , user_login=?,user_tel=?,user_sex=? where user_id=?"
+        let arr=[user_name,user_login,user_tel,user_sex,user_id]
+        return new Promise(function(resolve,reject){
+            db.connect(sql,arr,(err,data)=>{
+                if (!err){
+                    resolve(data)
+                }else {
+                    reject(err)
+                }
+            })
+        })
+    },
+    uploadPersonImg:function(user_id,user_pic,callback){
+        let sql="update t_user set user_pic=? where user_id=?";
+        db.connect(sql,[user_pic,user_id],callback)
     }
 
 };

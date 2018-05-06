@@ -21,4 +21,6 @@ Personalrouter.post("/Deleteorder.do",PersonalContro.Deleteorder);
 Personalrouter.get("/Afewpages.do",PersonalContro.Afewpages);
 Personalrouter.get("/Afewpages2.do",PersonalContro.Afewpages2);
 
+Personalrouter.get("/editPersonInfo.do",PersonalContro.editPersonInfo);//修改个人资料
+Personalrouter.post("/uploadPersonImg.do",PersonalContro.uploadPersonImg);//上传个人头像
 module.exports = Personalrouter;
