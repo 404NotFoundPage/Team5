@@ -1,6 +1,6 @@
 
 const PersonalModel=require("../dao/PersonalDao.js");
-
+const muilter = require('./../config/multerUtil.js');
 
 const baokuanController={
     PersonalInit(request,response){
@@ -278,6 +278,42 @@ const baokuanController={
         }).catch((err)=>{//失败
             console.log(err);
         })
+    },
+    editPersonInfo(request,response){
+        let user_id=request.session.user.user_id;
+        let user_name=request.query.user_name;
+        let user_login=request.query.user_login;
+        let user_tel=request.query.user_tel;
+        let user_sex=request.query.user_sex;
+        PersonalModel.editPersonInfo(user_id,user_name,user_login,user_tel,user_sex).then((data)=>{
+            response.send({flag:"1",data:data});
+        }).catch((err)=>{//失败
+            console.log(err);
+        })
+    },
+    uploadPersonImg(req,res){
+        let user_id=req.session.user.user_id;
+        let user_pic;
+        var upload=muilter.array('txtFile');
+        upload(req, res, function (err) {
+            //添加错误处理
+            if (err) {
+                return  console.log(err);
+            }
+            //文件信息在req.file或者req.files中显示。
+            let uploadsrc =req.files[0].destination+"/";
+            let uploadfilename = req.files[0].filename;
+            let uploadsrcstring= uploadsrc+uploadfilename;
+            uploadsrcstring = uploadsrcstring.substring(2);
+            uploadsrcstring = "http://localhost:1111/"+uploadsrcstring;
+
+            user_pic="images/buyerImg/"+uploadfilename;
+            PersonalModel.uploadPersonImg(user_id,user_pic,function(err,data){
+                console.log(data)
+            })
+            console.log(uploadsrcstring)
+            res.send(user_pic)
+        });
     }
 };
 module.exports=baokuanController;
