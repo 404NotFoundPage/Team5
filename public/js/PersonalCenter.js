@@ -179,6 +179,12 @@ function pcright_liebiao() {
         $(".user_login").html(data.user_login);
         $(".user_tel").html(data.user_tel);
         $(".user_sex").html(data.user_sex);
+        $("#userimg").attr('src',data.user_pic)
+
+        $("#username>input").val(data.user_name)
+        $("#loginname>input").val(data.user_login)
+        $("#phone>input").val(data.user_tel)
+        $("#sex>select").val(data.user_sex)
     })
 }
 //修改密码
@@ -679,3 +685,53 @@ function gouwuchefenye(){
         gouwuche()
     })
 }
+
+//点击个人资料中的修改
+$(".pchead_ziliao .xiugai").on("click",function(){
+    $(".pchead_ziliao span,.pchead_ziliao .xiugai").css({visibility:"hidden"})
+    $(".pchead_ziliao input,select,.pchead_ziliao .queding,#addimg").css({visibility:"visible"})
+})
+//个人资料修改确定
+$(".pchead_ziliao .queding").on("click",function(){
+    $(".pchead_ziliao span,.pchead_ziliao .xiugai").css({visibility:"visible"})
+    $(".pchead_ziliao input,select,.pchead_ziliao .queding,#addimg,#confirm").css({visibility:"hidden"})
+
+    var username=$("#username>input").val();
+    var loginname=$("#loginname>input").val();
+    var phone=$("#phone>input").val();
+    var sex=$("#sex>select").val()
+    var persondata="user_name="+username+"&user_login="+loginname+"&user_tel="+phone+"&user_sex="+sex;
+    $.get("/editPersonInfo.do",persondata,function (data) {
+        if(data.flag=='1'){
+            $(".user_name").html(username);
+            $(".user_login").html(loginname);
+            $(".user_tel").html(phone);
+            $(".user_sex").html(sex);
+        }
+    })
+})
+function addimg(){
+    $("#fileinput")[0].click()  
+    $("#addimg").css({visibility:"hidden"})
+    $("#confirm").css({visibility:"visible"})
+}
+$("#confirm").on("click",function(){
+    var xmlHttp;
+    if(window.XMLHttpRequest){ //DOM
+        xmlHttp = new XMLHttpRequest();
+    }else if(window.ActiveXObject){ //IE
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlHttp.onreadystatechange=function(){
+        if(xmlHttp.readyState==4&&xmlHttp.status==200){
+            console.log(xmlHttp.responseText)
+            $("#userimg").attr('src',xmlHttp.responseText)
+        }
+    }
+    xmlHttp.open("post","/uploadPersonImg.do");
+    var form = document.getElementById("form1");
+    var formData = new FormData(form);
+    xmlHttp.send(formData);
+    $("#confirm").css({visibility:"hidden"})
+})

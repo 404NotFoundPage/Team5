@@ -10,11 +10,11 @@
 }
 @font-face {
   font-family: 'iconfont';  /* project id 616061 */
-  src: url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.eot');
-  src: url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.woff') format('woff'),
-  url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_616061_mf8pjxzzf4r3haor.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_616061_01kpu76srw6zuxr.eot');
+  src: url('//at.alicdn.com/t/font_616061_01kpu76srw6zuxr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_616061_01kpu76srw6zuxr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_616061_01kpu76srw6zuxr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_616061_01kpu76srw6zuxr.svg#iconfont') format('svg');
 }
 
 body{
@@ -71,9 +71,38 @@ section{
       width: 266px;
       height: 230px;
       float: left;
+      position: relative;
       img{
         width: 266px;
         height: 230px;
+      }
+      #addimg{
+        font-family: "iconfont";;
+        position: absolute;
+        line-height: 230px;
+        top:0px;
+        left:108px;
+        color:white;
+        font-size:40px;
+        visibility: hidden;
+        cursor: pointer;
+      }
+      #addimg:hover,#confirm:hover{
+        color: #273b5e;
+      }
+      #confirm{
+        cursor: pointer;
+        font-family: "iconfont";;
+        position: absolute;
+        line-height: 230px;
+        top:0px;
+        left:108px;
+        color:white;
+        font-size:40px;
+        visibility: hidden;
+      }
+      #form1{
+        opacity: 0;
       }
     }
     .pchead_ziliao{
@@ -82,11 +111,36 @@ section{
       float: left;
       margin-left: 20px;
       padding: 20px 0 0 0;
+      .xiugai,.queding{
+        background-color:#273b5e;
+        color: white;
+        font-size: 14px;
+        padding:6px 10px;
+        cursor: pointer;
+      }
+      .queding{
+        visibility: hidden;
+        margin-left:-48px;
+      }
+      .queding:hover,.xiugai:hover{
+        opacity: 0.8;
+      }
       p{
+        position: relative;
         padding-top:20px;
-        .xiugai{
-          margin-left: 290px;
-          cursor: pointer;
+        input,span,select{
+          position: absolute;
+          left: 100px;
+        }
+        input,select{
+          height: 26px;
+          border-radius: 3px;
+          border:1px solid #273b5e;
+          visibility: hidden;
+        }
+        select{
+          width: 150px;
+          visibility: hidden;
         }
       }
     }
@@ -476,7 +530,6 @@ select {
     width: auto;
     height: 100px;
     vertical-align:middle;
-
   }
 }
 .cus{

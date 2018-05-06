@@ -30,13 +30,25 @@
     <div class="pcright_liebiao mito">
         <div class="pcphone_box">
             <div class="pchead_phone">
-                <img src="images/in_1.jpg" alt=""/>
+                <img src="" id='userimg'/>
+                <span id="addimg" onclick="addimg()">&#xe663;</span>
+                <span id="confirm">&#xe615;</span>
+                <form  id='form1' enctype="multipart/form-data" method="post">
+                    <input type="file" name="txtFile" id="fileinput"/>
+                 </form>
             </div>
             <div class="pchead_ziliao">
-                <p>会员名: <span class="user_name">1</span> <span class="xiugai">修改</span></p>
-                <p>账号:  <span class="user_login">2</span></p>
-                <p>绑定手机号:  <span class="user_tel">3</span></p>
-                <p>性别:  <span class="user_sex">4</span></p>
+                <span class="xiugai">修改</span><span class="queding">确定</span>
+                <p id="username">会员名: <input type="text" value="1"><span class="user_name">1</span></p>
+                <p id="loginname">账号:  <input type="text"/><span class="user_login">2</span></p>
+                <p id="phone">绑定手机号:  <input type="text"/><span class="user_tel">3</span></p>
+                <p id="sex">性别:
+                    <select>
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select></select>
+                    <span class="user_sex">4</span>
+                </p>
             </div>
         </div>
 
