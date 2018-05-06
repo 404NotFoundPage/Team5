@@ -61,7 +61,7 @@ const bf_tj_contro ={
         let pro_id = goods_type+"+"+index;
         req.session.user_id = 1;
         if(req.session.user){
-            bf_model.bf_soucang(pro_id,req.session.user_id).then(function (data) {
+            bf_model.bf_soucang(req.session.user_id,pro_id).then(function (data) {
                 if(data.affectedRows != 0){
                     res.send("收藏成功");
                 }
@@ -78,7 +78,7 @@ const bf_tj_contro ={
         let pro_id = goods_type+"+"+index;
         req.session.user_id = 1;
         if(req.session.user){
-            bf_model.bf_cancelsoucang(pro_id,req.session.user_id).then(function (data) {
+            bf_model.bf_cancelsoucang(req.session.user_id,pro_id).then(function (data) {
                 if(data.affectedRows != 0){
                     res.send("取消收藏成功");
                 }
