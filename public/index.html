@@ -25,41 +25,41 @@
 		</div>
 		<ul class="imgs">
 			<li class="active">
-				<img src="images/in_banner1.jpg">
+				<a href="chaju.html"> <img src="images/in_banner1.jpg"></a>
 				<div class="banner_text txt1">
 					<h1>一茶一杯一世界</h1>
-					<a href="">点击查看</a>
+					<a href="chaju.html">点击查看</a>
 				</div>
 			</li>
 			<li>
-				<img src="images/in_banner2.jpg">
+				<a href="huaping.html"><img src="images/in_banner2.jpg"></a>
 				<div class="banner_text txt2">
 					<h1>暗香</h1>
 					<p>疏影横斜水清浅<br>暗香浮动月黄昏</p>
-					<a href="">点击查看</a>
+					<a href="huaping.html">点击查看</a>
 				</div>
 			</li>
 			<li>
-				<img src="images/in_banner3.jpg">
+				<a href="baijian.html"><img src="images/in_banner3.jpg"></a>
 				<div class="banner_text txt3">
 					<h1>碧波流翠</h1>
 					<p>只一眼，便已清心...</p>
-					<a href="">点击查看</a>
+					<a href="baijian.html">点击查看</a>
 				</div>
 			</li>
 			<li>
-				<img src="images/in_banner4.jpg">
+				<a href="baokuan.html"><img src="images/in_banner4.jpg"></a>
 				<div class="banner_text">
 					<h1>花器</h1>
 					<p>许花草一个精致的归属...</p>
-					<a href="">点击查看</a>
+					<a href="baokuan.html">点击查看</a>
 				</div>
 			</li>
 			<li>
-				<img src="images/in_banner5.jpg">
+				<a href="brandstory.html"><img src="images/in_banner5.jpg"></a>
 				<div class="banner_text txt5">
 					<h1>大师传统手工制作，千年传承</h1>
-					<a href="#">点击查看</a>
+					<a href="brandstory.html">点击查看</a>
 				</div>
 			</li>
 		</ul>
@@ -94,7 +94,7 @@
 						<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
 						<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
 					</div>
-					<h2>瓷韵夏日青莲系列</h2>
+					<h2><%=newname[0] %></h2>
 					<div class="in_ljBuy">
 						<a href="#" class="newbuy"  uid="<%=newid[1] %>">立即购买</a>
 					</div>
@@ -115,7 +115,7 @@
 						<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
 						<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
 					</div>
-					<h2>瓷韵夏日青莲系列</h2>
+					<h2><%=newname[1] %></h2>
 					<div class="in_ljBuy">
 						<a href="#"  class="newbuy"  uid="<%=newid[1] %>">立即购买</a>
 					</div>
@@ -136,7 +136,7 @@
 						<span class="nocollect" uid="<%=newid[1] %>" >&#xe61c</span>
 						<span class="collect" uid="<%=newid[1] %>" >&#xe61d;</span>
 					</div>
-					<h2>瓷韵夏日青莲系列</h2>
+					<h2><%=newname[2] %></h2>
 					<div class="in_ljBuy">
 						<a href="#" class="newbuy" uid="<%=newid[1] %>">立即购买</a>
 					</div>
@@ -179,7 +179,7 @@
 					<span class="nocollect" uid="<%=baoid[1] %>" >&#xe61c</span>
 					<span class="collect" uid="<%=baoid[1] %>" >&#xe61d;</span>
 				</div>
-				<h2>瓷韵夏日青莲系列</h2>
+				<h2><%=baoname[0] %></h2>
 				<div class="in_ljBuy">
 					<a class="buy" uid="<%=baoid[1] %>">立即购买</a>
 				</div>
@@ -207,7 +207,7 @@
 						<span class="nocollect" uid="<%=baoid[1] %>" >&#xe61c</span>
 						<span class="collect" uid="<%=baoid[1] %>" >&#xe61d;</span>
 					</div>
-					<h2>瓷韵夏日青莲系列</h2>
+					<h2><%=baoname[1] %></h2>
 					<div class="in_ljBuy">
 						<a href="#" class="buy" uid="<%=baoid[1] %>">立即购买</a>
 					</div>
@@ -227,7 +227,7 @@
 						<span class="nocollect" uid="<%=baoid[1] %>" >&#xe61c</span>
 						<span class="collect" uid="<%=baoid[1] %>" >&#xe61d;</span>
 					</div>
-					<h2>瓷韵夏日青莲系列</h2>
+					<h2><%=baoname[2] %> </h2>
 					<div class="in_ljBuy">
 						<a href="#" class="buy" uid="<%=baoid[1] %>">立即购买</a>
 					</div>
@@ -319,11 +319,15 @@
 		</div>
 	</div>
 </section>
+<section style="clear:both">
+	<!--引入底部文件-->
+	<%-include footer.html %>
+</section>
 <!-- 提示-->
 <div id="prompt">
 </div>
-<!--引入底部文件-->
-<%-include footer.html %>
+
+
 
 <script src="js/less.min.js"></script>
 <script src="js/jquery-1.11.3.js"></script>
@@ -352,12 +356,14 @@
             if ($(this).scrollTop() > 3350) {
                 $("section:nth-of-type(5)").css("opacity", 1);
             }
-            if ($(this).scrollTop() > 3900) {
+            if ($(this).scrollTop() > 3500) {
                 $("section:nth-of-type(6)").css("opacity", 1);
+				$("section:nth-of-type(7)").css("opacity", 1);
             }
-            if ($(this).scrollTop() > 4000) {
+            if ($(this).scrollTop() > 3500) {
                 $("footer").css("opacity", 1);
             }
+			console.log($(this).scrollTop())
         })
     })
 	$(document).ready(function(){
