@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>head</title>
+    <link rel="stylesheet/less" href="less/common.less">
+    <link rel="stylesheet/less" href="less/OrderSubmission.less">
+    <link rel="stylesheet" href="css/pick-pcc.min.1.0.1.css">
+
+</head>
+<body>
+<header>
+    <nav class="nav">
+        <div class="nav_logo">
+            <h1>
+                <a href="#">
+                    <img src="images/logo.png">
+                </a>
+            </h1>
+        </div>
+        <div class="nav_right">
+            <div class="nav_log">
+                <ul>
+                    <li><a href="#">注册</a></li>
+                    <li>|</li>
+                    <li><a href="#">登录</a></li>
+                    <li><a href="#">&#xe606;</a></li>
+                </ul>
+            </div>
+            <div class="nav_bar">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">花瓶</a></li>
+                    <li><a href="#">茶具</a></li>
+                    <li><a href="#">摆件</a></li>
+                    <li><a href="#"><span>&#xe689;</span>爆款推荐</a></li>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">艺术馆</a></li>
+                    <li>
+                        <div class="search">
+                            <span><a href="#">&#xe517;</a></span>
+                            <input type="text" placeholder="输入搜索内容">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section>
+    <div class="os">
+        <div class="os_localtion"></div>
+        <div class="os_localtion1">
+            <h5>请选择收货地址并确认收件人信息</h5>
+            <p class="zjshdz_btn">增加收货地址</p>
+            <div class="os_zjshdz">
+                <div class="pcright_liebiao2 mito">
+                    <p>新增收货地址：手机和电话号码选填一样，带<span>*</span>为必填项</p>
+                    <div class="pcright_szdq">
+                        所在地区<span>*</span>
+                        <select name="" id="pcright_county">
+                            <option value="">中国大陆</option>
+                        </select>
+                        <!--三级联动-->
+                        <a href="javascript:void(0)" class="pick-area pick-area1" name="请选择/请选择/请选择"></a>
+                    </div>
+
+                    <div class="pcright_adress">
+                        <p>详细地址<span>*</span></p>
+                        <textarea id="textarea" cols="30" rows="10"placeholder="请填写详细收货地址，如街道名称、名牌号、楼层等信息"></textarea>
+                    </div>
+
+                    <div class="pcright_code">
+                        收 件 人<span>*</span>
+                        <input class="Addressee" type="text" placeholder="请填写收件人姓名">
+                    </div>
+
+                    <div class="pcright_addressee">
+                        电话号码<span>*</span>
+                        <input class="PhoneNumber" type="text" placeholder="长度不超过25个字符">
+                    </div>
+
+                    <div class="pcright_defalut">
+                        <input class="Setasthedr" type="checkbox">设为默认地址</br>
+                        <button class="Preservation" type="button">保存</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="os_localtionlb">
+
+            </div>
+        </div>
+
+        <!--点击增加收货地址的遮罩层-->
+        <div class="djdzzzc">
+
+        </div>
+        <!--支付方式-->
+        <div class="os_Pmethod ">
+            <p>支付方式</p>
+            <div class="zhifubao">支付宝支付</div>
+            <div class="wechat">微信支付</div>
+        </div>
+        <!--商品列表-->
+        <table class="os_splb" cellspacing="0">
+            <thead>
+            <tr>
+                <th>商品名称</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>总价</th>
+            </tr>
+            </thead>
+
+            <tbody class="tbodydd">
+
+
+            </tbody>
+        </table>
+
+        <div class="os_ddtjbox">
+            <div class="os_ddtj">
+                <p><span class="submit_zjs"></span>件商品，总商品价格：<span class="submit_money"></span></p>
+                <p>优惠:<span>￥000.00</span></p>
+                <p>运费:<span>￥000.00</span></p>
+                <p>服务费:<span>￥000.00</span></p>
+                <p>应付金额: <span class="submit_money"></span></p>
+                <div class="subit_tjdd">
+                    提交订单
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="js/jquery-1.11.3.js" type="text/javascript"></script>
+<script src="js/less.min.js" type="text/javascript"></script>
+<script src="js/pick-pcc.min.1.0.1.js"></script>
+<script src="js/OrderSubmission.js"></script>
+<script type="text/javascript">
+    var addDatalist;   // 存放获取 地址的
+    var addshangping;  //商品订单信息
+    var  a=0;//判断条件
+    var  addr_id;
+    $(".pick-area1").pickArea();
+
+    $(".pick-area2").pickArea({
+        "format":"北京市/市辖区", //格式
+        "width":"300",
+        "borderColor":"#7b68ee",//文本边框的色值
+        "arrowColor":"#7b68ee",//箭头颜色
+        "listBdColor":"#7b68ee",//下拉框父元素ul的border色值
+        "color":"#7b68ee",//字体颜色
+        "fontSize":"16px",//字体大小
+        "hoverColor":"#7b68ee",
+        "paddingLeft":"10px",
+        "arrowRight":"10px",
+        //"preSet":"北京市/市辖区/东城区",
+        "getVal":function(){
+            //console.log($(".pick-area-hidden").val())
+            //console.log($(".pick-area-dom").val())
+            var thisdom = $("."+$(".pick-area-dom").val());
+            thisdom.next().val($(".pick-area-hidden").val());
+        }
+    });
+
+    $(".pick-area3").pickArea({
+        "format":"江苏省", //格式
+        "width":"400",
+        "borderColor":"#51AFC9",//文本边框的色值
+        "arrowColor":"#51AFC9",//箭头颜色
+        "listBdColor":"#51AFC9",//下拉框父元素ul的border色值
+        "color":"#51AFC9",//字体颜色
+        "fontSize":"16px",//字体大小
+        "hoverColor":"#51AFC9",
+        "paddingLeft":"10px",
+        "arrowRight":"10px",
+        "maxHeight":"600",
+        //"preSet":"河南省/郑州市",
+        "getVal":function(){
+            //console.log($(".pick-area-hidden").val())
+            //console.log($(".pick-area-dom").val())
+            var thisdom = $("."+$(".pick-area-dom").val());
+            thisdom.next().val($(".pick-area-hidden").val());
+        }
+    });
+    $(".pick-area4").pickArea({
+        "format":"province/city/county", //格式
+        "width":"420",//设置“省市县”文本边框的宽度
+        "height":"48",//设置“省市县”文本边框的高度
+        "borderColor":"#435abd",//设置“省市县”文本边框的色值
+        "arrowColor":"#435abd",//设置下拉箭头颜色
+        "listBdColor":"#435abd",//设置下拉框父元素ul的border色值
+        "color":"#435abd",//设置“省市县”字体颜色
+        "fontSize":"20px",//设置字体大小
+        "hoverColor":"#435abd",
+        "paddingLeft":"30px",//设置“省”位置处的span相较于边框的距离
+        "arrowRight":"30px",//设置下拉箭头距离边框右侧的距离
+        "maxHeight":"300px",
+        //"preSet":"",//数据初始化 ；这里的数据初始化有两种方式，第一种是用preSet属性设置，第二种是在a标签里使用name属性设置
+        "getVal":function(){//这个方法是每次选中一个省、市或者县之后，执行的方法
+            //console.log($(".pick-area-hidden").val())
+            //console.log($(".pick-area-dom").val())
+            var thisdom = $("."+$(".pick-area-dom").val());//返回的是调用这个插件的元素pick-area，$(".pick-area-dom").val()的值是该元素的另一个class名，这个class名在dom结构中是唯一的，不会有重复，可以通过这个class名来识别这个pick-area
+            thisdom.next().val($(".pick-area-hidden").val());//$(".pick-area-hidden").val()是页面中隐藏域的值，存放着每次选中一个省、市或者县的时候，当前文本存放的省市县的最新值，每点击一次下拉框里的li，这个值就会立即更新
+        }
+    });
+    $(".pick-area5").pickArea({
+        "format":"province/city", //格式
+        "width":"300",
+        "borderColor":"#e02222",//文本边框的色值
+        "arrowColor":"#e02222",//下拉箭头颜色
+        "listBdColor":"#e02222",//下拉框父元素ul的border色值
+        "color":"#8c8c8c",//字体颜色
+        "hoverColor":"#e02222",
+        //"preSet":"山东省/临沂市/兰陵县",
+        "getVal":function(){
+            //console.log($(".pick-area-hidden").val())
+            //console.log($(".pick-area-dom").val())
+            var thisdom = $("."+$(".pick-area-dom").val());
+            thisdom.next().val($(".pick-area-hidden").val());
+        }
+    });
+
+    $(".pick-area6").pickArea({
+        "format":"上海市/市辖区/普陀区", //格式
+        "width":"340",
+        "borderColor":"#ff8c00",//文本边框的色值
+        "arrowColor":"#ff8c00",//下拉箭头颜色
+        "listBdColor":"#ff8c00",//下拉框父元素ul的border色值
+        "color":"#ff8c00",//字体颜色
+        "hoverColor":"#ff8c00",
+        //"preSet":"山东省/临沂市/兰陵县",
+        "getVal":function(){
+            //console.log($(".pick-area-hidden").val())
+            //console.log($(".pick-area-dom").val())
+            var thisdom = $("."+$(".pick-area-dom").val());
+            thisdom.next().val($(".pick-area-hidden").val());
+        }
+    });
+
+    $(".pick-area7").pickArea({"format":"","width":"150px","borderColor":"#7894D4","color":'#7894D4',"arrowColor":"#7894D4"});
+
+    // 点击增加地址按钮
+    $(".zjshdz_btn").on("click",function () {
+        $(".pick-province").html("请选择")  //获取省
+        $(".pick-city").html("请选择")  //获取市
+        $(".pick-county").html("请选择")  //获取乡
+        $("#textarea").val("")  //具体的地详细地址
+        $(".Addressee").val("")  //收件人
+        $(".PhoneNumber").val("")  //电话号码
+        $(".Setasthedr").is(':checked') //设为默认地址
+
+        $(".os_localtion1>h5").css({display:"none"});
+        $(".os_localtion1>p").css({display:"none"});
+        $(".os_localtionlb").css({display:"none"});
+        $(".os_Pmethod").css({display:"none"});
+
+        $(".djdzzzc").css({display:"block"});
+        $(".djdzzzc").css({"z-index":"8"});
+        // $(".os_splb").css({opacity:"0"});
+        $(".os_ddtjbox").css({display:"none"});
+        $(".os_zjshdz").css({display:"block"});
+        $("section").css({height:"auto"});
+    })
+
+
+    //点击保存
+    $(".Preservation").on("click",function () {
+        // 点击保存实现显示
+        $(".os_localtion1>h5").css({display:"block"});
+        $(".os_localtion1>p").css({display:"block"});
+        $(".os_localtionlb").css({display:"block"});
+        $(".os_Pmethod").css({display:"block"});
+        $(".os_ddtjbox").css({display:"block"});
+        $(".os_zjshdz").css({display:"none"});
+        $(".djdzzzc").css({display:"none"});
+        $(".os_splb").css({opacity:1});
+        $(".os_ddtj").css({display:"block"});
+        // $(".os").css({border:"1px solid silver"});
+
+
+        // 点击获取值
+         province = $(".pick-province").html()  //获取省
+         city = $(".pick-city").html()  //获取市
+         county = $(".pick-county").html()  //获取乡
+         textarea = $("#textarea").val()  //具体的地详细地址
+         Addressee = $(".Addressee").val()  //收件人
+         PhoneNumber = $(".PhoneNumber").val()  //电话号码
+         Setasthedr = $(".Setasthedr").is(':checked') //设为默认地址
+        if(Setasthedr==true){
+            Setasthedr=0
+        }else{
+            Setasthedr=1
+        }
+
+        console.log("1111111111111111111")
+        var data="province="+province+"&city="+city+"&county="+county+"&textarea="+textarea+"&Addressee="+Addressee+"&PhoneNumber="+PhoneNumber+"&Setasthedr="+Setasthedr+"&addr_id="+addr_id
+        console.log(data)
+        // 把获取的值传到后台数据库
+        if(a==1){// 修改
+            console.log("dadadadadasada")
+            $.get("/updatahcrshdz.do",data,function (trr){
+                huoqudizhi();
+            })
+        }else{//添加
+
+            //空值的时候不能添加
+            if(province && city  && county  && textarea  && Addressee  && PhoneNumber){
+                $.get("/hcrshdz.do",data,function (trr) {
+                    huoqudizhi();
+                })
+            }else{
+                alert("不能为空")
+            }
+        }
+        a=0;
+    })
+
+
+    // 发起请求(收货地址)   方法获取地址
+    huoqudizhi();
+    function huoqudizhi() {
+        $.get("/hqshdz.do",function (data) {   //收货地址请求 后台返回数据
+            addDatalist=data;
+            $(".os_localtionlb").html("");
+            for(var i=0;i<data.length;i++){
+                document.getElementsByClassName("os_localtionlb")[0].innerHTML+="<div>" +
+                    "<span><input type='radio' name='test' value='"+data[i].addr_id+"'></span>" +
+                    "<span>"+data[i].addr_person+"</span>" +
+                    "<span>"+data[i].addr_pro+"</span>" +
+                    "<span>"+data[i].addr_city+"</span>" +
+                    "<span>"+data[i].addr_area+"</span>" +
+                    "<span>"+data[i].addr_detail+"</span>" +
+                    "<span>"+data[i].addr_tel+"</span>" +
+                    "<span addr='"+data[i].addr_id+"' class='shdzbj'>编辑</span>" +
+                    "</div>"
+            }
+        })
+    }
+
+    // 点击编辑，把值赋给增加收货地址里面
+    $(".os_localtionlb").on("click",".shdzbj",function () {
+        a=1
+        addr_id=$(this).attr("addr")
+        $(".os_localtion1>h5").css({display: "none"});
+        $(".os_localtion1>p").css({display: "none"});
+        $(".os_localtionlb").css({display: "none"});
+        $(".os_Pmethod").css({display: "none"});
+        $(".os_splb").css({opacity: "0"});
+        $(".os_ddtj").css({display: "none"});
+        $(".os_zjshdz").css({display: "block"});
+        console.log(addDatalist)
+        console.log($(this).attr("addr"))
+        for (var i = 0; i < addDatalist.length; i++) {
+            if(addDatalist[i].addr_id==$(this).attr("addr")){
+                console.log(addDatalist[i])
+                $(".pick-province").html(addDatalist[i].addr_pro)  //获取省
+                $(".pick-city").html(addDatalist[i].addr_city)  //获取市
+                $(".pick-county").html(addDatalist[i].addr_area)  //获取乡
+                $("#textarea").val(addDatalist[i].addr_detail)  //具体的地详细地址
+                $(".Addressee").val(addDatalist[i].addr_person)  //收件人
+                $(".PhoneNumber").val(addDatalist[i].addr_tel)  //电话号码
+
+                if(addDatalist[i].add_default==1){   // 判断默认地址
+                    $(".Setasthedr").attr("checked", false)//设为默认地址
+                }else{
+                    $(".Setasthedr").attr("checked", true)//设为默认地址
+                }
+            }
+        }
+    }) //budong
+
+    var payfs;
+    //支付宝以及微信按钮
+    $(".zhifubao").on("click",function () {
+        $(".zhifubao").css({outline:"1px solid red"})
+        $(".zhifubao").css({color:"red"})
+        $(".wechat").css({outline:"none"})
+        $(".wechat").css({color:"black"})
+        payfs='支付宝'
+    });
+    $(".wechat").on("click",function () {
+        $(".wechat").css({outline:"1px solid red"})
+        $(".wechat").css({color:"red"})
+        $(".zhifubao").css({outline:"none"})
+        $(".zhifubao").css({color:"black"})
+        payfs='微信'
+    });
+
+    //提交订单里面的表格
+    ddbiao();
+    function ddbiao(){
+        $(".tbodydd").html("");
+        $.get("/dingdanbiao.do",function (data) {
+            addshangping=data;
+            console.log(data);
+            for(var i=0;i<data.length;i++){
+                var str=data[i].pro_img_url;
+                var arr=str.split(",");
+                var meng=data[i].pro_price*data[i].sc_amount;
+                document.getElementsByClassName("tbodydd")[0].innerHTML+="<tr>" +
+                    "<td><img src='"+arr[0]+"' alt=''><a>"+data[i].pro_name+"</a></td>" +
+                    "<td><span class='danjia'>"+data[i].pro_price+"</span></td>" +
+                    "<td><span class='shuliang'>"+data[i].sc_amount+"</span></td>" +
+                    // "<td><a value='"+data[i].sc_id+"' class='jian'>&#xe641;</a><span class='jiange'>"+data[i].sc_amount+"</span><a value='"+data[i].sc_id+"' class='jia'>&#xe65e;</a></td>" +
+                    "<td><span class='zongjia'>"+1+"</span></td>" +
+                    "</tr>"
+            };
+            queryzongjia()//提交订单里面的商品总价
+            queryjianshu()//提交订单里面的商品总件数
+        })
+    }
+    
+    //提交订单里面的商品总价
+    var zj=[]
+    var sum=0
+    function queryzongjia(){
+       $(".zongjia").each(function (i,obj) {
+           zj.push($(this).html())
+           sum += parseInt(zj[i]);
+       })
+        console.log(zj)
+        console.log(sum)
+    }
+    $(".submit_money").html("￥"+(Math.floor(sum * 100) / 100))
+
+
+    //提交订单里面的商品总件数
+    var js=[]
+    var sum1=0;
+    function queryjianshu() {
+        $(".shuliang").each(function (i,obj) {
+            js.push($(this).html())
+            sum1 += parseInt(js[i])
+        })
+        console.log(js)
+        console.log(sum1)
+    }
+    $(".submit_zjs").html(sum1)
+
+    //获取页面所有数据
+    $(".subit_tjdd").on("click",function () {
+        console.log(payfs);
+        var order_time = ""+new Date().getFullYear()+"-"+ (new Date().getMonth()+1)+"-"+new Date().getDate() // 时间
+        var order_postmethod='顺丰快递'  //快递
+        var order_paymethod=payfs; //支付方式
+        var order_receivername  //姓名
+        var order_bill=0  //发票
+        var order_addr  //收货地址
+        var order_pay=0//支付状态
+        var order_status=0  //收发货状态
+        var order_price=sum  // 订单 总价
+        var pro_id=addshangping[0].pro_id //商品编号
+        console.log(addDatalist);
+
+        var test =$("input[name='test']:checked").val()
+        console.log(test)
+        for(var i=0;i<addDatalist.length;i++){
+            if(test==addDatalist[i].addr_id){
+                order_addr=addDatalist[i].addr_pro+addDatalist[i].addr_city+addDatalist[i].addr_area+addDatalist[i].addr_detail
+                order_receivername=addDatalist[i].addr_person
+            }
+        }
+        console.log(order_time,
+        order_postmethod,
+        order_paymethod,
+        order_receivername,
+        order_bill,
+        order_addr,
+        order_pay,
+        order_status,
+        parseInt(order_price))
+        console.log(addshangping[0].pro_id);
+
+        //点击提交订单后把页面数据传入后台
+        let iiii={order_time,
+            order_postmethod,
+            order_paymethod,
+            order_receivername,
+            order_bill,
+            order_addr,
+            order_pay,
+            order_status,
+            order_price:parseInt(order_price),
+            pro_id,
+            order_number:"1"
+        }
+        if(order_paymethod && order_price&& order_addr&& order_receivername){
+            $.get("/tijiaodingdan.do",iiii,function (data) {
+                    if(data){
+                        console.log("xx")
+                        window.location.href='http://localhost:1111/PaymentSuccess.html'
+                    }
+            })
+        }else{
+            alert("不能为空")
+        }
+    })
+
+
+</script>
+</body>
+</html>
