@@ -129,7 +129,7 @@ const baokuanController={
     },
     QueryOrder(request,response){
 
-        let sql='SELECT t_detail.pro_id,t_pro.pro_price,t_img.pro_img_url,t_pro.pro_name,t_detail.order_detail_amount,t_detail.order_detail_totalPrice,t_ord.order_pay,t_ord.order_status FROM' +
+        let sql='SELECT t_ord.order_id,t_detail.pro_id,t_pro.pro_price,t_img.pro_img_url,t_pro.pro_name,t_detail.order_detail_amount,t_detail.order_detail_totalPrice,t_ord.order_pay,t_ord.order_status FROM' +
             '  t_order AS t_ord JOIN t_orderdetail AS t_detail ON t_ord.order_id = t_detail.order_id JOIN t_productimg AS t_img ON t_img.pro_id = t_detail.pro_id' +
             ' JOIN t_productinfo AS t_pro ON t_pro.pro_id = t_img.pro_id WHERE t_ord.user_id = ? AND  t_img.pro_img_coditon=0 AND t_img.pro_img_status=0 AND ' +
             't_ord.order_condition=0 AND t_detail.order_detail_condition=0 AND t_pro.pro_condition=0 ';
@@ -163,7 +163,7 @@ const baokuanController={
         }
 
 
-        sql = sql+" GROUP BY t_ord.user_id";
+        // sql = sql+" GROUP BY t_ord.user_id";
 
         console.log(sql);
 

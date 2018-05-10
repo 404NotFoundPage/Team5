@@ -429,7 +429,7 @@ function QueryOrder(){
                 "<td>"+data[i].order_detail_amount+"</td>" +
                 "<td>"+data[i].order_detail_totalPrice+"</td>" +
                 "<td>"+pay+"</td>" +
-                "<td><p uid='"+data[i].pro_id+"' class='collection'>加入收藏</p><p uid='"+data[i].pro_id+"' class='Deleteorder'>删除</p></td>" +
+                "<td><p uid='"+data[i].pro_id+"' class='collection'>加入收藏</p><p uid='"+data[i].order_id+"' class='Deleteorder'>删除</p></td>" +
                 "</tr>"
         }
     })

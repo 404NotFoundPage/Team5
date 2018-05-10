@@ -38,7 +38,7 @@ $(".yanimg").on("click",function(){
         }
     }else{
         $(".connt2-2").val("");
-        $("input[name=username]").attr('placeholder',"请输入手机号");;
+        $("input[name=username]").attr('placeholder',"请输入手机号");
         console.log("没有值")
     }
 });
@@ -51,8 +51,11 @@ $(".reg-but").on("click",function(){
             var phdata="telphone="+telphone+"&VerCode="+VerCode+"&password="+password;
             $.post("/reg.do",phdata,function(data){
                     if(data=="ok"){
-
                         window.location.href="login.html";
+                    }else{
+                        $(".yan2-2").val("")
+                        $(".yan2-2").attr('placeholder',"验证码错误");
+                        $(".yan2-2").focus()
                     }
             })
         }else{
